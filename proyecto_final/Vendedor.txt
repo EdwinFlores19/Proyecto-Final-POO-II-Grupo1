@@ -1,2 +1,4 @@
-1,test,72074565,TEST123
-2,f,99999999,test123
+1,william,72074565,test,administrador
+2,test,11111111,test,vendedor
+3,marta,12345678911,test,cliente
+4,angello,72266591,angfal491,administrador

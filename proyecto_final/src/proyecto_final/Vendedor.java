@@ -1,35 +1,38 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package proyecto_final;
 
-/**
- *
- * @author WILLIAM
- */
 public class Vendedor {
+
     int codigo;
     String nombre;
     String dni;
-    String contraseña;
+    String contrasena;
+    String rol;
 
     public Vendedor() {
     }
 
-    public Vendedor(int codigo, String nombre, String dni, String contraseña) {
+    public Vendedor(int codigo, String nombre, String dni, String contrasena, String rol) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.dni = dni;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
+        this.rol = rol;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getRol() {
+        return rol;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public int getCodigo() {
@@ -55,6 +58,5 @@ public class Vendedor {
     public void setDni(String dni) {
         this.dni = dni;
     }
-    
-    
+
 }
