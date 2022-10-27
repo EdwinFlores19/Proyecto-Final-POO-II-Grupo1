@@ -108,4 +108,25 @@ public class Proveedor_Array {
             return proveedor_a.get(proveedor_a.size() - 1).getProv_cod() + 1;
         }
     }
+    
+    public void grabarModificareliminar(){
+        try
+        {
+            FileWriter f = new FileWriter(nom,false);
+            BufferedWriter b = new BufferedWriter(f);
+            PrintWriter pw = new PrintWriter(b);
+            for(Proveedor obj:proveedor_a)
+            {
+               pw.println(obj.getProv_cod() + "," + obj.getProv_ruc() + "," + obj.getProv_raz_soc() + ","
+                    + obj.getProv_dir() + ","
+                    + obj.getProv_nom_contact_1() + "," + obj.getProv_nom_contact_2() + "," + obj.getProv_website()
+                    + "," + obj.getProv_surcursal()); 
+            }
+            
+            pw.flush();
+            pw.close();
+        } catch ( Exception e ){
+            System.out.println(e);
+        }
+   }
 }

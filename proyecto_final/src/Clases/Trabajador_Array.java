@@ -122,4 +122,27 @@ public class Trabajador_Array {
     public void remove(Trabajador obj) {
         trabajador_a.remove(obj);
     }
+    
+    public void grabarModificareliminar(){
+        try
+        {
+            FileWriter f = new FileWriter(nom,false);
+            BufferedWriter b = new BufferedWriter(f);
+            PrintWriter pw = new PrintWriter(b);
+            for(Trabajador obj:trabajador_a)
+            {
+               pw.println(obj.getTrab_cod() + "," + obj.getTrab_dni() + "," + obj.getTrab_nombre() + ","
+                    + obj.getTrab_apellido() + ","
+                    + obj.getTrab_nacimiento() + "," + obj.getTrab_sexo() + "," + obj.getTrab_email() + ","
+                    + obj.getTrab_dir() + "," + obj.getTrab_dir_distr() + "," + obj.getTrab_dir_prov() + ","
+                    + obj.getTrab_sueldo() + "," + obj.getTrab_sist_pen() + "," + obj.getTrab_f_ingreso() + ","
+                    + obj.getTrab_hijos() + "," + obj.getTrab_seguro()); 
+            }
+            
+            pw.flush();
+            pw.close();
+        } catch ( Exception e ){
+            System.out.println(e);
+        }
+   }
 }

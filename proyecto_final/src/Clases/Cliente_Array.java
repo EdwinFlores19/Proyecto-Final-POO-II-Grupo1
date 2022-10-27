@@ -115,4 +115,25 @@ public class Cliente_Array {
     public void remove(Cliente obj) {
         cliente_a.remove(obj);
     }
+    
+    public void grabarModificareliminar(){
+        try
+        {
+            FileWriter f = new FileWriter(nom,false);
+            BufferedWriter b = new BufferedWriter(f);
+            PrintWriter pw = new PrintWriter(b);
+            for(Cliente obj:cliente_a)
+            {
+               pw.println(obj.getCli_cod() + "," + obj.getCli_dni() + "," + obj.getCli_nombre() + ","
+                    + obj.getCli_apellido() + ","
+                    + obj.getCli_nacimiento() + "," + obj.getCli_sexo() + "," + obj.getCli_email() + ","
+                    + obj.getCli_dir() + "," + obj.getCli_dir_distr() + "," + obj.getCli_dir_prov()); 
+            }
+            
+            pw.flush();
+            pw.close();
+        } catch ( Exception e ){
+            System.out.println(e);
+        }
+   }
 }
