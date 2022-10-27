@@ -4,10 +4,10 @@
  */
 package vista_controlador.vendedor;
 
-import vista_controlador.crear_cuenta;
-import vista_controlador.crear_cuenta;
-import vista_controlador.vista_login;
-import vista_controlador.vista_login;
+import vista_controlador.login.crear_cuenta;
+import vista_controlador.login.crear_cuenta;
+import vista_controlador.login.vista_login;
+import vista_controlador.login.vista_login;
 
 /**
  *

@@ -1,6 +1,6 @@
 package proyecto_final;
 
-import vista_controlador.vista_login;
+import vista_controlador.login.vista_login;
 
 public class Proyecto_final {
 
@@ -8,5 +8,4 @@ public class Proyecto_final {
         vista_login log = new vista_login();
         log.setVisible(true);
     }
-
 }

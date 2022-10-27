@@ -1,7 +1,7 @@
 package vista_controlador.admin;
 
-import vista_controlador.vista_login;
-import auxiliares.Auxiliares;
+import vista_controlador.login.vista_login;
+import Auxiliares.Auxiliares;
 
 public class admin_1 extends javax.swing.JFrame {
 
@@ -98,7 +98,7 @@ public class admin_1 extends javax.swing.JFrame {
         jLabel2.setText("BIENVENIDO ADMIN");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 500, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/img1.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

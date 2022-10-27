@@ -1,14 +1,14 @@
 package vista_controlador.admin;
 
-import vista_controlador.vista_login;
+import vista_controlador.login.vista_login;
 import javax.swing.JOptionPane;
-import proyecto_final.Array_vendedor;
-import proyecto_final.Vendedor;
-import auxiliares.Auxiliares;
+import Clases.Vendedor_Array;
+import Clases.Vendedor;
+import Auxiliares.Auxiliares;
 
 public class crear_cuenta_admin extends javax.swing.JFrame {
 
-    Array_vendedor array1 = new Array_vendedor();
+    Vendedor_Array array1 = new Vendedor_Array();
     Auxiliares aux = new Auxiliares();
 
     public crear_cuenta_admin() {
@@ -114,7 +114,7 @@ public class crear_cuenta_admin extends javax.swing.JFrame {
         jLabel2.setText("Nombre:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/img1.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

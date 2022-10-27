@@ -1,13 +1,13 @@
 package vista_controlador.admin;
 
 import javax.swing.table.DefaultTableModel;
-import proyecto_final.Array_vendedor;
-import auxiliares.Auxiliares;
+import Clases.Vendedor_Array;
+import Auxiliares.Auxiliares;
 
 public class listado_cuentas extends javax.swing.JFrame {
 
     DefaultTableModel modelo;
-    Array_vendedor array1 = new Array_vendedor();
+    Vendedor_Array array1 = new Vendedor_Array();
     Auxiliares aux = new Auxiliares();
 
     public listado_cuentas() {
@@ -91,7 +91,7 @@ public class listado_cuentas extends javax.swing.JFrame {
         jLabel2.setText("LISTADO DE CUENTAS REGISTRADAS");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/img1.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, -1));
 
         pack();

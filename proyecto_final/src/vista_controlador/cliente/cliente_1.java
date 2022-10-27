@@ -1,8 +1,8 @@
 package vista_controlador.cliente;
 
-import vista_controlador.crear_cuenta;
-import vista_controlador.vista_login;
-import auxiliares.Auxiliares;
+import vista_controlador.login.crear_cuenta;
+import vista_controlador.login.vista_login;
+import Auxiliares.Auxiliares;
 
 public class cliente_1 extends javax.swing.JFrame {
 
@@ -72,7 +72,7 @@ public class cliente_1 extends javax.swing.JFrame {
         });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 180, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/img1.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
