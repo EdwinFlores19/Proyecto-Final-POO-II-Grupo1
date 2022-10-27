@@ -5,6 +5,10 @@ public class Usuario {  /*Login*/
     private String user_password;
     private String user_rol = "Cliente";
 
+    public Usuario() {
+    }
+
+    
     public Usuario(String user_credencial, String user_password, String user_rol) {
         this.user_credencial = user_credencial;
         this.user_password = user_password;
