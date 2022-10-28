@@ -1,18 +1,18 @@
 package vista_controlador.login;
 
 import javax.swing.JOptionPane;
-import Clases.Vendedor_Array;
-import Clases.Vendedor;
+import Clases.Cliente_Array;
+import Clases.Cliente;
 import Auxiliares.Auxiliares;
 
 public class crear_cuenta extends javax.swing.JFrame {
 
-    Vendedor_Array array1 = new Vendedor_Array();
+    Cliente_Array array1 = new Cliente_Array();
     Auxiliares aux = new Auxiliares();
 
     public crear_cuenta() {
         initComponents();
-        array1.inicializar();
+        array1.cliente_ini();
     }
 
     @SuppressWarnings("unchecked")
@@ -20,22 +20,22 @@ public class crear_cuenta extends javax.swing.JFrame {
     private void initComponents() {
 
         pf_pass = new javax.swing.JPasswordField();
-        tf_email = new javax.swing.JPasswordField();
         tf_credencial = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         tf_nom = new javax.swing.JTextField();
         tf_ape = new javax.swing.JTextField();
         pf_pre_pass = new javax.swing.JPasswordField();
-        tf_sexo = new javax.swing.JPasswordField();
         Fecha = new com.toedter.calendar.JDateChooser();
         jLabel10 = new javax.swing.JLabel();
-        tf_dir = new javax.swing.JPasswordField();
         jLabel11 = new javax.swing.JLabel();
-        tf_dir_dist = new javax.swing.JPasswordField();
-        tf_dir_prov = new javax.swing.JPasswordField();
         b_create_acc = new javax.swing.JButton();
         b_exit = new javax.swing.JButton();
         cb_sel_creds = new javax.swing.JComboBox<>();
+        tf_dir_prov = new javax.swing.JTextField();
+        tf_dir_dist = new javax.swing.JTextField();
+        tf_dir = new javax.swing.JTextField();
+        tf_sexo = new javax.swing.JTextField();
+        tf_email = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -51,9 +51,6 @@ public class crear_cuenta extends javax.swing.JFrame {
 
         pf_pass.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         getContentPane().add(pf_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, 140, -1));
-
-        tf_email.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        getContentPane().add(tf_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 340, 140, -1));
 
         tf_credencial.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         tf_credencial.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -80,31 +77,19 @@ public class crear_cuenta extends javax.swing.JFrame {
 
         pf_pre_pass.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         getContentPane().add(pf_pre_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 140, -1));
-
-        tf_sexo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        getContentPane().add(tf_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 290, 140, -1));
-        getContentPane().add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 240, 140, 30));
+        getContentPane().add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 420, 140, 30));
 
         jLabel10.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("direccion:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 390, -1, -1));
-
-        tf_dir.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        getContentPane().add(tf_dir, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 390, 140, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 170, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("provincia:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 440, -1, -1));
-
-        tf_dir_dist.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        getContentPane().add(tf_dir_dist, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 190, 140, -1));
-
-        tf_dir_prov.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        getContentPane().add(tf_dir_prov, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 440, 140, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 270, -1, -1));
 
         b_create_acc.setBackground(new java.awt.Color(255, 255, 255));
         b_create_acc.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
@@ -131,29 +116,56 @@ public class crear_cuenta extends javax.swing.JFrame {
         cb_sel_creds.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "RUC" }));
         getContentPane().add(cb_sel_creds, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 90, 30));
 
+        tf_dir_prov.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        tf_dir_prov.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tf_dir_provKeyPressed(evt);
+            }
+        });
+        getContentPane().add(tf_dir_prov, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 270, 140, 30));
+
+        tf_dir_dist.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tf_dir_distKeyPressed(evt);
+            }
+        });
+        getContentPane().add(tf_dir_dist, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 220, 140, 30));
+
+        tf_dir.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        getContentPane().add(tf_dir, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 170, 140, 30));
+
+        tf_sexo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        tf_sexo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tf_sexoKeyPressed(evt);
+            }
+        });
+        getContentPane().add(tf_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 370, 140, 30));
+        getContentPane().add(tf_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 320, 140, 30));
+
         jLabel12.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("distrito:");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 190, -1, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 220, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("email:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 340, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 320, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("sexo:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 290, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 370, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Fecha de nacimiento:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 240, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 420, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -208,25 +220,27 @@ public class crear_cuenta extends javax.swing.JFrame {
     private void b_create_accActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_create_accActionPerformed
         int id = array1.Correlativo();
         String nombre = tf_nom.getText();
+        String apellido = tf_ape.getText();
         String credential = tf_credencial.getText();
         String pre_cont = pf_pre_pass.getText();
         String contrasena = pf_pass.getText();
+        String direccion = tf_dir.getText();
+        String direccion_prov = tf_dir_prov.getText();
+        String direccion_dist = tf_dir_dist.getText();
+        String email = tf_email.getText();
+        String sexo = tf_sexo.getText();
+        String nacimiento = Fecha.getDateFormatString();
         String combo_dr = (String) cb_sel_creds.getSelectedItem();
 
         if (pre_cont.equals(contrasena) && !(aux.tf_are_empty(new Object[]{nombre, credential, pre_cont, contrasena}))) {
             switch (combo_dr) {
                 case "DNI" -> {
                     if (credential.length() == 8) {
-                        Vendedor vendedor1 = new Vendedor();
-                        vendedor1.setCodigo(id);
-                        vendedor1.setNombre(nombre);
-                        vendedor1.setDni(credential);
-                        vendedor1.setContrasena(contrasena);
-                        vendedor1.setRol("Cliente");
-
-                        array1.agregar(vendedor1);
-                        array1.grabar_archivo(vendedor1);
-
+                        Cliente clt = new Cliente(id,nombre,apellido,sexo,nacimiento,direccion,direccion_dist,direccion_prov,email,credential, contrasena, "Cliente");
+                        
+                        array1.agregar(clt);
+                        array1.grabar_arch_cliente(clt);
+                        
                         vista_login v1 = new vista_login();
                         aux.change_jf(v1, this);
                     } else {
@@ -237,15 +251,10 @@ public class crear_cuenta extends javax.swing.JFrame {
 
                 case "RUC" -> {
                     if (credential.length() == 11) {
-                        Vendedor vendedor1 = new Vendedor();
-                        vendedor1.setCodigo(id);
-                        vendedor1.setNombre(nombre);
-                        vendedor1.setDni(credential);
-                        vendedor1.setContrasena(contrasena);
-                        vendedor1.setRol("Cliente");
-
-                        array1.agregar(vendedor1);
-                        array1.grabar_archivo(vendedor1);
+                        Cliente clt = new Cliente(id,nombre,apellido,sexo,nacimiento,direccion,direccion_dist,direccion_prov,email,credential, contrasena, "Cliente");
+                        
+                        array1.agregar(clt);
+                        array1.grabar_arch_cliente(clt);
 
                         vista_login v1 = new vista_login();
                         aux.change_jf(v1, this);
@@ -262,6 +271,33 @@ public class crear_cuenta extends javax.swing.JFrame {
         vista_login vlog = new vista_login();
         aux.change_jf(vlog, this);
     }//GEN-LAST:event_b_exitActionPerformed
+
+    private void tf_dir_provKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_dir_provKeyPressed
+        char c = evt.getKeyChar();
+        if (Character.isDigit(c)) {
+            tf_nom.setEditable(false);
+        } else {
+            tf_nom.setEditable(true);
+        }
+    }//GEN-LAST:event_tf_dir_provKeyPressed
+
+    private void tf_sexoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_sexoKeyPressed
+        char c = evt.getKeyChar();
+        if (Character.isDigit(c)) {
+            tf_nom.setEditable(false);
+        } else {
+            tf_nom.setEditable(true);
+        }
+    }//GEN-LAST:event_tf_sexoKeyPressed
+
+    private void tf_dir_distKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_dir_distKeyPressed
+        char c = evt.getKeyChar();
+        if (Character.isDigit(c)) {
+            tf_nom.setEditable(false);
+        } else {
+            tf_nom.setEditable(true);
+        }
+    }//GEN-LAST:event_tf_dir_distKeyPressed
 
     public static void main(String args[]) {
         try {
@@ -309,11 +345,11 @@ public class crear_cuenta extends javax.swing.JFrame {
     private javax.swing.JPasswordField pf_pre_pass;
     private javax.swing.JTextField tf_ape;
     private javax.swing.JTextField tf_credencial;
-    private javax.swing.JPasswordField tf_dir;
-    private javax.swing.JPasswordField tf_dir_dist;
-    private javax.swing.JPasswordField tf_dir_prov;
-    private javax.swing.JPasswordField tf_email;
+    private javax.swing.JTextField tf_dir;
+    private javax.swing.JTextField tf_dir_dist;
+    private javax.swing.JTextField tf_dir_prov;
+    private javax.swing.JTextField tf_email;
     private javax.swing.JTextField tf_nom;
-    private javax.swing.JPasswordField tf_sexo;
+    private javax.swing.JTextField tf_sexo;
     // End of variables declaration//GEN-END:variables
 }

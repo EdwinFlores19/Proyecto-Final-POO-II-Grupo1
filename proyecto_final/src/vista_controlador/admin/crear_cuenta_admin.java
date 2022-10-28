@@ -2,18 +2,18 @@ package vista_controlador.admin;
 
 import vista_controlador.login.vista_login;
 import javax.swing.JOptionPane;
-import Clases.Vendedor_Array;
-import Clases.Vendedor;
+import Clases.Trabajador_Array;
+import Clases.Trabajador;
 import Auxiliares.Auxiliares;
 
 public class crear_cuenta_admin extends javax.swing.JFrame {
 
-    Vendedor_Array array1 = new Vendedor_Array();
+    Trabajador_Array array1 = new Trabajador_Array();
     Auxiliares aux = new Auxiliares();
 
     public crear_cuenta_admin() {
         initComponents();
-        array1.inicializar();
+        array1.trabajador_ini();
     }
 
     @SuppressWarnings("unchecked")
@@ -135,15 +135,11 @@ public class crear_cuenta_admin extends javax.swing.JFrame {
             switch (combo_dr) {
                 case "DNI" -> {
                     if (credential.length() == 8) {
-                        Vendedor vendedor1 = new Vendedor();
-                        vendedor1.setCodigo(id);
-                        vendedor1.setNombre(nombre);
-                        vendedor1.setDni(credential);
-                        vendedor1.setContrasena(contrasena);
-                        vendedor1.setRol(rol);
+                        Trabajador trabajador1 = new Trabajador();
+                        
 
-                        array1.agregar(vendedor1);
-                        array1.grabar_archivo(vendedor1);
+                        array1.agregar(trabajador1);
+                        array1.grabar_archivo(trabajador1);
 
                         vista_login v1 = new vista_login();
                         aux.change_jf(v1, this);
@@ -155,15 +151,15 @@ public class crear_cuenta_admin extends javax.swing.JFrame {
 
                 case "RUC" -> {
                     if (credential.length() == 11) {
-                        Vendedor vendedor1 = new Vendedor();
-                        vendedor1.setCodigo(id);
-                        vendedor1.setNombre(nombre);
-                        vendedor1.setDni(credential);
-                        vendedor1.setContrasena(contrasena);
-                        vendedor1.setRol(rol);
+                        Trabajador trabajador1 = new Trabajador();
+                        trabajador1.setCodigo(id);
+                        trabajador1.setNombre(nombre);
+                        trabajador1.setDni(credential);
+                        trabajador1.setContrasena(contrasena);
+                        trabajador1.setRol(rol);
 
-                        array1.agregar(vendedor1);
-                        array1.grabar_archivo(vendedor1);
+                        array1.agregar(trabajador1);
+                        array1.grabar_archivo(trabajador1);
 
                         vista_login v1 = new vista_login();
                         aux.change_jf(v1, this);

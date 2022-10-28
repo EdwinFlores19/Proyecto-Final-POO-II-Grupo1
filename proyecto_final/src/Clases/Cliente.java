@@ -1,30 +1,31 @@
 package Clases;
 
-public class Cliente {
+public class Cliente extends Usuario {
     private int cli_cod;
     private String cli_nombre;
     private String cli_apellido;
     private String cli_sexo;  /*M - Masculino | F - Femenino | O - Otros*/
-    private String cli_nacimiento;    
-    private String cli_dni;
+    private String cli_nacimiento;
     private String cli_dir;
     private String cli_dir_distr;
     private String cli_dir_prov;
     private String cli_email;
 
-    public Cliente() {}
+    public Cliente(String user_credencial, String user_password, String user_rol) {
+        super(user_credencial, user_password, user_rol);
+    }
     
-    public Cliente(String cli_nombre, int cli_cod ,String cli_email, String cli_apellido, String cli_sexo, String cli_nacimiento, String cli_dni, String cli_dir, String cli_dir_distr, String cli_dir_prov) {
+    public Cliente(int cli_cod, String cli_nombre, String cli_apellido, String cli_sexo, String cli_nacimiento, String cli_dir, String cli_dir_distr, String cli_dir_prov, String cli_email, String user_credencial, String user_password, String user_rol) {
+        super(user_credencial, user_password, user_rol);
+        this.cli_cod = cli_cod;
         this.cli_nombre = cli_nombre;
         this.cli_apellido = cli_apellido;
-        this.cli_cod = cli_cod;
         this.cli_sexo = cli_sexo;
         this.cli_nacimiento = cli_nacimiento;
-        this.cli_email = cli_email;
-        this.cli_dni = cli_dni;
         this.cli_dir = cli_dir;
         this.cli_dir_distr = cli_dir_distr;
         this.cli_dir_prov = cli_dir_prov;
+        this.cli_email = cli_email;
     }
 
     public int getCli_cod() {
@@ -35,14 +36,6 @@ public class Cliente {
         this.cli_cod = cli_cod;
     }
 
-    public String getCli_email() {
-        return cli_email;
-    }
-
-    public void setCli_email(String cli_email) {
-        this.cli_email = cli_email;
-    }
-    
     public String getCli_nombre() {
         return cli_nombre;
     }
@@ -75,14 +68,6 @@ public class Cliente {
         this.cli_nacimiento = cli_nacimiento;
     }
 
-    public String getCli_dni() {
-        return cli_dni;
-    }
-
-    public void setCli_dni(String cli_dni) {
-        this.cli_dni = cli_dni;
-    }
-
     public String getCli_dir() {
         return cli_dir;
     }
@@ -107,5 +92,12 @@ public class Cliente {
         this.cli_dir_prov = cli_dir_prov;
     }
 
+    public String getCli_email() {
+        return cli_email;
+    }
+
+    public void setCli_email(String cli_email) {
+        this.cli_email = cli_email;
+    }
     
 }

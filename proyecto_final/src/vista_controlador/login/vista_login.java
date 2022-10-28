@@ -4,18 +4,18 @@ import vista_controlador.cliente.cliente_1;
 import vista_controlador.vendedor.vendedor_1;
 import vista_controlador.admin.admin_1;
 import javax.swing.JOptionPane;
-import Clases.Vendedor_Array;
-import Clases.Vendedor;
+import Clases.Cliente_Array;
+import Clases.Cliente;
 import Auxiliares.Auxiliares;
 
 public class vista_login extends javax.swing.JFrame {
 
-    Vendedor_Array array1 = new Vendedor_Array();
+    Cliente_Array array1 = new Cliente_Array();
     Auxiliares aux = new Auxiliares();
     
     public vista_login() {
         initComponents();
-        array1.inicializar();
+        array1.cliente_ini();
     }
 
     @SuppressWarnings("unchecked")
@@ -97,19 +97,19 @@ public class vista_login extends javax.swing.JFrame {
         String dni = tf_user.getText();
         String contrasena = pf_pass.getText();
 
-        Vendedor ven1 = array1.busqueda_dni(dni);
+        Cliente ven1 = array1.buscar_cliente_dni(dni);
 
-        if (ven1.getContrasena().equals(contrasena)) {
+        if (ven1.getUser_password().equals(contrasena)) {
             roles(ven1);
-        } else if ("error".equals(ven1.getContrasena())) {
+        } else if ("error".equals(ven1.getUser_password())) {
             JOptionPane.showMessageDialog(rootPane, "Dni y/o contrasena incorrectas");
             tf_user.setText("");
             pf_pass.setText("");
         }
     }//GEN-LAST:event_iniciar_sesionActionPerformed
 
-    private void roles(Vendedor vendedor1) {
-        switch (vendedor1.getRol()) {
+    private void roles(Cliente vendedor1) {
+        switch (vendedor1.getUser_rol()) {
             case "administrador":
                 JOptionPane.showMessageDialog(rootPane, "Bienvenido a nuestra plataforma administrador!!!");
                 admin_1 a1 = new admin_1();

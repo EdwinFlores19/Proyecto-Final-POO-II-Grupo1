@@ -25,16 +25,16 @@ public class Cliente_Array {
             lector = new BufferedReader(new FileReader(nom));
             while ((linea = lector.readLine()) != null) {
                 partes = linea.split(",");
-                Cliente clien1 = new Cliente();
-                clien1.setCli_dni(partes[0]);
-                clien1.setCli_nombre(partes[1]);
-                clien1.setCli_apellido(partes[2]);
-                clien1.setCli_nacimiento(partes[3]);
-                clien1.setCli_sexo(partes[4]);
-                clien1.setCli_email(partes[5]);
-                clien1.setCli_dir(partes[6]);
-                clien1.setCli_dir_distr(partes[7]);
-                clien1.setCli_dir_prov(partes[8]);
+                Cliente clien1 = new Cliente(partes[0], partes[1], partes[2]);
+                clien1.setCli_cod(Integer.parseInt(partes[3]));
+                clien1.setCli_nombre(partes[4]);
+                clien1.setCli_apellido(partes[5]);
+                clien1.setCli_sexo(partes[6]);
+                clien1.setCli_nacimiento(partes[7]);
+                clien1.setCli_dir(partes[8]);
+                clien1.setCli_dir_distr(partes[9]);
+                clien1.setCli_dir_prov(partes[10]);
+                clien1.setCli_email(partes[11]);
 
                 cliente_a.add(clien1);
             }
@@ -45,7 +45,7 @@ public class Cliente_Array {
 
     public Cliente buscar_cliente_cod(int codigo) {
         for (int i = 0; i < cliente_a.size(); i++) {
-            if (cliente_a.get(i).getCli_dni().equals(codigo)) {
+            if (cliente_a.get(i).getUser_credencial().equals(codigo)) {
                 return cliente_a.get(i);
             }
         }
@@ -54,12 +54,11 @@ public class Cliente_Array {
 
     public Cliente buscar_cliente_dni(String dni) {
         for (int i = 0; i < cliente_a.size(); i++) {
-            if (cliente_a.get(i).getCli_dni().equals(dni)) {
+            if (cliente_a.get(i).getUser_credencial().equals(dni)) {
                 return cliente_a.get(i);
             }
         }
-        Cliente cerror = new Cliente();
-        cerror.setCli_nombre("error");
+        Cliente cerror = new Cliente("000000000", "error", "error");
         return cerror;
     }
 
@@ -68,10 +67,10 @@ public class Cliente_Array {
             FileWriter fw = new FileWriter(nom, true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
-            pw.println(obj.getCli_cod() + "," + obj.getCli_dni() + "," + obj.getCli_nombre() + ","
-                    + obj.getCli_apellido() + ","
-                    + obj.getCli_nacimiento() + "," + obj.getCli_sexo() + "," + obj.getCli_email() + ","
-                    + obj.getCli_dir() + "," + obj.getCli_dir_distr() + "," + obj.getCli_dir_prov());
+            pw.println(
+                    obj.getCli_cod() + "," + obj.getUser_credencial() + "," + obj.getCli_nombre() + "," + obj.getCli_apellido()
+                            + "," + obj.getCli_sexo() + "," + obj.getCli_nacimiento() + "," + obj.getCli_dir() + ","
+                            + obj.getCli_dir_distr() + "," + obj.getCli_dir_prov() + "," + obj.getCli_email());
             pw.print("\n");
             pw.flush();
             pw.close();
@@ -115,25 +114,26 @@ public class Cliente_Array {
     public void remove(Cliente obj) {
         cliente_a.remove(obj);
     }
-    
-    public void grabarModificareliminar(){
-        try
-        {
-            FileWriter f = new FileWriter(nom,false);
+
+    public void grabarModificareliminar() {
+        try {
+            FileWriter f = new FileWriter(nom, false);
             BufferedWriter b = new BufferedWriter(f);
             PrintWriter pw = new PrintWriter(b);
-            for(Cliente obj:cliente_a)
-            {
-               pw.println(obj.getCli_cod() + "," + obj.getCli_dni() + "," + obj.getCli_nombre() + ","
-                    + obj.getCli_apellido() + ","
-                    + obj.getCli_nacimiento() + "," + obj.getCli_sexo() + "," + obj.getCli_email() + ","
-                    + obj.getCli_dir() + "," + obj.getCli_dir_distr() + "," + obj.getCli_dir_prov()); 
+            for (Cliente obj : cliente_a) {
+                pw.println(
+                        obj.getCli_cod() + "," + obj.getUser_credencial() + "," + obj.getCli_nombre() + ","
+                                + obj.getCli_apellido()
+                                + "," + obj.getCli_sexo() + "," + obj.getCli_nacimiento() + "," + obj.getCli_dir() + ","
+                                + obj.getCli_dir_distr() + "," + obj.getCli_dir_prov() + "," + obj.getCli_email());
             }
-            
+            pw.print("\n");
             pw.flush();
             pw.close();
-        } catch ( Exception e ){
+            b.close();
+            f.close();
+        } catch (IOException e) {
             System.out.println(e);
         }
-   }
+    }
 }

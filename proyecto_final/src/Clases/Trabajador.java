@@ -1,8 +1,7 @@
 package Clases;
 
-public class Trabajador {
+public class Trabajador extends Usuario {
     private int trab_cod;
-    private String trab_dni;
     private String trab_nombre;
     private String trab_apellido;
     private String trab_nacimiento;
@@ -17,12 +16,14 @@ public class Trabajador {
     private double trab_sueldo;
     private int trab_hijos;
 
-    public Trabajador() {}
-    
-    public Trabajador(String trab_dni, int trab_cod ,String trab_nombre, String trab_apellido, String trab_nacimiento, String trab_sexo, String trab_email, String trab_dir, String trab_dir_distr, String trab_dir_prov, String trab_seguro, String trab_sist_pen, String trab_f_ingreso, double trab_sueldo, int trab_hijos) {
-        this.trab_dni = trab_dni;
-        this.trab_nombre = trab_nombre;
+    public Trabajador(String user_credencial, String user_password, String user_rol) {
+        super(user_credencial, user_password, user_rol);
+    }
+
+    public Trabajador(int trab_cod, String trab_nombre, String trab_apellido, String trab_nacimiento, String trab_sexo, String trab_email, String trab_dir, String trab_dir_distr, String trab_dir_prov, String trab_seguro, String trab_sist_pen, String trab_f_ingreso, double trab_sueldo, int trab_hijos, String user_credencial, String user_password, String user_rol) {
+        super(user_credencial, user_password, user_rol);
         this.trab_cod = trab_cod;
+        this.trab_nombre = trab_nombre;
         this.trab_apellido = trab_apellido;
         this.trab_nacimiento = trab_nacimiento;
         this.trab_sexo = trab_sexo;
@@ -43,14 +44,6 @@ public class Trabajador {
 
     public void setTrab_cod(int trab_cod) {
         this.trab_cod = trab_cod;
-    }
-
-    public String getTrab_dni() {
-        return trab_dni;
-    }
-
-    public void setTrab_dni(String trab_dni) {
-        this.trab_dni = trab_dni;
     }
 
     public String getTrab_nombre() {
@@ -156,6 +149,5 @@ public class Trabajador {
     public void setTrab_hijos(int trab_hijos) {
         this.trab_hijos = trab_hijos;
     }
-    
     
 }

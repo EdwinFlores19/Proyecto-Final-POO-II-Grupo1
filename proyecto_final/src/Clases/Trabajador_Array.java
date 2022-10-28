@@ -25,21 +25,21 @@ public class Trabajador_Array {
             lector = new BufferedReader(new FileReader(nom));
             while ((linea = lector.readLine()) != null) {
                 partes = linea.split(",");
-                Trabajador trab1 = new Trabajador();
-                trab1.setTrab_dni(partes[0]);
-                trab1.setTrab_nombre(partes[1]);
-                trab1.setTrab_apellido(partes[2]);
-                trab1.setTrab_nacimiento(partes[3]);
-                trab1.setTrab_sexo(partes[4]);
-                trab1.setTrab_email(partes[5]);
-                trab1.setTrab_dir(partes[6]);
-                trab1.setTrab_dir_distr(partes[7]);
-                trab1.setTrab_dir_prov(partes[8]);
-                trab1.setTrab_sueldo(Double.parseDouble(partes[9]));
-                trab1.setTrab_sist_pen(partes[10]);
-                trab1.setTrab_f_ingreso(partes[11]);
-                trab1.setTrab_hijos(Integer.parseInt(partes[12]));
-                trab1.setTrab_seguro(partes[13]);
+                Trabajador trab1 = new Trabajador(partes[0], partes[1], partes[2]);
+                trab1.setTrab_cod(Integer.parseInt(partes[3]));
+                trab1.setTrab_nombre(partes[4]);
+                trab1.setTrab_apellido(partes[5]);
+                trab1.setTrab_nacimiento(partes[6]);
+                trab1.setTrab_sexo(partes[7]);
+                trab1.setTrab_email(partes[8]);
+                trab1.setTrab_dir(partes[9]);
+                trab1.setTrab_dir_distr(partes[10]);
+                trab1.setTrab_dir_prov(partes[11]);
+                trab1.setTrab_sueldo(Double.parseDouble(partes[12]));
+                trab1.setTrab_sist_pen(partes[13]);
+                trab1.setTrab_f_ingreso(partes[14]);
+                trab1.setTrab_hijos(Integer.parseInt(partes[15]));
+                trab1.setTrab_seguro(partes[16]);
 
                 trabajador_a.add(trab1);
             }
@@ -50,7 +50,7 @@ public class Trabajador_Array {
 
     public Trabajador buscar_trabajador_cod(int codigo) {
         for (int i = 0; i < trabajador_a.size(); i++) {
-            if (trabajador_a.get(i).getTrab_dni().equals(codigo)) {
+            if (trabajador_a.get(i).getUser_credencial().equals(codigo)) {
                 return trabajador_a.get(i);
             }
         }
@@ -59,12 +59,11 @@ public class Trabajador_Array {
 
     public Trabajador buscar_trabajador_dni(String dni) {
         for (int i = 0; i < trabajador_a.size(); i++) {
-            if (trabajador_a.get(i).getTrab_dni().equals(dni)) {
+            if (trabajador_a.get(i).getUser_credencial().equals(dni)) {
                 return trabajador_a.get(i);
             }
         }
-        Trabajador cerror = new Trabajador();
-        cerror.setTrab_nombre("error");
+        Trabajador cerror = new Trabajador("000000000", "error", "error");
         return cerror;
     }
 
@@ -73,7 +72,7 @@ public class Trabajador_Array {
             FileWriter fw = new FileWriter(nom, true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
-            pw.println(obj.getTrab_cod() + "," + obj.getTrab_dni() + "," + obj.getTrab_nombre() + ","
+            pw.println(obj.getTrab_cod() + "," + obj.getUser_credencial() + "," + obj.getTrab_nombre() + ","
                     + obj.getTrab_apellido() + ","
                     + obj.getTrab_nacimiento() + "," + obj.getTrab_sexo() + "," + obj.getTrab_email() + ","
                     + obj.getTrab_dir() + "," + obj.getTrab_dir_distr() + "," + obj.getTrab_dir_prov() + ","
@@ -122,27 +121,25 @@ public class Trabajador_Array {
     public void remove(Trabajador obj) {
         trabajador_a.remove(obj);
     }
-    
-    public void grabarModificareliminar(){
-        try
-        {
-            FileWriter f = new FileWriter(nom,false);
+
+    public void grabarModificareliminar() {
+        try {
+            FileWriter f = new FileWriter(nom, false);
             BufferedWriter b = new BufferedWriter(f);
             PrintWriter pw = new PrintWriter(b);
-            for(Trabajador obj:trabajador_a)
-            {
-               pw.println(obj.getTrab_cod() + "," + obj.getTrab_dni() + "," + obj.getTrab_nombre() + ","
-                    + obj.getTrab_apellido() + ","
-                    + obj.getTrab_nacimiento() + "," + obj.getTrab_sexo() + "," + obj.getTrab_email() + ","
-                    + obj.getTrab_dir() + "," + obj.getTrab_dir_distr() + "," + obj.getTrab_dir_prov() + ","
-                    + obj.getTrab_sueldo() + "," + obj.getTrab_sist_pen() + "," + obj.getTrab_f_ingreso() + ","
-                    + obj.getTrab_hijos() + "," + obj.getTrab_seguro()); 
+            for (Trabajador obj : trabajador_a) {
+                pw.println(obj.getTrab_cod() + "," + obj.getUser_credencial() + "," + obj.getTrab_nombre() + ","
+                        + obj.getTrab_apellido() + ","
+                        + obj.getTrab_nacimiento() + "," + obj.getTrab_sexo() + "," + obj.getTrab_email() + ","
+                        + obj.getTrab_dir() + "," + obj.getTrab_dir_distr() + "," + obj.getTrab_dir_prov() + ","
+                        + obj.getTrab_sueldo() + "," + obj.getTrab_sist_pen() + "," + obj.getTrab_f_ingreso() + ","
+                        + obj.getTrab_hijos() + "," + obj.getTrab_seguro());
             }
-            
+
             pw.flush();
             pw.close();
-        } catch ( Exception e ){
+        } catch (IOException e) {
             System.out.println(e);
         }
-   }
+    }
 }

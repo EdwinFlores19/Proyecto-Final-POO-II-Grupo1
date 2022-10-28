@@ -3,7 +3,7 @@ package Clases;
 public class Usuario {  /*Login*/
     private String user_credencial;
     private String user_password;
-    private String user_rol = "Cliente";
+    private String user_rol;
 
     public Usuario() {
     }
