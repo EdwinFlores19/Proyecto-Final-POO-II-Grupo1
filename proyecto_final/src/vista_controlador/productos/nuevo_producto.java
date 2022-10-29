@@ -38,10 +38,18 @@ public class nuevo_producto extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        precio_ = new javax.swing.JTextField();
-        tipo_ = new javax.swing.JTextField();
-        marca_ = new javax.swing.JTextField();
+        unidades_ = new javax.swing.JTextField();
+        tamaño_ = new javax.swing.JTextField();
+        color_ = new javax.swing.JTextField();
         nombre_ = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        costo_ = new javax.swing.JTextField();
+        precio_ = new javax.swing.JTextField();
+        stock_ = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,22 +58,22 @@ public class nuevo_producto extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nombre:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("MARCA:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, -1, -1));
+        jLabel5.setText("Color:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("TIPO:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 340, -1, -1));
+        jLabel6.setText("tamaño:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Precio:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, -1, -1));
+        jLabel7.setText("costo:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Felix Titling", 0, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -94,35 +102,40 @@ public class nuevo_producto extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 530, 220, -1));
 
-        precio_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        precio_.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        precio_.addActionListener(new java.awt.event.ActionListener() {
+        unidades_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        unidades_.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        unidades_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                precio_ActionPerformed(evt);
+                unidades_ActionPerformed(evt);
             }
         });
-        precio_.addKeyListener(new java.awt.event.KeyAdapter() {
+        unidades_.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                precio_KeyPressed(evt);
+                unidades_KeyPressed(evt);
             }
         });
-        getContentPane().add(precio_, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 400, 140, -1));
+        getContentPane().add(unidades_, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 140, -1));
 
-        tipo_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        tipo_.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                tipo_KeyPressed(evt);
+        tamaño_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        tamaño_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tamaño_ActionPerformed(evt);
             }
         });
-        getContentPane().add(tipo_, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, 140, -1));
+        tamaño_.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tamaño_KeyPressed(evt);
+            }
+        });
+        getContentPane().add(tamaño_, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 140, -1));
 
-        marca_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        marca_.addKeyListener(new java.awt.event.KeyAdapter() {
+        color_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        color_.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                marca_KeyPressed(evt);
+                color_KeyPressed(evt);
             }
         });
-        getContentPane().add(marca_, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 260, 140, -1));
+        getContentPane().add(color_, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 140, -1));
 
         nombre_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         nombre_.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -130,7 +143,41 @@ public class nuevo_producto extends javax.swing.JFrame {
                 nombre_KeyPressed(evt);
             }
         });
-        getContentPane().add(nombre_, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 200, 140, -1));
+        getContentPane().add(nombre_, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 140, -1));
+
+        jLabel8.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("unidades:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("precio:");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("F. ingreso:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 270, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("f. vencimiento:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("stock:");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, -1, -1));
+
+        costo_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        getContentPane().add(costo_, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 160, 140, -1));
+
+        precio_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        getContentPane().add(precio_, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, 140, -1));
+
+        stock_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        getContentPane().add(stock_, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 140, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -144,34 +191,47 @@ public class nuevo_producto extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void precio_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_precio_KeyPressed
+    private void unidades_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_unidades_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isLetter(c)) {
-            precio_.setEditable(false);
+            unidades_.setEditable(false);
         } else {
-            precio_.setEditable(true);
+            unidades_.setEditable(true);
         }
-    }//GEN-LAST:event_precio_KeyPressed
+    }//GEN-LAST:event_unidades_KeyPressed
 
-    private void precio_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precio_ActionPerformed
+    private void unidades_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unidades_ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_precio_ActionPerformed
+    }//GEN-LAST:event_unidades_ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         int codigo=array_pro.Correlativo();
         String nombre=nombre_.getText();
-        String marca=marca_.getText();
-        String tipo=tipo_.getText();
-        float precio=Float.parseFloat(precio_.getText());
-        if(nombre!="" && marca!="" && tipo!=""){
+        String color=color_.getText();
+        String tamaño=tamaño_.getText();
+        int unidades=Integer.parseInt(unidades_.getText());
+        int stock=Integer.parseInt(stock_.getText());
+        double costo=Double.parseDouble(costo_.getText());
+        double precio=Double.parseDouble(precio_.getText());
+        String ingreso="a";
+        String vencimiento="b";
+        
+        
+        
+        if(nombre!="" && tamaño!=""  && color!="" ){
             Productos pro1=new Productos();
-            pro1.setCodigo_producto(codigo);
-            pro1.setMarca_producto(marca);
-            pro1.setNombre_producto(nombre);
-            pro1.setPrecio_producto(precio);
-            pro1.setTipo_producto(tipo);
-
+            pro1.setP_id(codigo);
+            pro1.setNombre(nombre);
+            pro1.setTamaño(tamaño);
+            pro1.setColor(color);
+            pro1.setUnidades(unidades);
+            pro1.setStock(stock);
+            pro1.setCosto(costo);
+            pro1.setPrecio(precio);
+            pro1.setF_ingreso(ingreso);
+            pro1.setF_vencimiento(vencimiento);
+        
             array_pro.agregar(pro1);
             array_pro.grabar_archivo(pro1);
             
@@ -183,39 +243,43 @@ public class nuevo_producto extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(rootPane, "Ningun casillero debe estar vacio");
             nombre_.setText("");
-            marca_.setText("");
-            tipo_.setText("");
+            color_.setText("");
+            tamaño_.setText("");
         }
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void tipo_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tipo_KeyPressed
+    private void tamaño_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tamaño_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isDigit(c)) {
-            tipo_.setEditable(false);
+            tamaño_.setEditable(false);
         } else {
-            tipo_.setEditable(true);
+            tamaño_.setEditable(true);
         }
-    }//GEN-LAST:event_tipo_KeyPressed
+    }//GEN-LAST:event_tamaño_KeyPressed
 
-    private void marca_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_marca_KeyPressed
+    private void color_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_color_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isDigit(c)) {
-            tipo_.setEditable(false);
+            tamaño_.setEditable(false);
         } else {
-            tipo_.setEditable(true);
+            tamaño_.setEditable(true);
         }
-    }//GEN-LAST:event_marca_KeyPressed
+    }//GEN-LAST:event_color_KeyPressed
 
     private void nombre_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombre_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isDigit(c)) {
-            tipo_.setEditable(false);
+            tamaño_.setEditable(false);
         } else {
-            tipo_.setEditable(true);
+            tamaño_.setEditable(true);
         }
     }//GEN-LAST:event_nombre_KeyPressed
+
+    private void tamaño_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tamaño_ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tamaño_ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,17 +317,25 @@ public class nuevo_producto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField color_;
+    private javax.swing.JTextField costo_;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField marca_;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField nombre_;
     private javax.swing.JTextField precio_;
-    private javax.swing.JTextField tipo_;
+    private javax.swing.JTextField stock_;
+    private javax.swing.JTextField tamaño_;
+    private javax.swing.JTextField unidades_;
     // End of variables declaration//GEN-END:variables
 }

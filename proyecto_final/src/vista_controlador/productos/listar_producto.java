@@ -35,11 +35,11 @@ public class listar_producto extends javax.swing.JFrame {
         modelo.addColumn("Fecha de Vencimiento");
         
         for (int i = 0; i < array_pro.rows(); i++) {
-            String[] info = new String[5];
+            String[] info = new String[6];
             info[0] = String.valueOf(array_pro.get(i).getP_id());
             info[1] = array_pro.get(i).getNombre();
             info[2] = array_pro.get(i).getColor();
-            info[3] = array_pro.get(i).getStock();
+            info[3] = String.valueOf(array_pro.get(i).getStock());
             info[4] = String.valueOf(array_pro.get(i).getPrecio());
             info[5] = array_pro.get(i).getF_vencimiento();
 

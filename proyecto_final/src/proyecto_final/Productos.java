@@ -13,8 +13,8 @@ public class Productos {
     String nombre;
     String color;
     String tamaño;
-    String unidades;
-    String stock;
+    int unidades;
+    int stock;
     double costo;
     double precio;
     String f_ingreso;
@@ -23,7 +23,7 @@ public class Productos {
     public Productos() {
     }
 
-    public Productos(int p_id, String nombre, String color, String tamaño, String unidades, String stock, double costo, double precio, String f_ingreso, String f_vencimiento) {
+    public Productos(int p_id, String nombre, String color, String tamaño, int unidades, int stock, double costo, double precio, String f_ingreso, String f_vencimiento) {
         this.p_id = p_id;
         this.nombre = nombre;
         this.color = color;
@@ -68,19 +68,19 @@ public class Productos {
         this.tamaño = tamaño;
     }
 
-    public String getUnidades() {
+    public int getUnidades() {
         return unidades;
     }
 
-    public void setUnidades(String unidades) {
+    public void setUnidades(int unidades) {
         this.unidades = unidades;
     }
 
-    public String getStock() {
+    public int getStock() {
         return stock;
     }
 
-    public void setStock(String stock) {
+    public void setStock(int stock) {
         this.stock = stock;
     }
 

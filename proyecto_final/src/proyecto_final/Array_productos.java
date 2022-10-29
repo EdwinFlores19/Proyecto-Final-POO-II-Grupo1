@@ -37,8 +37,8 @@ public class Array_productos {
                 pro1.setNombre(partes[1]);
                 pro1.setColor(partes[2]);
                 pro1.setTamaño(partes[3]);
-                pro1.setUnidades(partes[4]);
-                pro1.setStock(partes[5]);
+                pro1.setUnidades(Integer.parseInt(partes[4]));
+                pro1.setStock(Integer.parseInt(partes[5]));
                 pro1.setCosto(Double.parseDouble(partes[6]));
                 pro1.setPrecio(Double.parseDouble(partes[7]));
                 pro1.setF_ingreso(partes[8]);
@@ -140,6 +140,5 @@ public class Array_productos {
             System.out.println(e);
         }
     }
-    /*me quiero meter un tiro en los huevos*/
-    int n;
+   
 }

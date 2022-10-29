@@ -58,7 +58,8 @@ public class buscar_producto extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 500, -1));
 
         vencimiento_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        getContentPane().add(vencimiento_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, -1, -1));
+        vencimiento_.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(vencimiento_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, 20, 40));
 
         codigo_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         codigo_.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -132,6 +133,9 @@ public class buscar_producto extends javax.swing.JFrame {
         nombre_.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(nombre_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, -1, -1));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -163,7 +167,7 @@ public class buscar_producto extends javax.swing.JFrame {
         else{
             nombre_.setText(pro1.getNombre());
             precio.setText(String.valueOf(pro1.getPrecio()));
-            stock.setText(pro1.getStock());
+            stock.setText(String.valueOf(pro1.getStock()));
             vencimiento_.setText(pro1.getF_vencimiento());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
