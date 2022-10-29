@@ -1,22 +1,20 @@
 package vista_controlador;
 
-
 import vista_controlador.cliente.cliente_1;
 import vista_controlador.vendedor.vendedor_1;
-import vista_controlador.admin.admin_1;
+import vista_controlador.admin.admin_main_view;
 import javax.swing.JOptionPane;
-import proyecto_final.usuario_Array;
-import proyecto_final.Vendedor;
 import auxiliares.Auxiliares;
+import Clases.Cliente_Array;
 
 public class vista_login extends javax.swing.JFrame {
 
-    usuario_Array array1 = new usuario_Array();
+    Cliente_Array user_array = new Cliente_Array();
     Auxiliares aux = new Auxiliares();
     
     public vista_login() {
         initComponents();
-        array1.inicializar();
+        user_array.inicializar();
     }
 
     @SuppressWarnings("unchecked")
@@ -102,34 +100,31 @@ public class vista_login extends javax.swing.JFrame {
         if (ven1.getContrasena().equals(contrasena)) {
             roles(ven1);
         } else if ("error".equals(ven1.getContrasena())) {
-            JOptionPane.showMessageDialog(rootPane, "Documento y/o contrasena incorrectas");
+            JOptionPane.showMessageDialog(rootPane, "Dni y/o contrasena incorrectas");
             dni_.setText("");
             contraseña_.setText("");
         }
     }//GEN-LAST:event_iniciar_sesionActionPerformed
 
     private void roles(Vendedor vendedor1) {
-        if("administrador".equals(vendedor1.getRol())){
-            JOptionPane.showMessageDialog(rootPane,"Bienvenido a nuestra plataforma administrador!!!");
-            admin_1 a1=new admin_1();
-            a1.setVisible(true);
-            this.setVisible(false);
-        }
-        else if("vendedor".equals(vendedor1.getRol())){
-            JOptionPane.showMessageDialog(rootPane,"Bienvenido a nuestra plataforma vendedor!!!");
-            vendedor_1 v1=new vendedor_1();
-            v1.setVisible(true);
-            this.setVisible(false);
-        }
-        else if("cliente".equals(vendedor1.getRol())){
-            JOptionPane.showMessageDialog(rootPane,"Bienvenido a nuestra plataforma cliente!!!");
-            cliente_1 c1=new cliente_1();
-            c1.setVisible(true);
-            this.setVisible(false);
-        }
-        else{
-            JOptionPane.showMessageDialog(rootPane,"Su rol no es admitido");
-            this.setVisible(true);
+        switch (vendedor1.getRol()) {
+            case "administrador":
+                JOptionPane.showMessageDialog(rootPane, "Bienvenido a nuestra plataforma administrador!!!");
+                admin_main_view a1 = new admin_main_view();
+                aux.change_jf(a1, this);
+                break;
+            case "vendedor":
+                JOptionPane.showMessageDialog(rootPane, "Bienvenido a nuestra plataforma vendedor!!!");
+                vendedor_1 v1 = new vendedor_1();
+                aux.change_jf(v1, this);
+                break;
+            case "cliente":
+                JOptionPane.showMessageDialog(rootPane, "Bienvenido a nuestra plataforma cliente!!!");
+                cliente_1 c1 = new cliente_1();
+                aux.change_jf(c1, this);
+            default:
+                JOptionPane.showMessageDialog(rootPane, "Su rol no es admitido");
+                break;
         }
     }
     private void dni_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dni_KeyPressed
@@ -176,24 +171,3 @@ public class vista_login extends javax.swing.JFrame {
     private javax.swing.JLabel jlabelfondo;
     // End of variables declaration//GEN-END:variables
 }
-/*
-switch (vendedor1.getRol()) {
-            case "administrador":
-                JOptionPane.showMessageDialog(rootPane, "Bienvenido a nuestra plataforma administrador!!!");
-                admin_1 a1 = new admin_1();
-                aux.change_jf(a1, this);
-                break;
-            case "vendedor":
-                JOptionPane.showMessageDialog(rootPane, "Bienvenido a nuestra plataforma vendedor!!!");
-                vendedor_1 v1 = new vendedor_1();
-                aux.change_jf(v1, this);
-                break;
-            case "cliente":
-                JOptionPane.showMessageDialog(rootPane, "Bienvenido a nuestra plataforma cliente!!!");
-                cliente_1 c1 = new cliente_1();
-                aux.change_jf(c1, this);
-            default:
-                JOptionPane.showMessageDialog(rootPane, "Su rol no es admitido");
-                break;
-        }
-*/

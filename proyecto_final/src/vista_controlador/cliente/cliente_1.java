@@ -17,12 +17,12 @@ public class cliente_1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        b_comprar = new javax.swing.JButton();
+        b_buscar_prod = new javax.swing.JButton();
+        b_listar = new javax.swing.JButton();
+        b_buscar_bol_fact = new javax.swing.JButton();
+        b_exit = new javax.swing.JButton();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -32,61 +32,61 @@ public class cliente_1 extends javax.swing.JFrame {
         jLabel2.setText("BIENVENIDO CLIENTE");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 510, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Comprar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        b_comprar.setBackground(new java.awt.Color(255, 255, 255));
+        b_comprar.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_comprar.setForeground(new java.awt.Color(0, 0, 0));
+        b_comprar.setText("Comprar");
+        b_comprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                b_comprarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 280, -1));
+        getContentPane().add(b_comprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, 280, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("buscar producto");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 300, 280, -1));
+        b_buscar_prod.setBackground(new java.awt.Color(255, 255, 255));
+        b_buscar_prod.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_buscar_prod.setForeground(new java.awt.Color(0, 0, 0));
+        b_buscar_prod.setText("buscar producto");
+        getContentPane().add(b_buscar_prod, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, 280, -1));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("listar productos");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 280, -1));
+        b_listar.setBackground(new java.awt.Color(255, 255, 255));
+        b_listar.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_listar.setForeground(new java.awt.Color(0, 0, 0));
+        b_listar.setText("listar productos");
+        getContentPane().add(b_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 280, -1));
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("buscar boleta/factura");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, 280, -1));
+        b_buscar_bol_fact.setBackground(new java.awt.Color(255, 255, 255));
+        b_buscar_bol_fact.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_buscar_bol_fact.setForeground(new java.awt.Color(0, 0, 0));
+        b_buscar_bol_fact.setText("buscar boleta/factura");
+        getContentPane().add(b_buscar_bol_fact, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 390, 280, -1));
 
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("SALIR");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        b_exit.setBackground(new java.awt.Color(255, 255, 255));
+        b_exit.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_exit.setForeground(new java.awt.Color(0, 0, 0));
+        b_exit.setText("SALIR");
+        b_exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                b_exitActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 180, -1));
+        getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 180, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void b_comprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_comprarActionPerformed
         crear_cuenta c1= new crear_cuenta();
         aux.change_jf(c1, this);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_b_comprarActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void b_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_exitActionPerformed
         vista_login v1 = new vista_login();
         aux.change_jf(v1, this);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_b_exitActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -114,12 +114,12 @@ public class cliente_1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton b_buscar_bol_fact;
+    private javax.swing.JButton b_buscar_prod;
+    private javax.swing.JButton b_comprar;
+    private javax.swing.JButton b_exit;
+    private javax.swing.JButton b_listar;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
