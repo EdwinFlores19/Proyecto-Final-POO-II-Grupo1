@@ -34,7 +34,7 @@ public class buscar_producto extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        precio = new javax.swing.JLabel();
+        vencimiento_ = new javax.swing.JLabel();
         codigo_ = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -43,8 +43,8 @@ public class buscar_producto extends javax.swing.JFrame {
         precio_ = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        marca_ = new javax.swing.JLabel();
-        tipo_ = new javax.swing.JLabel();
+        stock = new javax.swing.JLabel();
+        precio = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         nombre_ = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -57,8 +57,8 @@ public class buscar_producto extends javax.swing.JFrame {
         jLabel2.setText("buscar producto");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 500, -1));
 
-        precio.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        getContentPane().add(precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, -1, -1));
+        vencimiento_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        getContentPane().add(vencimiento_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, -1, -1));
 
         codigo_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         codigo_.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -98,12 +98,12 @@ public class buscar_producto extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Tipo:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 60, -1));
+        jLabel5.setText("Precio:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, 80, -1));
 
         precio_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         precio_.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(precio_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, -1, -1));
+        getContentPane().add(precio_, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, -1, 40));
 
         jLabel7.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,21 +112,21 @@ public class buscar_producto extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Marca:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, -1, -1));
+        jLabel8.setText("Stock:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
 
-        marca_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        marca_.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(marca_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, -1));
+        stock.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        stock.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(stock, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, -1));
 
-        tipo_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        tipo_.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(tipo_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, -1, -1));
+        precio.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        precio.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Precio:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, -1, -1));
+        jLabel11.setText("Fecha de vencimiento:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, -1, -1));
 
         nombre_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         nombre_.setForeground(new java.awt.Color(255, 255, 255));
@@ -149,21 +149,22 @@ public class buscar_producto extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
         int codigo=Integer.parseInt(codigo_.getText());
         Productos pro1=array1.busqueda_codigo(codigo);
         if(codigo>array1.rows() ){
             codigo_.setText("");
             nombre_.setText("");
-            marca_.setText("");
-            tipo_.setText("");
+            stock.setText("");
+            precio.setText("");
             precio_.setText("");
             JOptionPane.showMessageDialog(rootPane, "Codigo no encontrado");
         }
         else{
-            nombre_.setText(pro1.getNombre_producto());
-            marca_.setText(pro1.getMarca_producto());
-            tipo_.setText(pro1.getTipo_producto());
-            precio_.setText(String.valueOf(pro1.getPrecio_producto()));
+            nombre_.setText(pro1.getNombre());
+            precio.setText(String.valueOf(pro1.getPrecio()));
+            stock.setText(pro1.getStock());
+            vencimiento_.setText(pro1.getF_vencimiento());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -219,10 +220,10 @@ public class buscar_producto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel marca_;
     private javax.swing.JLabel nombre_;
     private javax.swing.JLabel precio;
     private javax.swing.JLabel precio_;
-    private javax.swing.JLabel tipo_;
+    private javax.swing.JLabel stock;
+    private javax.swing.JLabel vencimiento_;
     // End of variables declaration//GEN-END:variables
 }
