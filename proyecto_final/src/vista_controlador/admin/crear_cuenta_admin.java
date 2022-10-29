@@ -2,199 +2,373 @@ package vista_controlador.admin;
 
 import vista_controlador.login.vista_login;
 import javax.swing.JOptionPane;
-import Clases.Trabajador_Array;
+import Clases.Cliente;
+import Clases.Cliente_Array;
 import Clases.Trabajador;
+import Clases.Trabajador_Array;
 import Auxiliares.Auxiliares;
 
 public class crear_cuenta_admin extends javax.swing.JFrame {
 
-    Trabajador_Array array1 = new Trabajador_Array();
+    Cliente_Array array1 = new Cliente_Array();
     Auxiliares aux = new Auxiliares();
 
     public crear_cuenta_admin() {
         initComponents();
-        array1.trabajador_ini();
+        array1.cliente_ini();
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        j3 = new javax.swing.JPasswordField();
-        j4 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        j2 = new javax.swing.JTextField();
+        crear_cta_cliente = new javax.swing.JFrame();
+        tf_nom = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        tf_ape = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        tf_dir = new javax.swing.JTextField();
+        tf_dir_dist = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        tf_dir_prov = new javax.swing.JTextField();
+        tf_email = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        tf_sexo = new javax.swing.JTextField();
+        Fecha = new com.toedter.calendar.JDateChooser();
+        jLabel13 = new javax.swing.JLabel();
+        b_create = new javax.swing.JButton();
+        b_exit_f = new javax.swing.JButton();
+        fondo1 = new javax.swing.JLabel();
+        pf_pass = new javax.swing.JPasswordField();
+        pf_pre_pass = new javax.swing.JPasswordField();
+        b_next = new javax.swing.JButton();
+        tf_credencial = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        j1 = new javax.swing.JTextField();
-        combobox = new javax.swing.JComboBox<>();
-        combo_DR = new javax.swing.JComboBox<>();
+        b_exit = new javax.swing.JButton();
+        combo_rol = new javax.swing.JComboBox<>();
+        combo_credencial = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
+
+        crear_cta_cliente.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        crear_cta_cliente.setSize(1280, 720);
+        crear_cta_cliente.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tf_nom.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        tf_nom.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tf_nomKeyPressed(evt);
+            }
+        });
+        crear_cta_cliente.getContentPane().add(tf_nom, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, 140, -1));
+
+        jLabel2.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel2.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setText("Nombre:");
+        crear_cta_cliente.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("Apellido:");
+        crear_cta_cliente.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, -1, -1));
+
+        tf_ape.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tf_apeKeyPressed(evt);
+            }
+        });
+        crear_cta_cliente.getContentPane().add(tf_ape, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, 140, 30));
+
+        jLabel10.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel10.setText("direccion:");
+        crear_cta_cliente.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, -1, -1));
+
+        tf_dir.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        crear_cta_cliente.getContentPane().add(tf_dir, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, 140, 30));
+
+        tf_dir_dist.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tf_dir_distKeyPressed(evt);
+            }
+        });
+        crear_cta_cliente.getContentPane().add(tf_dir_dist, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, 140, 30));
+
+        jLabel12.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel12.setText("distrito:");
+        crear_cta_cliente.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel11.setText("provincia:");
+        crear_cta_cliente.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, -1, -1));
+
+        tf_dir_prov.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        tf_dir_prov.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tf_dir_provKeyPressed(evt);
+            }
+        });
+        crear_cta_cliente.getContentPane().add(tf_dir_prov, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, 140, 30));
+        crear_cta_cliente.getContentPane().add(tf_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 380, 140, 30));
+
+        jLabel9.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel9.setText("email:");
+        crear_cta_cliente.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel8.setText("sexo:");
+        crear_cta_cliente.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 430, -1, -1));
+
+        tf_sexo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        tf_sexo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tf_sexoKeyPressed(evt);
+            }
+        });
+        crear_cta_cliente.getContentPane().add(tf_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 430, 140, 30));
+        crear_cta_cliente.getContentPane().add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 480, 140, 30));
+
+        jLabel13.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel13.setText("Fecha de nacimiento:");
+        crear_cta_cliente.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, -1, -1));
+
+        b_create.setBackground(new java.awt.Color(255, 255, 255));
+        b_create.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_create.setForeground(new java.awt.Color(0, 0, 0));
+        b_create.setText("Crear Cuenta");
+        b_create.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_createActionPerformed(evt);
+            }
+        });
+        crear_cta_cliente.getContentPane().add(b_create, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 590, 180, -1));
+
+        b_exit_f.setBackground(new java.awt.Color(255, 255, 255));
+        b_exit_f.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_exit_f.setForeground(new java.awt.Color(0, 0, 0));
+        b_exit_f.setText("SALIR");
+        b_exit_f.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_exit_fActionPerformed(evt);
+            }
+        });
+        crear_cta_cliente.getContentPane().add(b_exit_f, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 640, 180, -1));
+
+        fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/img1.jpg"))); // NOI18N
+        crear_cta_cliente.getContentPane().add(fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        j3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        getContentPane().add(j3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 140, -1));
+        pf_pass.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        getContentPane().add(pf_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, 140, -1));
 
-        j4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        getContentPane().add(j4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 320, 140, -1));
+        pf_pre_pass.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        getContentPane().add(pf_pre_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 320, 140, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Crear Cuenta");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        b_next.setBackground(new java.awt.Color(255, 255, 255));
+        b_next.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_next.setForeground(new java.awt.Color(0, 0, 0));
+        b_next.setText("SIGUIENTE");
+        b_next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                b_nextActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 520, -1, -1));
+        getContentPane().add(b_next, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 590, 180, -1));
 
-        j2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        j2.addKeyListener(new java.awt.event.KeyAdapter() {
+        tf_credencial.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        tf_credencial.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                j2KeyPressed(evt);
+                tf_credencialKeyPressed(evt);
             }
         });
-        getContentPane().add(j2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 250, 140, -1));
+        getContentPane().add(tf_credencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 250, 140, -1));
 
         jLabel5.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("                                       Rol:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 250, 30));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, 250, 30));
 
         jLabel3.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("      DNI / RUC:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 250, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("SALIR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        b_exit.setBackground(new java.awt.Color(255, 255, 255));
+        b_exit.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_exit.setForeground(new java.awt.Color(0, 0, 0));
+        b_exit.setText("SALIR");
+        b_exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                b_exitActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 580, 180, -1));
+        getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 640, 180, -1));
 
-        j1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        j1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                j1KeyPressed(evt);
-            }
-        });
-        getContentPane().add(j1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 180, 140, -1));
+        combo_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Cliente", "Vendedor" }));
+        combo_rol.setSelectedIndex(1);
+        getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, 140, 30));
 
-        combobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Cliente", "Vendedor" }));
-        combobox.setSelectedIndex(1);
-        getContentPane().add(combobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 450, 140, -1));
-
-        combo_DR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "RUC" }));
-        getContentPane().add(combo_DR, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 250, 110, 30));
+        combo_credencial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "RUC" }));
+        getContentPane().add(combo_credencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 250, 110, 30));
 
         jLabel7.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Confirmar contraseña:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 250, 30));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, 250, 30));
 
         jLabel4.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Contraseña:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nombre:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/img1.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/img1.jpg"))); // NOI18N
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void b_nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_nextActionPerformed
+        String combo_dr = (String) combo_credencial.getSelectedItem();
+        String combo_r = (String) combo_rol.getSelectedItem();
+        /*funcion q depende de los combos para pasar a la sgte ventana de cliente*/
+        aux.change_jf(crear_cta_cliente, this);
+    }//GEN-LAST:event_b_nextActionPerformed
+
+    private void b_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_exitActionPerformed
+        vista_login v1 = new vista_login();
+        aux.change_jf(v1, this);
+    }//GEN-LAST:event_b_exitActionPerformed
+
+    private void tf_credencialKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_credencialKeyPressed
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            tf_credencial.setEditable(false);
+        } else {
+            tf_credencial.setEditable(true);
+        }
+    }//GEN-LAST:event_tf_credencialKeyPressed
+
+    private void b_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_createActionPerformed
         int id = array1.Correlativo();
-        String nombre = j1.getText();
-        String credential = j2.getText();
-        String pre_cont = j4.getText();
-        String contrasena = j3.getText();
-        String rol = (String) combobox.getSelectedItem();
-        rol = rol.toLowerCase();
-        String combo_dr = (String) combo_DR.getSelectedItem();
+        String nombre = tf_nom.getText();
+        String apellido = tf_ape.getText();
+        String credential = tf_credencial.getText();
+        String pre_cont = pf_pre_pass.getText();
+        String contrasena = pf_pass.getText();
+        String direccion = tf_dir.getText();
+        String direccion_prov = tf_dir_prov.getText();
+        String direccion_dist = tf_dir_dist.getText();
+        String email = tf_email.getText();
+        String sexo = tf_sexo.getText();
+        String nacimiento = Fecha.getDateFormatString();
+        String combo_dr = (String) combo_credencial.getSelectedItem();
 
         if (pre_cont.equals(contrasena) && !(aux.tf_are_empty(new Object[]{nombre, credential, pre_cont, contrasena}))) {
             switch (combo_dr) {
                 case "DNI" -> {
                     if (credential.length() == 8) {
-                        Trabajador trabajador1 = new Trabajador();
+                        Cliente clt = new Cliente(id,nombre,apellido,sexo,nacimiento,direccion,direccion_dist,direccion_prov,email,credential, contrasena, "Cliente");
                         
-
-                        array1.agregar(trabajador1);
-                        array1.grabar_archivo(trabajador1);
-
+                        array1.agregar(clt);
+                        array1.grabar_arch_cliente(clt);
+                        
                         vista_login v1 = new vista_login();
                         aux.change_jf(v1, this);
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "El DNI debe tener 8 digitos");
-                        j2.setText("");
+                        tf_credencial.setText("");
                     }
                 }
 
                 case "RUC" -> {
                     if (credential.length() == 11) {
-                        Trabajador trabajador1 = new Trabajador();
-                        trabajador1.setCodigo(id);
-                        trabajador1.setNombre(nombre);
-                        trabajador1.setDni(credential);
-                        trabajador1.setContrasena(contrasena);
-                        trabajador1.setRol(rol);
-
-                        array1.agregar(trabajador1);
-                        array1.grabar_archivo(trabajador1);
+                        Cliente clt = new Cliente(id,nombre,apellido,sexo,nacimiento,direccion,direccion_dist,direccion_prov,email,credential, contrasena, "Cliente");
+                        
+                        array1.agregar(clt);
+                        array1.grabar_arch_cliente(clt);
 
                         vista_login v1 = new vista_login();
                         aux.change_jf(v1, this);
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "El RUC debe tener 11 digitos");
-                        j2.setText("");
+                        tf_credencial.setText("");
                     }
                 }
             }
         }
+    }//GEN-LAST:event_b_createActionPerformed
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void b_exit_fActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_exit_fActionPerformed
+        admin_1 admin = new admin_1();
+        aux.change_jf(admin, this);
+    }//GEN-LAST:event_b_exit_fActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        vista_login v1 = new vista_login();
-        aux.change_jf(v1, this);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void j1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_j1KeyPressed
+    private void tf_nomKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_nomKeyPressed
         char c = evt.getKeyChar();
         if (Character.isDigit(c)) {
-            j1.setEditable(false);
+            tf_nom.setEditable(false);
         } else {
-            j1.setEditable(true);
+            tf_nom.setEditable(true);
         }
-    }//GEN-LAST:event_j1KeyPressed
+    }//GEN-LAST:event_tf_nomKeyPressed
 
-    private void j2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_j2KeyPressed
+    private void tf_dir_distKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_dir_distKeyPressed
         char c = evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            j2.setEditable(false);
+        if (Character.isDigit(c)) {
+            tf_nom.setEditable(false);
         } else {
-            j2.setEditable(true);
+            tf_nom.setEditable(true);
         }
-    }//GEN-LAST:event_j2KeyPressed
+    }//GEN-LAST:event_tf_dir_distKeyPressed
+
+    private void tf_dir_provKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_dir_provKeyPressed
+        char c = evt.getKeyChar();
+        if (Character.isDigit(c)) {
+            tf_nom.setEditable(false);
+        } else {
+            tf_nom.setEditable(true);
+        }
+    }//GEN-LAST:event_tf_dir_provKeyPressed
+
+    private void tf_sexoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_sexoKeyPressed
+        char c = evt.getKeyChar();
+        if (Character.isDigit(c)) {
+            tf_nom.setEditable(false);
+        } else {
+            tf_nom.setEditable(true);
+        }
+    }//GEN-LAST:event_tf_sexoKeyPressed
+
+    private void tf_apeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_apeKeyPressed
+        char c = evt.getKeyChar();
+        if (Character.isDigit(c)) {
+            tf_nom.setEditable(false);
+        } else {
+            tf_nom.setEditable(true);
+        }
+    }//GEN-LAST:event_tf_apeKeyPressed
 
     public static void main(String args[]) {
         try {
@@ -222,19 +396,37 @@ public class crear_cuenta_admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> combo_DR;
-    private javax.swing.JComboBox<String> combobox;
-    private javax.swing.JTextField j1;
-    private javax.swing.JTextField j2;
-    private javax.swing.JPasswordField j3;
-    private javax.swing.JPasswordField j4;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private com.toedter.calendar.JDateChooser Fecha;
+    private javax.swing.JButton b_create;
+    private javax.swing.JButton b_exit;
+    private javax.swing.JButton b_exit_f;
+    private javax.swing.JButton b_next;
+    private javax.swing.JComboBox<String> combo_credencial;
+    private javax.swing.JComboBox<String> combo_rol;
+    private javax.swing.JFrame crear_cta_cliente;
+    private javax.swing.JLabel fondo;
+    private javax.swing.JLabel fondo1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPasswordField pf_pass;
+    private javax.swing.JPasswordField pf_pre_pass;
+    private javax.swing.JTextField tf_ape;
+    private javax.swing.JTextField tf_credencial;
+    private javax.swing.JTextField tf_dir;
+    private javax.swing.JTextField tf_dir_dist;
+    private javax.swing.JTextField tf_dir_prov;
+    private javax.swing.JTextField tf_email;
+    private javax.swing.JTextField tf_nom;
+    private javax.swing.JTextField tf_sexo;
     // End of variables declaration//GEN-END:variables
 }

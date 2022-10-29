@@ -12,6 +12,8 @@ public class Producto {
     private String prod_f_ingreso;
     private String prod_f_venci;
 
+    public Producto() {}
+    
     public Producto(int prod_id, String prod_nombre, String prod_tamano, int prod_units, int prod_stock, int prod_unidades, double prod_costo, double prod_precio, String prod_f_ingreso, String prod_f_venci) {
         this.prod_id = prod_id;
         this.prod_nombre = prod_nombre;

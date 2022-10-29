@@ -16,14 +16,15 @@ public class Auxiliares {
         return false;
     }
 
-    public void clear_tfs(JTextField[] tf) {
-        for (JTextField tf1 : tf) {
-            tf1.setText("");
+    public void clear_tfs(Object[] tf) {
+        for (Object tf1 : tf) {
+            ((JTextField) tf1).setText("");
         }
     }
 
     public void change_jf(JFrame show, JFrame hide) {
         show.setVisible(true);
         hide.setVisible(false);
+        hide.dispose();
     }
 }

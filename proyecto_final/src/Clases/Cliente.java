@@ -11,6 +11,8 @@ public class Cliente extends Usuario {
     private String cli_dir_prov;
     private String cli_email;
 
+    public Cliente() {}
+    
     public Cliente(String user_credencial, String user_password, String user_rol) {
         super(user_credencial, user_password, user_rol);
     }

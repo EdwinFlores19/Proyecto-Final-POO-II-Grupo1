@@ -16,6 +16,8 @@ public class Trabajador extends Usuario {
     private double trab_sueldo;
     private int trab_hijos;
 
+    public Trabajador() {}
+    
     public Trabajador(String user_credencial, String user_password, String user_rol) {
         super(user_credencial, user_password, user_rol);
     }

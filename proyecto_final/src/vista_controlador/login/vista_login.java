@@ -12,7 +12,7 @@ public class vista_login extends javax.swing.JFrame {
 
     Cliente_Array array1 = new Cliente_Array();
     Auxiliares aux = new Auxiliares();
-    
+
     public vista_login() {
         initComponents();
         array1.cliente_ini();
@@ -22,27 +22,27 @@ public class vista_login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
+        b_create = new javax.swing.JButton();
         tf_user = new javax.swing.JTextField();
         pf_pass = new javax.swing.JPasswordField();
         iniciar_sesion = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jlabelfondo = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Crear Cuenta");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        b_create.setBackground(new java.awt.Color(255, 255, 255));
+        b_create.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
+        b_create.setForeground(new java.awt.Color(0, 0, 0));
+        b_create.setText("Crear Cuenta");
+        b_create.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                b_createActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 510, 130, -1));
+        getContentPane().add(b_create, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 510, 130, -1));
 
         tf_user.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         tf_user.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -81,17 +81,17 @@ public class vista_login extends javax.swing.JFrame {
         jLabel1.setFocusable(false);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 130, 50));
 
-        jlabelfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/img1.jpg"))); // NOI18N
-        jlabelfondo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(jlabelfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, -1));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/img1.jpg"))); // NOI18N
+        fondo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void b_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_createActionPerformed
         crear_cuenta c1 = new crear_cuenta();
         aux.change_jf(c1, this);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_b_createActionPerformed
 
     private void iniciar_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar_sesionActionPerformed
         String dni = tf_user.getText();
@@ -103,8 +103,7 @@ public class vista_login extends javax.swing.JFrame {
             roles(ven1);
         } else if ("error".equals(ven1.getUser_password())) {
             JOptionPane.showMessageDialog(rootPane, "Dni y/o contrasena incorrectas");
-            tf_user.setText("");
-            pf_pass.setText("");
+            aux.clear_tfs(new Object[]{tf_user,pf_pass});
         }
     }//GEN-LAST:event_iniciar_sesionActionPerformed
 
@@ -164,11 +163,11 @@ public class vista_login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton b_create;
+    private javax.swing.JLabel fondo;
     private javax.swing.JButton iniciar_sesion;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jlabelfondo;
     private javax.swing.JPasswordField pf_pass;
     private javax.swing.JTextField tf_user;
     // End of variables declaration//GEN-END:variables

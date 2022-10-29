@@ -80,12 +80,12 @@ public class cliente_1 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         crear_cuenta c1= new crear_cuenta();
-        aux.change_jf(c1, this);
+        aux.change_jf(c1, this);        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         vista_login v1 = new vista_login();
-        aux.change_jf(v1, this);
+        aux.change_jf(v1, this);        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     public static void main(String args[]) {

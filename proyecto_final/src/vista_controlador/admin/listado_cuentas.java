@@ -24,7 +24,7 @@ public class listado_cuentas extends javax.swing.JFrame {
         modelo.addColumn("N° docuemnto");
         modelo.addColumn("Rol");
 
-        this.jTable1.setModel(modelo);
+        /*this.jTable1.setModel(modelo);
         for (int i = 0; i < array1.rows(); i++) {
             String[] info = new String[4];
             info[0] = String.valueOf(array1.get(i).getCodigo());
@@ -33,7 +33,7 @@ public class listado_cuentas extends javax.swing.JFrame {
             info[3] = array1.get(i).getRol();
 
             modelo.addRow(info);
-        }
+        }*/
         jTable1.setDefaultEditor(Object.class, null);
     }
 
