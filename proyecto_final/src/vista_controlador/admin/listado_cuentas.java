@@ -1,18 +1,22 @@
 package vista_controlador.admin;
 
 import javax.swing.table.DefaultTableModel;
-import Clases.Vendedor_Array;
+import Clases.Cliente_Array;
+import Clases.Trabajador_Array;
 import Auxiliares.Auxiliares;
 
 public class listado_cuentas extends javax.swing.JFrame {
 
     DefaultTableModel modelo;
-    Vendedor_Array array1 = new Vendedor_Array();
+    /*Mostraremos trabajadores y clientes? O solo uno de ellos?*/
+//    Trabajador_Array array1 = new Trabajador_Array();
+//    Cliente_Array array2 = new Cliente_Array();
     Auxiliares aux = new Auxiliares();
 
     public listado_cuentas() {
         initComponents();
-        array1.inicializar();
+//        array1.trabajador_ini();
+//        array2.cliente_ini();
         modelo = new DefaultTableModel();
 
         modelo.addColumn("Codigo");
