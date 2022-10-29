@@ -1,6 +1,9 @@
 package vista_controlador.admin;
 
 import auxiliares.Auxiliares;
+import vista_controlador.productos.buscar_producto;
+import vista_controlador.productos.listar_producto;
+import vista_controlador.productos.nuevo_producto;
 
 public class productos_1 extends javax.swing.JFrame {
 
@@ -69,6 +72,11 @@ public class productos_1 extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(0, 0, 0));
         jButton4.setText("BUSCAR PRODUCTOS");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 420, 250, -1));
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
@@ -89,17 +97,30 @@ public class productos_1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:        
+        // TODO add your handling code here:  
+        nuevo_producto n1=new nuevo_producto();
+        n1.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        listar_producto l1=new listar_producto();
+        l1.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         admin_1 a1 = new admin_1();
         aux.change_jf(a1, this);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        buscar_producto b1=new buscar_producto();
+        b1.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     public static void main(String args[]) {
         try {

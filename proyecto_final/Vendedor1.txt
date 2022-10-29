@@ -1,0 +1,5 @@
+1,william,72074565,test,administrador
+2,test,11111111,test,vendedor
+3,marta,12345678911,test,cliente
+4,angello,72266591,angfal491,administrador
+5,prueba,23456789,test,cliente

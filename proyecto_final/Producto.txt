@@ -1,0 +1,2 @@
+1,yogurt 1lt,gloria,lacteos,8.0
+2,arroz 1kg,costeño,perecibles,3.4

@@ -1,13 +1,13 @@
 package vista_controlador.admin;
 
 import javax.swing.table.DefaultTableModel;
-import proyecto_final.Array_vendedor;
+import proyecto_final.usuario_Array;
 import auxiliares.Auxiliares;
 
 public class listado_cuentas extends javax.swing.JFrame {
 
     DefaultTableModel modelo;
-    Array_vendedor array1 = new Array_vendedor();
+    usuario_Array array1 = new usuario_Array();
     Auxiliares aux = new Auxiliares();
 
     public listado_cuentas() {
@@ -19,14 +19,18 @@ public class listado_cuentas extends javax.swing.JFrame {
         modelo.addColumn("Nombre");
         modelo.addColumn("N° docuemnto");
         modelo.addColumn("Rol");
+        modelo.addColumn("Sexo");
+        modelo.addColumn("N° de hijos");
 
         this.jTable1.setModel(modelo);
         for (int i = 0; i < array1.rows(); i++) {
-            String[] info = new String[4];
+            String[] info = new String[6];
             info[0] = String.valueOf(array1.get(i).getCodigo());
             info[1] = array1.get(i).getNombre();
             info[2] = array1.get(i).getDni();
             info[3] = array1.get(i).getRol();
+            info[4] = array1.get(i).getSexo();
+            info[5] = String.valueOf(array1.get(i).getNum_hijos());
 
             modelo.addRow(info);
         }
@@ -98,7 +102,7 @@ public class listado_cuentas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        admin_1 a1 = new admin_1();
+        cuentas_1 a1 = new cuentas_1();
         aux.change_jf(a1, this);
     }//GEN-LAST:event_jButton5ActionPerformed
 
