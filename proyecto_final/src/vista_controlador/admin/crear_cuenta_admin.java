@@ -11,11 +11,12 @@ import Auxiliares.Auxiliares;
 public class crear_cuenta_admin extends javax.swing.JFrame {
 
     Cliente_Array array1 = new Cliente_Array();
+    Trabajador_Array arrayt = new Trabajador_Array();
     Auxiliares aux = new Auxiliares();
 
     public crear_cuenta_admin() {
         initComponents();
-        array1.cliente_ini();
+
     }
 
     @SuppressWarnings("unchecked")
@@ -80,6 +81,12 @@ public class crear_cuenta_admin extends javax.swing.JFrame {
         jLabel6.setText("Apellido:");
         crear_cta_cliente.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, -1, -1));
 
+        tf_ape.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        tf_ape.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_apeActionPerformed(evt);
+            }
+        });
         tf_ape.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tf_apeKeyPressed(evt);
@@ -96,6 +103,7 @@ public class crear_cuenta_admin extends javax.swing.JFrame {
         tf_dir.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         crear_cta_cliente.getContentPane().add(tf_dir, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, 140, 30));
 
+        tf_dir_dist.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         tf_dir_dist.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tf_dir_distKeyPressed(evt);
@@ -122,6 +130,8 @@ public class crear_cuenta_admin extends javax.swing.JFrame {
             }
         });
         crear_cta_cliente.getContentPane().add(tf_dir_prov, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, 140, 30));
+
+        tf_email.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         crear_cta_cliente.getContentPane().add(tf_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 380, 140, 30));
 
         jLabel9.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
@@ -180,6 +190,11 @@ public class crear_cuenta_admin extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pf_pass.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        pf_pass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pf_passActionPerformed(evt);
+            }
+        });
         getContentPane().add(pf_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, 140, -1));
 
         pf_pre_pass.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -286,7 +301,83 @@ public class crear_cuenta_admin extends javax.swing.JFrame {
         String combo_dr = (String) combo_credencial.getSelectedItem();
 
         if (pre_cont.equals(contrasena) && !(aux.tf_are_empty(new Object[]{nombre, credential, pre_cont, contrasena}))) {
-            switch (combo_dr) {
+            if (combo_dr == "DNI" && credential.length() == 8) {
+                if ("Cliente" == combo_rol.getSelectedItem()) {
+                    Cliente clt = new Cliente();
+
+                    clt.setCli_cod(id);
+                    clt.setCli_nombre(nombre);
+                    clt.setCli_apellido(apellido);
+                    clt.setCli_sexo(sexo);
+                    clt.setCli_nacimiento(nacimiento);
+                    clt.setCli_dir(direccion);
+                    clt.setCli_dir_distr(direccion_dist);
+                    clt.setCli_dir_prov(direccion_prov);
+                    clt.setUser_credencial(credential);
+                    clt.setUser_password(contrasena);
+                    clt.setUser_rol("Cliente");
+
+                    array1.agregar(clt);
+                    array1.grabar_arch_cliente(clt);
+
+                    vista_login v1 = new vista_login();
+                    aux.change_jf(v1, this);
+                } else if (combo_rol.getSelectedItem() == "Vendedor") {
+                    Trabajador tra = new Trabajador();
+                    tra.setTrab_cod(id);
+                    tra.setTrab_nombre(nombre);
+                    tra.setTrab_apellido(apellido);
+                    tra.setTrab_nacimiento(nacimiento);
+                    tra.setTrab_sexo(sexo);
+                    tra.setTrab_email(email);
+                    tra.setTrab_dir(direccion);
+                    tra.setTrab_dir_distr(direccion_dist);
+                    tra.setTrab_dir_prov(direccion_prov);
+                    tra.setTrab_seguro("Essalud");
+                    tra.setTrab_sist_pen("AFP");
+                    tra.setTrab_sueldo(1290.0);
+                    tra.setTrab_hijos(2);
+                    tra.setUser_credencial(credential);
+                    tra.setUser_password(contrasena);
+                    tra.setUser_rol("Vendedor");
+
+                    arrayt.agregar(tra);
+                    arrayt.grabar_arch_trabajador(tra);
+
+                    vista_login v1 = new vista_login();
+                    aux.change_jf(v1, this);
+                } else if (combo_rol.getSelectedItem() == "Administrador") {
+
+                    Trabajador tra = new Trabajador();
+                    tra.setTrab_cod(id);
+                    tra.setTrab_nombre(nombre);
+                    tra.setTrab_apellido(apellido);
+                    tra.setTrab_nacimiento(nacimiento);
+                    tra.setTrab_sexo(sexo);
+                    tra.setTrab_email(email);
+                    tra.setTrab_dir(direccion);
+                    tra.setTrab_dir_distr(direccion_dist);
+                    tra.setTrab_dir_prov(direccion_prov);
+                    tra.setTrab_seguro("Essalud");
+                    tra.setTrab_sist_pen("AFP");
+                    tra.setTrab_sueldo(1290.0);
+                    tra.setTrab_hijos(2);
+                    tra.setUser_credencial(credential);
+                    tra.setUser_password(contrasena);
+                    tra.setUser_rol("Administrador");
+
+                    arrayt.agregar(tra);
+                    arrayt.grabar_arch_trabajador(tra);
+
+                    vista_login v1 = new vista_login();
+                    aux.change_jf(v1, this);
+                }
+
+            } else if (combo_dr == "RUC") {
+
+            }
+
+            /*switch (combo_dr) {
                 case "DNI" -> {
                     if (credential.length() == 8) {
                         Cliente clt = new Cliente(id,nombre,apellido,sexo,nacimiento,direccion,direccion_dist,direccion_prov,email,credential, contrasena, "Cliente");
@@ -315,9 +406,10 @@ public class crear_cuenta_admin extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(rootPane, "El RUC debe tener 11 digitos");
                         tf_credencial.setText("");
                     }
-                }
-            }
+                }*/
         }
+
+
     }//GEN-LAST:event_b_createActionPerformed
 
     private void b_exit_fActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_exit_fActionPerformed
@@ -369,6 +461,14 @@ public class crear_cuenta_admin extends javax.swing.JFrame {
             tf_nom.setEditable(true);
         }
     }//GEN-LAST:event_tf_apeKeyPressed
+
+    private void tf_apeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_apeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_apeActionPerformed
+
+    private void pf_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pf_passActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pf_passActionPerformed
 
     public static void main(String args[]) {
         try {

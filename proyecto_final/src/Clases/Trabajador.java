@@ -40,6 +40,8 @@ public class Trabajador extends Usuario {
         this.trab_hijos = trab_hijos;
     }
 
+    
+
     public int getTrab_cod() {
         return trab_cod;
     }

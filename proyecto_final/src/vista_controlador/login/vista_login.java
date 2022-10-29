@@ -7,15 +7,19 @@ import javax.swing.JOptionPane;
 import Clases.Cliente_Array;
 import Clases.Cliente;
 import Auxiliares.Auxiliares;
+import Clases.Trabajador_Array;
 
 public class vista_login extends javax.swing.JFrame {
 
     Cliente_Array array1 = new Cliente_Array();
     Auxiliares aux = new Auxiliares();
+    Trabajador_Array array2= new Trabajador_Array();
 
     public vista_login() {
         initComponents();
         array1.cliente_ini();
+        array2.trabajador_ini();
+        
     }
 
     @SuppressWarnings("unchecked")

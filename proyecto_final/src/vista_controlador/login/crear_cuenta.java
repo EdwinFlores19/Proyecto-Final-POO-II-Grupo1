@@ -236,7 +236,19 @@ public class crear_cuenta extends javax.swing.JFrame {
             switch (combo_dr) {
                 case "DNI" -> {
                     if (credential.length() == 8) {
-                        Cliente clt = new Cliente(id,nombre,apellido,sexo,nacimiento,direccion,direccion_dist,direccion_prov,email,credential, contrasena, "Cliente");
+                        Cliente clt= new Cliente();
+                        
+                        clt.setCli_cod(id);
+                        clt.setCli_nombre(nombre);
+                        clt.setCli_apellido(apellido);
+                        clt.setCli_sexo(sexo);
+                        clt.setCli_nacimiento(nacimiento);
+                        clt.setCli_dir(direccion);
+                        clt.setCli_dir_distr(direccion_dist);
+                        clt.setCli_dir_prov(direccion_prov);
+                        clt.setUser_credencial(credential);
+                        clt.setUser_password(contrasena);
+                        clt.setUser_rol("Cliente");
                         
                         array1.agregar(clt);
                         array1.grabar_arch_cliente(clt);

@@ -14,7 +14,7 @@ public class Cliente_Array {
 
     String linea;
     BufferedReader lector;
-    String partes[] = null;
+    String partes[]=null;
     String nom = "Clientes.txt";
 
     private final ArrayList<Cliente> cliente_a = new ArrayList();
@@ -25,17 +25,20 @@ public class Cliente_Array {
             lector = new BufferedReader(new FileReader(nom));
             while ((linea = lector.readLine()) != null) {
                 partes = linea.split(",");
-                Cliente clien1 = new Cliente(partes[0], partes[1], partes[2]);
-                clien1.setCli_cod(Integer.parseInt(partes[3]));
-                clien1.setCli_nombre(partes[4]);
-                clien1.setCli_apellido(partes[5]);
-                clien1.setCli_sexo(partes[6]);
-                clien1.setCli_nacimiento(partes[7]);
-                clien1.setCli_dir(partes[8]);
-                clien1.setCli_dir_distr(partes[9]);
-                clien1.setCli_dir_prov(partes[10]);
-                clien1.setCli_email(partes[11]);
-
+                Cliente clien1 = new Cliente();
+                clien1.setCli_cod(Integer.parseInt(partes[0]));
+                clien1.setUser_credencial(partes[1]);
+                clien1.setUser_password(partes[2]);
+                clien1.setCli_nombre(partes[3]);
+                clien1.setCli_apellido(partes[4]);
+                clien1.setCli_sexo(partes[5]);
+                clien1.setCli_nacimiento(partes[6]);
+                clien1.setCli_dir(partes[7]);
+                clien1.setCli_dir_distr(partes[8]);
+                clien1.setCli_dir_prov(partes[9]);
+                clien1.setCli_email(partes[10]);
+                clien1.setUser_rol(partes[11]);
+                
                 cliente_a.add(clien1);
             }
         } catch (IOException e) {
@@ -68,9 +71,9 @@ public class Cliente_Array {
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
             pw.println(
-                    obj.getCli_cod() + "," + obj.getUser_credencial() + "," + obj.getCli_nombre() + "," + obj.getCli_apellido()
+                    obj.getCli_cod() + "," + obj.getUser_credencial() +","+ obj.getUser_password()+"," + obj.getCli_nombre() + "," + obj.getCli_apellido()
                             + "," + obj.getCli_sexo() + "," + obj.getCli_nacimiento() + "," + obj.getCli_dir() + ","
-                            + obj.getCli_dir_distr() + "," + obj.getCli_dir_prov() + "," + obj.getCli_email());
+                            + obj.getCli_dir_distr() + "," + obj.getCli_dir_prov() + "," + obj.getCli_email()+","+obj.getUser_rol());
             pw.print("\n");
             pw.flush();
             pw.close();
@@ -122,10 +125,9 @@ public class Cliente_Array {
             PrintWriter pw = new PrintWriter(b);
             for (Cliente obj : cliente_a) {
                 pw.println(
-                        obj.getCli_cod() + "," + obj.getUser_credencial() + "," + obj.getCli_nombre() + ","
-                                + obj.getCli_apellido()
-                                + "," + obj.getCli_sexo() + "," + obj.getCli_nacimiento() + "," + obj.getCli_dir() + ","
-                                + obj.getCli_dir_distr() + "," + obj.getCli_dir_prov() + "," + obj.getCli_email());
+                        obj.getCli_cod() + "," + obj.getUser_credencial() +","+ obj.getUser_password()+"," + obj.getCli_nombre() + "," + obj.getCli_apellido()
+                            + "," + obj.getCli_sexo() + "," + obj.getCli_nacimiento() + "," + obj.getCli_dir() + ","
+                            + obj.getCli_dir_distr() + "," + obj.getCli_dir_prov() + "," + obj.getCli_email()+","+obj.getUser_rol());
             }
             pw.print("\n");
             pw.flush();
