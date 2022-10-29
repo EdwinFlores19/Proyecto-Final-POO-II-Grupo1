@@ -4,7 +4,6 @@
  */
 package proyecto_final;
 
-import java.awt.Dimension;
 import javax.swing.JOptionPane;
 
 
@@ -35,7 +34,7 @@ Array_vendedor array1=new Array_vendedor();
 
         jButton2 = new javax.swing.JButton();
         dni_ = new javax.swing.JTextField();
-        contraseña_ = new javax.swing.JPasswordField();
+        contrasena_ = new javax.swing.JPasswordField();
         iniciar_sesion = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -63,8 +62,8 @@ Array_vendedor array1=new Array_vendedor();
         });
         getContentPane().add(dni_, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 220, 140, -1));
 
-        contraseña_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        getContentPane().add(contraseña_, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 320, 140, -1));
+        contrasena_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        getContentPane().add(contrasena_, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 320, 140, -1));
 
         iniciar_sesion.setBackground(new java.awt.Color(255, 255, 255));
         iniciar_sesion.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
@@ -107,20 +106,20 @@ Array_vendedor array1=new Array_vendedor();
     private void iniciar_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar_sesionActionPerformed
         // TODO add your handling code here:
         String dni=dni_.getText();
-        String contraseña=contraseña_.getText();
+        String contrasena=contrasena_.getText();
         
         Vendedor ven1=array1.busqueda_dni(dni);
         
-        if(ven1.getContraseña().equals(contraseña)){
+        if(ven1.getContrasena().equals(contrasena)){
             JOptionPane.showMessageDialog(rootPane,"Bienvenido a nuestra plataforma!!!");
             interfazP i1= new interfazP();
             i1.setVisible(true);
             this.setVisible(false);
         }
-        else if("error".equals(ven1.getContraseña())){
-            JOptionPane.showMessageDialog(rootPane,"Dni y/o contraseña incorrectas");
+        else if("error".equals(ven1.getContrasena())){
+            JOptionPane.showMessageDialog(rootPane,"Dni y/o contrasena incorrectas");
             dni_.setText("");
-            contraseña_.setText("");
+            contrasena_.setText("");
         }
     }//GEN-LAST:event_iniciar_sesionActionPerformed
 
@@ -169,7 +168,7 @@ Array_vendedor array1=new Array_vendedor();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField contraseña_;
+    private javax.swing.JPasswordField contrasena_;
     private javax.swing.JTextField dni_;
     private javax.swing.JButton iniciar_sesion;
     private javax.swing.JButton jButton2;

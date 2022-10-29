@@ -123,15 +123,15 @@ public class crear_cuenta extends javax.swing.JFrame {
         String nombre = j1.getText();
         String dni = j2.getText();
         String pre_cont = j4.getText();
-        String contraseña = j3.getText();
+        String contrasena = j3.getText();
 
-        if (pre_cont.equals(contraseña) && !(pre_cont.isBlank()) && !(contraseña.isBlank())) {
+        if (pre_cont.equals(contrasena) && !(pre_cont.isBlank()) && !(contrasena.isBlank())) {
             if (dni.length() == 8 && !(dni.isBlank())) {
                 Vendedor vendedor1 = new Vendedor();
                 vendedor1.setCodigo(id);
                 vendedor1.setNombre(nombre);
                 vendedor1.setDni(dni);
-                vendedor1.setContraseña(contraseña);
+                vendedor1.setContrasena(contrasena);
 
                 array1.agregar(vendedor1);
                 array1.grabar_archivo(vendedor1);
@@ -144,7 +144,7 @@ public class crear_cuenta extends javax.swing.JFrame {
                 j2.setText("");
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Las contraseñas deben ser iguales y no vacias");
+            JOptionPane.showMessageDialog(rootPane, "Las contrasenas deben ser iguales y no vacias");
             j3.setText("");
             j4.setText("");
         }
