@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vista_controlador.productos;
+import Clases.Array_productos;
+import Clases.Productos;
 import javax.swing.JOptionPane;
 import vista_controlador.admin.productos_1;
 import proyecto_final.*;

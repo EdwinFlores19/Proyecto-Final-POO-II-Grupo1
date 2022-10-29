@@ -5,8 +5,8 @@
 package vista_controlador.productos;
 
 import javax.swing.JOptionPane;
-import proyecto_final.Array_productos;
-import proyecto_final.Productos;
+import Clases.Array_productos;
+import Clases.Productos;
 import vista_controlador.admin.productos_1;
 
 /**

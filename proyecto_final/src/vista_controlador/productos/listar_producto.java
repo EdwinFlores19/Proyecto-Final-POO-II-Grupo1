@@ -5,7 +5,7 @@
 package vista_controlador.productos;
 
 import javax.swing.table.DefaultTableModel;
-import proyecto_final.Array_productos;
+import Clases.Array_productos;
 import vista_controlador.admin.productos_1;
 
 /**
