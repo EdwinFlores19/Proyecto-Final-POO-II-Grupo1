@@ -1,2 +1,2 @@
-1,naranjas,anaranjado,grande,200,100,0.8,2.0,a,b
-2,aceite,rosado,grande,1000,54,4.0,11.0,a,b
+1,naranjas,anaranjado,grande,200,100,0.8,10.0,a,b
+2,yogurt,fresa,grande,500,34,5.0,7.5,a,b
