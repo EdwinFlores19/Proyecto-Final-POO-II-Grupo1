@@ -32,13 +32,13 @@ public class vendedor_1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        b_gen_venta = new javax.swing.JButton();
+        b_search = new javax.swing.JButton();
+        b_listar_prods = new javax.swing.JButton();
+        b_listar_ventas = new javax.swing.JButton();
+        b_cambiar_estado = new javax.swing.JButton();
+        b_exit = new javax.swing.JButton();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -48,71 +48,71 @@ public class vendedor_1 extends javax.swing.JFrame {
         jLabel2.setText("BIENVENIDO VENDEDOR");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 590, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("generar venta");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        b_gen_venta.setBackground(new java.awt.Color(255, 255, 255));
+        b_gen_venta.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_gen_venta.setForeground(new java.awt.Color(0, 0, 0));
+        b_gen_venta.setText("generar venta");
+        b_gen_venta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                b_gen_ventaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 290, -1));
+        getContentPane().add(b_gen_venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 290, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("buscar producto");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 290, -1));
+        b_search.setBackground(new java.awt.Color(255, 255, 255));
+        b_search.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_search.setForeground(new java.awt.Color(0, 0, 0));
+        b_search.setText("buscar producto");
+        getContentPane().add(b_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 290, -1));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("listar productos");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 290, -1));
+        b_listar_prods.setBackground(new java.awt.Color(255, 255, 255));
+        b_listar_prods.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_listar_prods.setForeground(new java.awt.Color(0, 0, 0));
+        b_listar_prods.setText("listar productos");
+        getContentPane().add(b_listar_prods, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 290, -1));
 
-        jButton6.setBackground(new java.awt.Color(255, 255, 255));
-        jButton6.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
-        jButton6.setText("listar ventas");
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 480, 290, -1));
+        b_listar_ventas.setBackground(new java.awt.Color(255, 255, 255));
+        b_listar_ventas.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_listar_ventas.setForeground(new java.awt.Color(0, 0, 0));
+        b_listar_ventas.setText("listar ventas");
+        getContentPane().add(b_listar_ventas, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 480, 290, -1));
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("cambiar estado de venta");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 420, 290, -1));
+        b_cambiar_estado.setBackground(new java.awt.Color(255, 255, 255));
+        b_cambiar_estado.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_cambiar_estado.setForeground(new java.awt.Color(0, 0, 0));
+        b_cambiar_estado.setText("cambiar estado de venta");
+        getContentPane().add(b_cambiar_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 420, 290, -1));
 
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("SALIR");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        b_exit.setBackground(new java.awt.Color(255, 255, 255));
+        b_exit.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_exit.setForeground(new java.awt.Color(0, 0, 0));
+        b_exit.setText("SALIR");
+        b_exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                b_exitActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 540, 180, -1));
+        getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 540, 180, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void b_gen_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_gen_ventaActionPerformed
         // TODO add your handling code here:
         crear_cuenta c1= new crear_cuenta();
         c1.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_b_gen_ventaActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void b_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_exitActionPerformed
         // TODO add your handling code here:
         vista_login v1 = new vista_login();
         v1.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_b_exitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,13 +150,13 @@ public class vendedor_1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton b_cambiar_estado;
+    private javax.swing.JButton b_exit;
+    private javax.swing.JButton b_gen_venta;
+    private javax.swing.JButton b_listar_prods;
+    private javax.swing.JButton b_listar_ventas;
+    private javax.swing.JButton b_search;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

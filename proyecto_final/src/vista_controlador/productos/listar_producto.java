@@ -5,7 +5,7 @@
 package vista_controlador.productos;
 
 import javax.swing.table.DefaultTableModel;
-import proyecto_final.Array_productos;
+import Clases.Array_productos;
 import vista_controlador.admin.productos_1;
 
 /**
@@ -29,19 +29,17 @@ public class listar_producto extends javax.swing.JFrame {
         
         modelo.addColumn("Codigo");
         modelo.addColumn("Nombre");
-        modelo.addColumn("Color");
-        modelo.addColumn("Stock");
+        modelo.addColumn("Marca");
+        modelo.addColumn("Tipo");
         modelo.addColumn("Precio");
-        modelo.addColumn("Fecha de Vencimiento");
         
         for (int i = 0; i < array_pro.rows(); i++) {
-            String[] info = new String[6];
-            info[0] = String.valueOf(array_pro.get(i).getP_id());
-            info[1] = array_pro.get(i).getNombre();
-            info[2] = array_pro.get(i).getColor();
-            info[3] = String.valueOf(array_pro.get(i).getStock());
-            info[4] = String.valueOf(array_pro.get(i).getPrecio());
-            info[5] = array_pro.get(i).getF_vencimiento();
+            String[] info = new String[5];
+            info[0] = String.valueOf(array_pro.get(i).getCodigo_producto());
+            info[1] = array_pro.get(i).getNombre_producto();
+            info[2] = array_pro.get(i).getMarca_producto();
+            info[3] = array_pro.get(i).getTipo_producto();
+            info[4] = String.valueOf(array_pro.get(i).getPrecio_producto());
 
             modelo.addRow(info);
         }

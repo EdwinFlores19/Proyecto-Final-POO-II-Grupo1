@@ -1,2 +1,2 @@
-1,naranjas,anaranjado,grande,200,100,0.8,10.0,a,b
-2,yogurt,fresa,grande,500,34,5.0,7.5,a,b
+1,yogurt 1lt,gloria,lacteos,8.0
+2,arroz 1kg,costeño,perecibles,3.4
