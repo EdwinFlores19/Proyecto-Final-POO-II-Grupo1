@@ -2,9 +2,7 @@ package vista_controlador.admin;
 
 import auxiliares.Auxiliares;
 import vista_controlador.productos.buscar_producto;
-import vista_controlador.productos.eliminar_producto;
 import vista_controlador.productos.listar_producto;
-import vista_controlador.productos.modificar_producto;
 import vista_controlador.productos.nuevo_producto;
 
 public class productos_1 extends javax.swing.JFrame {
@@ -51,11 +49,6 @@ public class productos_1 extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Modificar producto");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, -1, -1));
 
         jButton6.setBackground(new java.awt.Color(255, 255, 255));
@@ -73,11 +66,6 @@ public class productos_1 extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("eliminar producto");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, 250, -1));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
@@ -133,20 +121,6 @@ public class productos_1 extends javax.swing.JFrame {
         b1.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        modificar_producto m1= new modificar_producto();
-        m1.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        eliminar_producto e1= new eliminar_producto();
-        e1.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     public static void main(String args[]) {
         try {

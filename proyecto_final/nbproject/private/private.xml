@@ -3,12 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/WILLIAM/Documents/GitHub/Proyecto-Final-POO-II-Grupo1/proyecto_final/src/proyecto_final/Productos.java</file>
             <file>file:/C:/Users/WILLIAM/Documents/GitHub/Proyecto-Final-POO-II-Grupo1/proyecto_final/src/vista_controlador/productos/listar_producto.java</file>
             <file>file:/C:/Users/WILLIAM/Documents/GitHub/Proyecto-Final-POO-II-Grupo1/proyecto_final/src/vista_controlador/admin/productos_1.java</file>
-            <file>file:/C:/Users/WILLIAM/Documents/GitHub/Proyecto-Final-POO-II-Grupo1/proyecto_final/src/vista_controlador/productos/nuevo_producto.java</file>
+            <file>file:/C:/Users/WILLIAM/Documents/GitHub/Proyecto-Final-POO-II-Grupo1/proyecto_final/src/vista_controlador/admin/admin_crear_cuenta.java</file>
+            <file>file:/C:/Users/WILLIAM/Documents/GitHub/Proyecto-Final-POO-II-Grupo1/proyecto_final/src/vista_controlador/admin/modificar_cuenta.java</file>
+            <file>file:/C:/Users/WILLIAM/Documents/GitHub/Proyecto-Final-POO-II-Grupo1/proyecto_final/src/vista_controlador/admin/listado_cuentas.java</file>
+            <file>file:/C:/Users/WILLIAM/Documents/GitHub/Proyecto-Final-POO-II-Grupo1/proyecto_final/src/vista_controlador/admin/listado_cliente.java</file>
+            <file>file:/C:/Users/WILLIAM/Documents/GitHub/Proyecto-Final-POO-II-Grupo1/proyecto_final/src/vista_controlador/admin/eliminar_cuenta.java</file>
             <file>file:/C:/Users/WILLIAM/Documents/GitHub/Proyecto-Final-POO-II-Grupo1/proyecto_final/src/vista_controlador/productos/buscar_producto.java</file>
-            <file>file:/C:/Users/WILLIAM/Documents/GitHub/Proyecto-Final-POO-II-Grupo1/proyecto_final/src/proyecto_final/Array_productos.java</file>
+            <file>file:/C:/Users/WILLIAM/Documents/GitHub/Proyecto-Final-POO-II-Grupo1/proyecto_final/src/vista_controlador/admin/admin_listar_cuentas.java</file>
+            <file>file:/C:/Users/WILLIAM/Documents/GitHub/Proyecto-Final-POO-II-Grupo1/proyecto_final/src/vista_controlador/admin/admin_ventas_view.java</file>
         </group>
     </open-files>
 </project-private>

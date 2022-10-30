@@ -58,9 +58,8 @@ public class Array_productos {
                 return productos_a.get(i);
             }
         }
-        Productos producto1=new Productos();
-        producto1.setP_id(0);
-        return producto1;
+        
+        return null;
     }
     
    /* public Productos busqueda_marca(String marca) {
