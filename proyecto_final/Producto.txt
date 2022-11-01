@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-1,yogurt 1lt,gloria,lacteos,8.0
-2,arroz 1kg,costeño,perecibles,3.4
-=======
-1,naranjas,anaranjado,grande,200,100,0.8,2.0,a,b
-2,aceite,rosado,grande,1000,54,4.0,11.0,a,b
->>>>>>> parent of 4988ea4 (PRODUCTO TERMINADO)
