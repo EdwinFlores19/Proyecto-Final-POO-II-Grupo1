@@ -3,10 +3,12 @@ package vista_controlador.productos;
 import javax.swing.JOptionPane;
 import vista_controlador.admin.productos_1;
 import proyecto_final.*;
+import auxiliares.Auxiliares;
 
 public class nuevo_producto extends javax.swing.JFrame {
 
     productos_Array array_pro = new productos_Array();
+    Auxiliares aux = new Auxiliares();
 
     public nuevo_producto() {
         initComponents();
@@ -179,8 +181,7 @@ public class nuevo_producto extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         productos_1 p1 = new productos_1();
-        p1.setVisible(true);
-        this.setVisible(false);
+        aux.change_jf(p1, this);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void unidades_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_unidades_KeyPressed
@@ -222,8 +223,7 @@ public class nuevo_producto extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(rootPane, "Registro completado");
             productos_1 p1 = new productos_1();
-            p1.setVisible(true);
-            this.setVisible(false);
+            aux.change_jf(p1, this);
         } else {
             JOptionPane.showMessageDialog(rootPane, "Ningun casillero debe estar vacio");
             nombre_.setText("");

@@ -110,16 +110,14 @@ public class productos_1 extends javax.swing.JFrame {
 
     private void b_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_createActionPerformed
         // TODO add your handling code here:  
-        nuevo_producto n1=new nuevo_producto();
-        n1.setVisible(true);
-        this.setVisible(false);
+        nuevo_producto n1 = new nuevo_producto();
+        aux.change_jf(n1, this);
     }//GEN-LAST:event_b_createActionPerformed
 
     private void b_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_listarActionPerformed
         // TODO add your handling code here:
-        listar_producto l1=new listar_producto();
-        l1.setVisible(true);
-        this.setVisible(false);
+        listar_producto l1 = new listar_producto();
+        aux.change_jf(l1, this);
     }//GEN-LAST:event_b_listarActionPerformed
 
     private void b_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_exitActionPerformed
@@ -128,24 +126,18 @@ public class productos_1 extends javax.swing.JFrame {
     }//GEN-LAST:event_b_exitActionPerformed
 
     private void b_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buscarActionPerformed
-        // TODO add your handling code here:
-        buscar_producto b1=new buscar_producto();
-        b1.setVisible(true);
-        this.setVisible(false);
+        buscar_producto b1 = new buscar_producto();
+        aux.change_jf(b1, this);
     }//GEN-LAST:event_b_buscarActionPerformed
 
     private void b_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_modificarActionPerformed
-        // TODO add your handling code here:
-        modificar_producto m1= new modificar_producto();
-        m1.setVisible(true);
-        this.setVisible(false);
+        modificar_producto m1 = new modificar_producto();
+        aux.change_jf(m1, this);
     }//GEN-LAST:event_b_modificarActionPerformed
 
     private void b_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_eliminarActionPerformed
-        // TODO add your handling code here:
-        eliminar_producto e1= new eliminar_producto();
-        e1.setVisible(true);
-        this.setVisible(false);
+        eliminar_producto e1 = new eliminar_producto();
+        aux.change_jf(e1, this);
     }//GEN-LAST:event_b_eliminarActionPerformed
 
     public static void main(String args[]) {

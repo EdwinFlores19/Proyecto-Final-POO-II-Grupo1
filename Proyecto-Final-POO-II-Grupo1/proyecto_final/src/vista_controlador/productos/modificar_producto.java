@@ -189,8 +189,7 @@ public class modificar_producto extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Registro Modificado");
 
             productos_1 p1 = new productos_1();
-            p1.setVisible(true);
-            this.setVisible(false);
+            aux.change_jf(p1, this);
         } else {
             JOptionPane.showMessageDialog(null, "No existe código", "Error", JOptionPane.WARNING_MESSAGE);
         }

@@ -5,19 +5,17 @@ import javax.swing.JFrame;
 
 public class Auxiliares {
 
+    public boolean are_strings_emtpy(String[] str) {
+        for (int i = 0; i < str.length; i++) {
+            return str[i].isBlank();
+        }
+        return true;
+    }
+    
     public void clean_tfs(JTextField[] tf) {
         for (int i = 0; i < tf.length; i++) {
             tf[i].setText("");
         }
-    }
-
-    public boolean tf_are_empty(JTextField[] tf) {
-        for (int i = 0; i < tf.length; i++) {
-            if (tf[i].getText().isEmpty()) {
-                return false;
-            }
-        }
-        return true;
     }
 
     public void change_jf(JFrame show, JFrame hide) {

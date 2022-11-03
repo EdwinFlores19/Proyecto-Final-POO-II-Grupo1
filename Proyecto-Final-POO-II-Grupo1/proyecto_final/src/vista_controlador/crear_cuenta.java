@@ -215,15 +215,16 @@ public class crear_cuenta extends javax.swing.JFrame {
         String provincia = provincia_.getText();
         String password = password_.getText();
         String password2 = password2_.getText();
-        
-        JTextField tfs[] = {credencial_, nombre_, apellido_, email_, direccion_, distrito_, provincia_};
-        
+
+        String strs[] = {apellido, direccion, distrito, documento, email, f_nacimiento, nombre, password, password2, provincia, sexo};
+        JTextField tfs[] = {credencial_, nombre_, apellido_, email_, direccion_, distrito_, provincia_, password_, password2_};
+
         Usuario user1 = usuario_a.busqueda_credencial(documento);
 
         if (password.equals(password2)) {
-            if (aux.tf_are_empty(tfs) && !(f_nacimiento.isEmpty()) && !(sexo.isEmpty())) {
+            if (aux.are_strings_emtpy(strs)) {
                 if (documento.length() == 8 || documento.length() == 11) {
-                    if (!user1.getCredencial().equals(documento)) {                        
+                    if (!user1.getCredencial().equals(documento)) {
                         Cliente cliente1 = new Cliente();
                         Usuario usuario1 = new Usuario();
 
@@ -263,6 +264,8 @@ public class crear_cuenta extends javax.swing.JFrame {
                 }
             } else {
                 JOptionPane.showMessageDialog(rootPane, "No puede dejar campos vacios");
+                aux.clean_tfs(tfs);
+                sexo_.setSelectedIndex(0);
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Las contraseñas deben ser iguales y no vacias");

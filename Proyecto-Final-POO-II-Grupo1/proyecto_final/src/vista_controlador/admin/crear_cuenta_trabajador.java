@@ -72,22 +72,22 @@ public class crear_cuenta_trabajador extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("nombre:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("fecha de nacimiento:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("sexo:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("email:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,12 +112,12 @@ public class crear_cuenta_trabajador extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("sistema de pensiones:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("fecha de ingreso:");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, -1, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -132,7 +132,7 @@ public class crear_cuenta_trabajador extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("rol:");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, -1, -1));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 470, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,7 +180,7 @@ public class crear_cuenta_trabajador extends javax.swing.JFrame {
         getContentPane().add(dni_, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 140, 30));
 
         rol_.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Administrador", "Vendedor" }));
-        getContentPane().add(rol_, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, 140, -1));
+        getContentPane().add(rol_, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 470, 140, 30));
 
         sexo_.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Masculino", "Femenino", "Otros" }));
         getContentPane().add(sexo_, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 140, -1));
@@ -206,17 +206,11 @@ public class crear_cuenta_trabajador extends javax.swing.JFrame {
             }
         });
         getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 630, 180, -1));
-        getContentPane().add(hijos_, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 340, 140, -1));
+        getContentPane().add(hijos_, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 340, 140, 30));
 
         salud_.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Essalud", "Seguro Privado", "Otro" }));
         getContentPane().add(salud_, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 390, 140, -1));
-
-        sueldo_.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                sueldo_KeyPressed(evt);
-            }
-        });
-        getContentPane().add(sueldo_, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 290, 140, -1));
+        getContentPane().add(sueldo_, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 290, 140, 30));
 
         pensiones_.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "AFP", "ONP" }));
         getContentPane().add(pensiones_, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, 140, -1));
@@ -246,36 +240,36 @@ public class crear_cuenta_trabajador extends javax.swing.JFrame {
     private void provincia_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_provincia_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isDigit(c)) {
-            email_.setEditable(false);
+            provincia_.setEditable(false);
         } else {
-            email_.setEditable(true);
+            provincia_.setEditable(true);
         }
     }//GEN-LAST:event_provincia_KeyPressed
 
     private void distrito_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_distrito_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isDigit(c)) {
-            email_.setEditable(false);
+            distrito_.setEditable(false);
         } else {
-            email_.setEditable(true);
+            distrito_.setEditable(true);
         }
     }//GEN-LAST:event_distrito_KeyPressed
 
     private void nombre_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombre_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isDigit(c)) {
-            email_.setEditable(false);
+            nombre_.setEditable(false);
         } else {
-            email_.setEditable(true);
+            nombre_.setEditable(true);
         }
     }//GEN-LAST:event_nombre_KeyPressed
 
     private void dni_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dni_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isLetter(c)) {
-            email_.setEditable(false);
+            dni_.setEditable(false);
         } else {
-            email_.setEditable(true);
+            dni_.setEditable(true);
         }
     }//GEN-LAST:event_dni_KeyPressed
 
@@ -295,65 +289,71 @@ public class crear_cuenta_trabajador extends javax.swing.JFrame {
         String s_salud = (String) salud_.getSelectedItem();
         String rol = (String) rol_.getSelectedItem();
 
-        int id = usuario_a.Correlativo();
         String password = password_.getText();
         String password2 = password2_.getText();
 
-        JTextField tfs[] = {dni_, nombre_, email_, direccion_, distrito_, provincia_};
+        String strs[] = {dni, nombre, nacimiento, sexo, email, direccion, distrito, provincia, sist_pensiones, ingreso, s_salud, rol, password, password2};
+        JTextField tfs[] = {dni_, nombre_, email_, direccion_, distrito_, provincia_, password2_, password_};
 
         Usuario user1 = usuario_a.busqueda_credencial(dni);
-        /*!!!*/
+
         if (password.equals(password2)) {
-            if (aux.tf_are_empty(tfs) && !(nacimiento.isEmpty()) && !(sexo.isEmpty()) && !(sueldo <= 0))
-            if (dni.length() == 8 || dni.length() == 11) {
-                if (!user1.getCredencial().equals(dni)) {
-                    Trabajador trabajador1 = new Trabajador();
-                    Usuario usuario1 = new Usuario();
+            if (aux.are_strings_emtpy(strs) && sueldo > 0 && n_hijos > 0) {
+                if (dni.length() == 8 || dni.length() == 11) {
+                    if (!user1.getCredencial().equals(dni)) {
+                        Trabajador trabajador1 = new Trabajador();
+                        Usuario usuario1 = new Usuario();
 
-                    trabajador1.setDni(dni);
-                    trabajador1.setNombre(nombre);
-                    trabajador1.setF_nacimiento(nacimiento);
-                    trabajador1.setSexo(sexo);
-                    trabajador1.setEmail(email);
-                    trabajador1.setDireccion(direccion);
-                    trabajador1.setD_distrito(distrito);
-                    trabajador1.setD_provincia(provincia);
-                    trabajador1.setSueldo(sueldo);
-                    trabajador1.setSist_pensiones(sist_pensiones);
-                    trabajador1.setF_ingreso(ingreso);
-                    trabajador1.setN_hijos(n_hijos);
-                    trabajador1.setS_salud(s_salud);
-                    trabajador1.setRol(rol);
+                        trabajador1.setDni(dni);
+                        trabajador1.setNombre(nombre);
+                        trabajador1.setF_nacimiento(nacimiento);
+                        trabajador1.setSexo(sexo);
+                        trabajador1.setEmail(email);
+                        trabajador1.setDireccion(direccion);
+                        trabajador1.setD_distrito(distrito);
+                        trabajador1.setD_provincia(provincia);
+                        trabajador1.setSueldo(sueldo);
+                        trabajador1.setSist_pensiones(sist_pensiones);
+                        trabajador1.setF_ingreso(ingreso);
+                        trabajador1.setN_hijos(n_hijos);
+                        trabajador1.setS_salud(s_salud);
+                        trabajador1.setRol(rol);
 
-                    usuario1.setId(usuario_a.Correlativo());
-                    usuario1.setCredencial(dni);
-                    usuario1.setPassword(password);
-                    usuario1.setRol(rol);
+                        usuario1.setId(usuario_a.Correlativo());
+                        usuario1.setCredencial(dni);
+                        usuario1.setPassword(password);
+                        usuario1.setRol(rol);
 
-                    usuario_a.agregar(usuario1);
-                    usuario_a.grabar_archivo(usuario1);
+                        usuario_a.agregar(usuario1);
+                        usuario_a.grabar_archivo(usuario1);
 
-                    trabajador_a.agregar(trabajador1);
-                    trabajador_a.grabar_archivo(trabajador1);
+                        trabajador_a.agregar(trabajador1);
+                        trabajador_a.grabar_archivo(trabajador1);
 
-                    JOptionPane.showMessageDialog(rootPane, "Cuenta creada satisfactoriamente");
+                        JOptionPane.showMessageDialog(rootPane, "Cuenta creada satisfactoriamente");
 
-                    admin_1 v1 = new admin_1();
-                    aux.change_jf(v1, this);
+                        admin_1 v1 = new admin_1();
+                        aux.change_jf(v1, this);
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "El documento ingresado ya se encuentra registrado");
+                        aux.clean_tfs(tfs);
+                        aux.clean_tfs(tfs);
+                        rol_.setSelectedIndex(0);
+                        sexo_.setSelectedIndex(0);
+                        pensiones_.setSelectedIndex(0);
+                        salud_.setSelectedIndex(0);
+                    }
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "El documento ingresado ya se encuentra registrado");
+                    JOptionPane.showMessageDialog(rootPane, "El DNI (8 digitos) o RUC (11 digitos) ingresado es incorrecto");
                     dni_.setText("");
-                    nombre_.setText("");
-                    password_.setText("");
-                    password2_.setText("");
-                    email_.setText("");
-                    direccion_.setText("");
-                    distrito_.setText("");
-                    provincia_.setText("");
                 }
             } else {
-                JOptionPane.showMessageDialog(rootPane, "El DNI ( 8 digitos) o RUC ( 11 digitos) ingresado es incorrecto");
-                dni_.setText("");
+                JOptionPane.showMessageDialog(rootPane, "No puede dejar campos vacios ni invalidos");
+                aux.clean_tfs(tfs);
+                rol_.setSelectedIndex(0);
+                sexo_.setSelectedIndex(0);
+                pensiones_.setSelectedIndex(0);
+                salud_.setSelectedIndex(0);
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Las contraseñas deben ser iguales y no vacias");
@@ -366,15 +366,6 @@ public class crear_cuenta_trabajador extends javax.swing.JFrame {
         admin_1 v1 = new admin_1();
         aux.change_jf(v1, this);
     }//GEN-LAST:event_b_exitActionPerformed
-
-    private void sueldo_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sueldo_KeyPressed
-        char c = evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            email_.setEditable(false);
-        } else {
-            email_.setEditable(true);
-        }
-    }//GEN-LAST:event_sueldo_KeyPressed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

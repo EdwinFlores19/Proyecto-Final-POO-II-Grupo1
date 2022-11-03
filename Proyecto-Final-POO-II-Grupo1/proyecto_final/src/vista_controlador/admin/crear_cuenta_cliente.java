@@ -215,11 +215,14 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
         String provincia = provincia_.getText();
         String password = password_.getText();
         String password2 = password2_.getText();
-        JTextField tfs[] = {credencial_, nombre_, apellido_, email_, direccion_, distrito_, provincia_, password_, password2_};
+
+        String strs[] = {documento, nombre, apellido, f_nacimiento, sexo, email, direccion, distrito, provincia, password, password2};
+        JTextField tfs[] = {apellido_, credencial_, direccion_, email_, nombre_, password2_, password_, provincia_};
+
         Usuario user1 = usuario_a.busqueda_credencial(documento);
 
         if (password.equals(password2)) {
-            if (aux.tf_are_empty(tfs) && !(f_nacimiento.isEmpty()) && !(sexo.isEmpty())) {
+            if (aux.are_strings_emtpy(strs)) {
                 if (documento.length() == 8 || documento.length() == 11) {
                     if (!user1.getCredencial().equals(documento)) {
                         Cliente cliente1 = new Cliente();
@@ -248,11 +251,12 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
 
                         JOptionPane.showMessageDialog(rootPane, "Cuenta creada satisfactoriamente");
 
-                    admin_1 v1 = new admin_1();
-                    aux.change_jf(v1, this);
-                } else {
+                        admin_1 v1 = new admin_1();
+                        aux.change_jf(v1, this);
+                    } else {
                         JOptionPane.showMessageDialog(rootPane, "El documento ingresado ya se encuentra registrado");
                         aux.clean_tfs(tfs);
+                        sexo_.setSelectedIndex(0);
                     }
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "El DNI (8 digitos) o RUC (11 digitos) ingresado es incorrecto");
@@ -260,6 +264,7 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
                 }
             } else {
                 JOptionPane.showMessageDialog(rootPane, "No puede dejar campos vacios");
+                sexo_.setSelectedIndex(0);
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Las contraseñas deben ser iguales y no vacias");

@@ -75,7 +75,7 @@ public class clientes_1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buscarActionPerformed
-        buscar_cliente b1=new buscar_cliente();
+        buscar_cliente b1 = new buscar_cliente();
         aux.change_jf(b1, this);
     }//GEN-LAST:event_b_buscarActionPerformed
 
@@ -85,7 +85,7 @@ public class clientes_1 extends javax.swing.JFrame {
     }//GEN-LAST:event_b_exitActionPerformed
 
     private void b_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_listarActionPerformed
-        listado_cliente l1= new listado_cliente();
+        listado_cliente l1 = new listado_cliente();
         aux.change_jf(l1, this);
     }//GEN-LAST:event_b_listarActionPerformed
 

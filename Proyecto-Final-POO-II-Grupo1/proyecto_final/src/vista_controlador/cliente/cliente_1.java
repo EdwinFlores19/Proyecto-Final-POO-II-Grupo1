@@ -7,7 +7,7 @@ import auxiliares.Auxiliares;
 public class cliente_1 extends javax.swing.JFrame {
 
     Auxiliares aux = new Auxiliares();
-    
+
     public cliente_1() {
         initComponents();
     }
@@ -79,7 +79,7 @@ public class cliente_1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_buyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buyActionPerformed
-        crear_cuenta c1= new crear_cuenta();
+        crear_cuenta c1 = new crear_cuenta();
         aux.change_jf(c1, this);
     }//GEN-LAST:event_b_buyActionPerformed
 
@@ -105,7 +105,7 @@ public class cliente_1 extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(cliente_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new cliente_1().setVisible(true);

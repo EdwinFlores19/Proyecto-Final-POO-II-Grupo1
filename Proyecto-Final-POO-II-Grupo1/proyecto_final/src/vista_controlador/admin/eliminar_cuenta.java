@@ -204,17 +204,16 @@ public class eliminar_cuenta extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_doc_KeyPressed
 
-   
-    
+
     private void b_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buscarActionPerformed
-        String documento=doc_.getText();
+        String documento = doc_.getText();
 
         Usuario user = array1.busqueda_credencial(documento);
         if (documento.length() == 8 || documento.length() == 11) {
             if (user.getCredencial().isEmpty()) {
                 if ("Cliente".equals(user.getRol())) {
                     Cliente cliente1 = cliente_a.busqueda_credencial(documento);
-                   
+
                     codigo_.setText(String.valueOf(user.getId()));
                     nombre_.setText(cliente1.getNombre());
                     documento_.setText(cliente1.getDocumento());
@@ -225,7 +224,6 @@ public class eliminar_cuenta extends javax.swing.JFrame {
                     provincia_.setText(cliente1.getD_provincia());
                     sexo_.setText(cliente1.getSexo());
                     doc_.setText("");
-                    
 
                 } else if ("Administrador".equals(user.getRol())) {
                     Trabajador trabajador1 = trabajador_a.busqueda_credencial(documento);
@@ -312,62 +310,59 @@ public class eliminar_cuenta extends javax.swing.JFrame {
 
     private void b_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_eliminarActionPerformed
         String documento = documento_.getText();
-        
+
         Usuario user = array1.busqueda_credencial(documento);
         if (user.getCredencial().isEmpty()) {
             if (documento_.getText().length() == 8 || documento_.getText().length() == 11) {
-                    if ("Cliente".equals(user.getRol())) {
-                        Cliente cliente1 = cliente_a.busqueda_credencial(documento);
-                       
-                        cliente_a.remove(cliente1);
-                        array1.remove(user);
-                        
-                        array1.grabarModificareliminar();
-                        cliente_a.grabarModificareliminar();
+                if ("Cliente".equals(user.getRol())) {
+                    Cliente cliente1 = cliente_a.busqueda_credencial(documento);
 
-                        JOptionPane.showMessageDialog(null, "Registro Modificado");
+                    cliente_a.remove(cliente1);
+                    array1.remove(user);
 
-                        cuentas_1 c1 = new cuentas_1();
-                        c1.setVisible(true);
-                        this.setVisible(false);
-                        
-                    } else if ("Administrador".equals(user.getRol()) && documento_.getText().length()==8) {
-                        Trabajador trabajador1 = trabajador_a.busqueda_credencial(documento);
-                        
-                        trabajador_a.remove(trabajador1);
-                        array1.remove(user);
-                        
-                        array1.grabarModificareliminar();
-                        trabajador_a.grabarModificareliminar();
+                    array1.grabarModificareliminar();
+                    cliente_a.grabarModificareliminar();
 
-                        JOptionPane.showMessageDialog(null, "Registro Modificado");
+                    JOptionPane.showMessageDialog(null, "Registro Modificado");
 
-                        cuentas_1 c1 = new cuentas_1();
-                        c1.setVisible(true);
-                        this.setVisible(false);
-                        
-                    } else if ("Vendedor".equals(user.getRol())&& documento_.getText().length()==8) {
-                        Trabajador trabajador1 = trabajador_a.busqueda_credencial(documento);
-                        
-                        trabajador_a.remove(trabajador1);
-                        array1.remove(user);
-                        
-                        array1.grabarModificareliminar();
-                        trabajador_a.grabarModificareliminar();
+                    cuentas_1 c1 = new cuentas_1();
+                    aux.change_jf(c1, this);
 
-                        JOptionPane.showMessageDialog(null, "Registro Modificado");
+                } else if ("Administrador".equals(user.getRol()) && documento_.getText().length() == 8) {
+                    Trabajador trabajador1 = trabajador_a.busqueda_credencial(documento);
 
-                        cuentas_1 c1 = new cuentas_1();
-                        c1.setVisible(true);
-                        this.setVisible(false);
-                    }
+                    trabajador_a.remove(trabajador1);
+                    array1.remove(user);
+
+                    array1.grabarModificareliminar();
+                    trabajador_a.grabarModificareliminar();
+
+                    JOptionPane.showMessageDialog(null, "Registro Modificado");
+
+                    cuentas_1 c1 = new cuentas_1();
+                    aux.change_jf(c1, this);
+
+                } else if ("Vendedor".equals(user.getRol()) && documento_.getText().length() == 8) {
+                    Trabajador trabajador1 = trabajador_a.busqueda_credencial(documento);
+
+                    trabajador_a.remove(trabajador1);
+                    array1.remove(user);
+
+                    array1.grabarModificareliminar();
+                    trabajador_a.grabarModificareliminar();
+
+                    JOptionPane.showMessageDialog(null, "Registro Modificado");
+
+                    cuentas_1 c1 = new cuentas_1();
+                    aux.change_jf(c1, this);
+                }
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Ingresar un DNI (8 digitos) o RUC (11 digitos) valido");
             }
         } else {
             JOptionPane.showMessageDialog(null, "No existe código", "Error", JOptionPane.WARNING_MESSAGE);
         }
-        
+
         /*Vendedor vr = array1.busqueda_dni(documento);
         if (doc_.getText() != "") {
             array1.remove(vr);

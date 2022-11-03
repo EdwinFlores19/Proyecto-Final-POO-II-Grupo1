@@ -108,7 +108,7 @@ public class crear_cuenta extends javax.swing.JFrame {
     }//GEN-LAST:event_b_create_vendedorActionPerformed
 
     private void b_create_proveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_create_proveedorActionPerformed
-        crear_cuenta_proveedor p1= new crear_cuenta_proveedor();
+        crear_cuenta_proveedor p1 = new crear_cuenta_proveedor();
         aux.change_jf(p1, this);
     }//GEN-LAST:event_b_create_proveedorActionPerformed
 

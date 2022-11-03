@@ -2,6 +2,7 @@ package vista_controlador.admin;
 
 import auxiliares.Auxiliares;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import proyecto_final.Cliente;
 import proyecto_final.Trabajador;
 import proyecto_final.Usuario;
@@ -15,7 +16,7 @@ public class modificar_cuenta extends javax.swing.JFrame {
     trabajador_Array trabajador_a = new trabajador_Array();
     cliente_Array cliente_a = new cliente_Array();
     Auxiliares aux = new Auxiliares();
-    
+
     public modificar_cuenta() {
         initComponents();
         array1.inicializar();
@@ -38,12 +39,12 @@ public class modificar_cuenta extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        b_exit = new javax.swing.JButton();
+        b_mod = new javax.swing.JButton();
         codigo_ = new javax.swing.JLabel();
         documento_ = new javax.swing.JTextField();
         nombre_ = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        tf_escritura = new javax.swing.JTextField();
         sexo_ = new javax.swing.JComboBox<>();
         rol_ = new javax.swing.JLabel();
         email_ = new javax.swing.JLabel();
@@ -111,34 +112,34 @@ public class modificar_cuenta extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("direccion:");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 180, 110, -1));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 180, 110, -1));
 
         jLabel11.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("rol:");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 50, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("salir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        b_exit.setBackground(new java.awt.Color(255, 255, 255));
+        b_exit.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_exit.setForeground(new java.awt.Color(0, 0, 0));
+        b_exit.setText("cancelar");
+        b_exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                b_exitActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 580, 200, -1));
+        getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 580, 200, -1));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("modificar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        b_mod.setBackground(new java.awt.Color(255, 255, 255));
+        b_mod.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_mod.setForeground(new java.awt.Color(0, 0, 0));
+        b_mod.setText("modificar");
+        b_mod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                b_modActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, 200, -1));
+        getContentPane().add(b_mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, 200, -1));
 
         codigo_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         codigo_.setForeground(new java.awt.Color(255, 255, 255));
@@ -164,10 +165,10 @@ public class modificar_cuenta extends javax.swing.JFrame {
         });
         getContentPane().add(nombre_, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 140, -1));
 
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField3.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, -1, -1));
+        tf_escritura.setBackground(new java.awt.Color(255, 255, 255));
+        tf_escritura.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        tf_escritura.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(tf_escritura, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, -1, -1));
 
         sexo_.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Masculino", "Femenino", "Otros" }));
         getContentPane().add(sexo_, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, 140, -1));
@@ -183,12 +184,13 @@ public class modificar_cuenta extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("distrito:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 220, 90, -1));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 230, 90, -1));
 
         jLabel15.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel15.setText("provincia:");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 270, 110, -1));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 280, 110, -1));
 
         jLabel17.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
@@ -203,7 +205,7 @@ public class modificar_cuenta extends javax.swing.JFrame {
                 distrito_KeyPressed(evt);
             }
         });
-        getContentPane().add(distrito_, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 220, 130, -1));
+        getContentPane().add(distrito_, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 230, 130, -1));
 
         provincia_.setBackground(new java.awt.Color(255, 255, 255));
         provincia_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
@@ -213,7 +215,7 @@ public class modificar_cuenta extends javax.swing.JFrame {
                 provincia_KeyPressed(evt);
             }
         });
-        getContentPane().add(provincia_, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 270, 130, -1));
+        getContentPane().add(provincia_, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 280, 130, -1));
 
         direccion_.setBackground(new java.awt.Color(255, 255, 255));
         direccion_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
@@ -241,6 +243,9 @@ public class modificar_cuenta extends javax.swing.JFrame {
         documento = doc_.getText();
 
         Usuario user = array1.busqueda_credencial(documento);
+
+        JTextField tfs[] = {direccion_, distrito_, doc_, documento_, nombre_, provincia_};
+
         if (documento.length() == 8 || documento.length() == 11) {
             if (!user.getCredencial().isEmpty()) {
                 if ("Cliente".equals(user.getRol())) {
@@ -308,38 +313,28 @@ public class modificar_cuenta extends javax.swing.JFrame {
                 }
             } else {
                 codigo_.setText("");
-                nombre_.setText("");
-                documento_.setText("");
                 email_.setText("");
                 sexo_.setSelectedIndex(0);
                 rol_.setText("");
-                direccion_.setText("");
-                distrito_.setText("");
-                provincia_.setText("");
-                doc_.setText("");
+                aux.clean_tfs(tfs);
                 JOptionPane.showMessageDialog(rootPane, "Documento no encontrado");
             }
         } else {
             codigo_.setText("");
-            nombre_.setText("");
-            documento_.setText("");
             email_.setText("");
             sexo_.setSelectedIndex(0);
             rol_.setText("");
-            direccion_.setText("");
-            distrito_.setText("");
-            provincia_.setText("");
-            doc_.setText("");
+            aux.clean_tfs(tfs);
             JOptionPane.showMessageDialog(rootPane, "Ingresar un DNI (8 digitos) o RUC (11 digitos) valido");
         }
     }//GEN-LAST:event_b_buscarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void b_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_exitActionPerformed
         cuentas_1 c1 = new cuentas_1();
         aux.change_jf(c1, this);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_b_exitActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void b_modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_modActionPerformed
         Usuario user = array1.busqueda_credencial(documento);
 
         if (!user.getCredencial().isEmpty()) {
@@ -362,8 +357,7 @@ public class modificar_cuenta extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Registro Modificado");
 
                     cuentas_1 c1 = new cuentas_1();
-                    c1.setVisible(true);
-                    this.setVisible(false);
+                    aux.change_jf(c1, this);
 
                 } else if ("Administrador".equals(user.getRol()) && documento_.getText().length() == 8) {
                     Trabajador trabajador1 = trabajador_a.busqueda_credencial(documento);
@@ -383,8 +377,7 @@ public class modificar_cuenta extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Registro Modificado");
 
                     cuentas_1 c1 = new cuentas_1();
-                    c1.setVisible(true);
-                    this.setVisible(false);
+                    aux.change_jf(c1, this);
 
                 } else if ("Vendedor".equals(user.getRol()) && documento_.getText().length() == 8) {
                     Trabajador trabajador1 = trabajador_a.busqueda_credencial(documento);
@@ -404,8 +397,7 @@ public class modificar_cuenta extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Registro Modificado");
 
                     cuentas_1 c1 = new cuentas_1();
-                    c1.setVisible(true);
-                    this.setVisible(false);
+                    aux.change_jf(c1, this);
                 }
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Ingresar un DNI (8 digitos) o RUC (11 digitos) valido");
@@ -437,7 +429,7 @@ public class modificar_cuenta extends javax.swing.JFrame {
         }*/
 
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_b_modActionPerformed
 
     private void nombre_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombre_KeyPressed
         char c = evt.getKeyChar();
@@ -451,27 +443,27 @@ public class modificar_cuenta extends javax.swing.JFrame {
     private void documento_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_documento_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isLetter(c)) {
-            nombre_.setEditable(false);
+            documento_.setEditable(false);
         } else {
-            nombre_.setEditable(true);
+            documento_.setEditable(true);
         }
     }//GEN-LAST:event_documento_KeyPressed
 
     private void distrito_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_distrito_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isLetter(c)) {
-            nombre_.setEditable(false);
+            distrito_.setEditable(false);
         } else {
-            nombre_.setEditable(true);
+            distrito_.setEditable(true);
         }
     }//GEN-LAST:event_distrito_KeyPressed
 
     private void provincia_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_provincia_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isLetter(c)) {
-            nombre_.setEditable(false);
+            provincia_.setEditable(false);
         } else {
-            nombre_.setEditable(true);
+            provincia_.setEditable(true);
         }
     }//GEN-LAST:event_provincia_KeyPressed
 
@@ -509,14 +501,14 @@ public class modificar_cuenta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_buscar;
+    private javax.swing.JButton b_exit;
+    private javax.swing.JButton b_mod;
     private javax.swing.JLabel codigo_;
     private javax.swing.JTextField direccion_;
     private javax.swing.JTextField distrito_;
     private javax.swing.JTextField doc_;
     private javax.swing.JTextField documento_;
     private javax.swing.JLabel email_;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -529,10 +521,10 @@ public class modificar_cuenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField nombre_;
     private javax.swing.JTextField provincia_;
     private javax.swing.JLabel rol_;
     private javax.swing.JComboBox<String> sexo_;
+    private javax.swing.JTextField tf_escritura;
     // End of variables declaration//GEN-END:variables
 }

@@ -130,8 +130,8 @@ public class admin_1 extends javax.swing.JFrame {
     }//GEN-LAST:event_b_clientesActionPerformed
 
     private void b_cuentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_cuentasActionPerformed
-        cuentas_1 c1= new cuentas_1();
-        aux.change_jf(c1,this);
+        cuentas_1 c1 = new cuentas_1();
+        aux.change_jf(c1, this);
     }//GEN-LAST:event_b_cuentasActionPerformed
 
     public static void main(String args[]) {

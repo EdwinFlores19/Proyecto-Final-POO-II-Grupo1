@@ -40,7 +40,7 @@ public class listado_cuentas extends javax.swing.JFrame {
                 info[2] = prueba.getNombre();
                 info[3] = prueba.getEmail();
                 info[4] = prueba.getSexo();
-                
+
             } else if ("Administrador".equals(array1.get(i).getRol()) || "Vendedor".equals(array1.get(i).getRol())) {
                 Trabajador prueba1 = trabajador_a.busqueda_credencial(array1.get(i).getCredencial());
                 info[2] = prueba1.getNombre();
@@ -49,7 +49,7 @@ public class listado_cuentas extends javax.swing.JFrame {
             }
 
             info[5] = array1.get(i).getRol();
-            
+
             modelo.addRow(info);
         }
         table_lista_cuentas.setDefaultEditor(Object.class, null);

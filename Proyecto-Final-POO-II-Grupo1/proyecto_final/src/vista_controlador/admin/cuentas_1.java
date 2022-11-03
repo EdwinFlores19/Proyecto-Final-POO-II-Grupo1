@@ -5,7 +5,7 @@ import auxiliares.Auxiliares;
 public class cuentas_1 extends javax.swing.JFrame {
 
     Auxiliares aux = new Auxiliares();
-    
+
     public cuentas_1() {
         initComponents();
     }
@@ -81,7 +81,7 @@ public class cuentas_1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_modificarActionPerformed
-        modificar_cuenta m1= new modificar_cuenta();
+        modificar_cuenta m1 = new modificar_cuenta();
         aux.change_jf(m1, this);
     }//GEN-LAST:event_b_modificarActionPerformed
 
@@ -91,7 +91,7 @@ public class cuentas_1 extends javax.swing.JFrame {
     }//GEN-LAST:event_b_listarActionPerformed
 
     private void b_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_eliminarActionPerformed
-        eliminar_cuenta e1= new eliminar_cuenta();
+        eliminar_cuenta e1 = new eliminar_cuenta();
         aux.change_jf(e1, this);
     }//GEN-LAST:event_b_eliminarActionPerformed
 

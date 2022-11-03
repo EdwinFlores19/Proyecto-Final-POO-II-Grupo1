@@ -10,7 +10,7 @@ public class buscar_producto extends javax.swing.JFrame {
 
     productos_Array array1 = new productos_Array();
     Auxiliares aux = new Auxiliares();
-    
+
     public buscar_producto() {
         initComponents();
         array1.inicializar();
