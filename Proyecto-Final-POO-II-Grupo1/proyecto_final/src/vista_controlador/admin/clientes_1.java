@@ -38,13 +38,13 @@ public class clientes_1 extends javax.swing.JFrame {
                 b_buscarActionPerformed(evt);
             }
         });
-        getContentPane().add(b_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, 200, -1));
+        getContentPane().add(b_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 200, -1));
 
         b_eliminar.setBackground(new java.awt.Color(255, 255, 255));
         b_eliminar.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         b_eliminar.setForeground(new java.awt.Color(0, 0, 0));
         b_eliminar.setText("eliminar cliente");
-        getContentPane().add(b_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, 200, -1));
+        getContentPane().add(b_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, 200, -1));
 
         b_listar.setBackground(new java.awt.Color(255, 255, 255));
         b_listar.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
@@ -55,7 +55,7 @@ public class clientes_1 extends javax.swing.JFrame {
                 b_listarActionPerformed(evt);
             }
         });
-        getContentPane().add(b_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 410, 200, -1));
+        getContentPane().add(b_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 200, -1));
 
         b_exit.setBackground(new java.awt.Color(255, 255, 255));
         b_exit.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N

@@ -3,6 +3,7 @@ package vista_controlador.admin;
 import javax.swing.JOptionPane;
 import proyecto_final.usuario_Array;
 import auxiliares.Auxiliares;
+import javax.swing.JTextField;
 import proyecto_final.Cliente;
 import proyecto_final.Usuario;
 import proyecto_final.cliente_Array;
@@ -93,11 +94,11 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
         getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 630, 180, -1));
 
         email_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        getContentPane().add(email_, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 140, 140, -1));
+        getContentPane().add(email_, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 160, 140, -1));
 
         combo_DR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "RUC" }));
         getContentPane().add(combo_DR, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, 110, 30));
-        getContentPane().add(fecha_, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 390, 140, 30));
+        getContentPane().add(fecha_, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 410, 140, 30));
 
         jLabel7.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -128,22 +129,22 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("email:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 140, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 160, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("direccion:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 220, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("distrito:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, 100, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 280, 100, -1));
 
         jLabel12.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("fecha de nacimiento:");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, -1, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 410, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,7 +152,7 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, -1));
 
         direccion_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        getContentPane().add(direccion_, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 200, 140, -1));
+        getContentPane().add(direccion_, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 220, 140, -1));
 
         distrito_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         distrito_.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -159,7 +160,7 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
                 distrito_KeyPressed(evt);
             }
         });
-        getContentPane().add(distrito_, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 260, 140, -1));
+        getContentPane().add(distrito_, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 280, 140, -1));
 
         nombre_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         nombre_.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -172,7 +173,7 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("provincia:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 330, -1, -1));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, -1, -1));
 
         provincia_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         provincia_.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -180,7 +181,7 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
                 provincia_KeyPressed(evt);
             }
         });
-        getContentPane().add(provincia_, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 320, 140, -1));
+        getContentPane().add(provincia_, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 340, 140, -1));
 
         apellido_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         apellido_.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -214,48 +215,51 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
         String provincia = provincia_.getText();
         String password = password_.getText();
         String password2 = password2_.getText();
-
+        JTextField tfs[] = {credencial_, nombre_, apellido_, email_, direccion_, distrito_, provincia_, password_, password2_};
         Usuario user1 = usuario_a.busqueda_credencial(documento);
 
-        if (!aux.tf_are_empty(new Object[]{credencial_, nombre_, apellido_, email_, direccion_, distrito_, provincia_, password_, password2_, sexo_})) {
-            if (documento.length() == 8 || documento.length() == 11) {
-                if (!user1.getCredencial().equals(documento) && password.equals(password2)) {
-                    Cliente cliente1 = new Cliente();
-                    Usuario usuario1 = new Usuario();
+        if (password.equals(password2)) {
+            if (aux.tf_are_empty(tfs) && !(f_nacimiento.isEmpty()) && !(sexo.isEmpty())) {
+                if (documento.length() == 8 || documento.length() == 11) {
+                    if (!user1.getCredencial().equals(documento)) {
+                        Cliente cliente1 = new Cliente();
+                        Usuario usuario1 = new Usuario();
 
-                    cliente1.setDocumento(documento);
-                    cliente1.setNombre(nombre);
-                    cliente1.setApellido(apellido);
-                    cliente1.setF_nacimiento(f_nacimiento);
-                    cliente1.setSexo(sexo);
-                    cliente1.setEmail(email);
-                    cliente1.setDireccion(direccion);
-                    cliente1.setD_distrito(distrito);
-                    cliente1.setD_provincia(provincia);
+                        cliente1.setDocumento(documento);
+                        cliente1.setNombre(nombre);
+                        cliente1.setApellido(apellido);
+                        cliente1.setF_nacimiento(f_nacimiento);
+                        cliente1.setSexo(sexo);
+                        cliente1.setEmail(email);
+                        cliente1.setDireccion(direccion);
+                        cliente1.setD_distrito(distrito);
+                        cliente1.setD_provincia(provincia);
 
-                    usuario1.setId(usuario_a.Correlativo());
-                    usuario1.setCredencial(documento);
-                    usuario1.setPassword(password);
-                    usuario1.setRol("Cliente");
+                        usuario1.setId(usuario_a.Correlativo());
+                        usuario1.setCredencial(documento);
+                        usuario1.setPassword(password);
+                        usuario1.setRol("Cliente");
 
-                    usuario_a.agregar(usuario1);
-                    usuario_a.grabar_archivo(usuario1);
+                        usuario_a.agregar(usuario1);
+                        usuario_a.grabar_archivo(usuario1);
 
-                    cliente_a.agregar(cliente1);
-                    cliente_a.grabar_archivo(cliente1);
+                        cliente_a.agregar(cliente1);
+                        cliente_a.grabar_archivo(cliente1);
 
-                    JOptionPane.showMessageDialog(rootPane, "Cuenta creada satisfactoriamente");
+                        JOptionPane.showMessageDialog(rootPane, "Cuenta creada satisfactoriamente");
 
                     admin_1 v1 = new admin_1();
                     aux.change_jf(v1, this);
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "El documento ingresado ya se encuentra registrado");
-                    aux.clear_tfs(new Object[]{credencial_, nombre_, apellido_, email_, direccion_, distrito_, provincia_});
+                        JOptionPane.showMessageDialog(rootPane, "El documento ingresado ya se encuentra registrado");
+                        aux.clean_tfs(tfs);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "El DNI (8 digitos) o RUC (11 digitos) ingresado es incorrecto");
+                    credencial_.setText("");
                 }
-
             } else {
-                JOptionPane.showMessageDialog(rootPane, "El DNI (8 digitos) o RUC (11 digitos) ingresado es incorrecto");
-                credencial_.setText("");
+                JOptionPane.showMessageDialog(rootPane, "No puede dejar campos vacios");
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Las contraseñas deben ser iguales y no vacias");
@@ -281,36 +285,36 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
     private void distrito_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_distrito_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isDigit(c)) {
-            email_.setEditable(false);
+            distrito_.setEditable(false);
         } else {
-            email_.setEditable(true);
+            distrito_.setEditable(true);
         }
     }//GEN-LAST:event_distrito_KeyPressed
 
     private void nombre_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombre_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isDigit(c)) {
-            email_.setEditable(false);
+            nombre_.setEditable(false);
         } else {
-            email_.setEditable(true);
+            nombre_.setEditable(true);
         }
     }//GEN-LAST:event_nombre_KeyPressed
 
     private void provincia_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_provincia_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isDigit(c)) {
-            email_.setEditable(false);
+            provincia_.setEditable(false);
         } else {
-            email_.setEditable(true);
+            provincia_.setEditable(true);
         }
     }//GEN-LAST:event_provincia_KeyPressed
 
     private void apellido_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_apellido_KeyPressed
         char c = evt.getKeyChar();
         if (Character.isDigit(c)) {
-            email_.setEditable(false);
+            apellido_.setEditable(false);
         } else {
-            email_.setEditable(true);
+            apellido_.setEditable(true);
         }
     }//GEN-LAST:event_apellido_KeyPressed
 

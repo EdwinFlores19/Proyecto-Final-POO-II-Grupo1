@@ -26,8 +26,8 @@ public class buscar_cliente extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         documento_ = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        b_search = new javax.swing.JButton();
+        b_exit = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -64,27 +64,27 @@ public class buscar_cliente extends javax.swing.JFrame {
         });
         getContentPane().add(documento_, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 150, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Buscar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        b_search.setBackground(new java.awt.Color(255, 255, 255));
+        b_search.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_search.setForeground(new java.awt.Color(0, 0, 0));
+        b_search.setText("Buscar");
+        b_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                b_searchActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
+        getContentPane().add(b_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("salir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        b_exit.setBackground(new java.awt.Color(255, 255, 255));
+        b_exit.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_exit.setForeground(new java.awt.Color(0, 0, 0));
+        b_exit.setText("cancelar");
+        b_exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                b_exitActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 610, 160, -1));
+        getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 610, 160, -1));
 
         jLabel8.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -155,12 +155,12 @@ public class buscar_cliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_documento_KeyPressed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void b_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_exitActionPerformed
         clientes_1 c1 = new clientes_1();
         aux.change_jf(c1, this);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_b_exitActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void b_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_searchActionPerformed
         String documento = documento_.getText();
 
         Usuario user1 = array1.busqueda_credencial(documento);
@@ -208,7 +208,7 @@ public class buscar_cliente extends javax.swing.JFrame {
             codigo_.setText("");
             JOptionPane.showMessageDialog(rootPane, "Ingresar un DNI (8 digitos) o RUC (11 digitos) valido");
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_b_searchActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -243,13 +243,13 @@ public class buscar_cliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton b_exit;
+    private javax.swing.JButton b_search;
     private javax.swing.JLabel codigo_;
     private javax.swing.JLabel direccion_;
     private javax.swing.JLabel documento2_;
     private javax.swing.JTextField documento_;
     private javax.swing.JLabel email_;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;

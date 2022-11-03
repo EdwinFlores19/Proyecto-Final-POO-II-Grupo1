@@ -3,6 +3,7 @@ package vista_controlador;
 import javax.swing.JOptionPane;
 import proyecto_final.usuario_Array;
 import auxiliares.Auxiliares;
+import javax.swing.JTextField;
 import proyecto_final.Cliente;
 import proyecto_final.Usuario;
 import proyecto_final.cliente_Array;
@@ -84,7 +85,7 @@ public class crear_cuenta extends javax.swing.JFrame {
         b_exit.setBackground(new java.awt.Color(255, 255, 255));
         b_exit.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         b_exit.setForeground(new java.awt.Color(0, 0, 0));
-        b_exit.setText("SALIR");
+        b_exit.setText("cancelar");
         b_exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_exitActionPerformed(evt);
@@ -214,48 +215,54 @@ public class crear_cuenta extends javax.swing.JFrame {
         String provincia = provincia_.getText();
         String password = password_.getText();
         String password2 = password2_.getText();
-
+        
+        JTextField tfs[] = {credencial_, nombre_, apellido_, email_, direccion_, distrito_, provincia_};
+        
         Usuario user1 = usuario_a.busqueda_credencial(documento);
 
-        if (password.equals(password2) && !aux.tf_are_empty(new Object[]{credencial_, nombre_, apellido_, email_, direccion_, distrito_, provincia_, password_, password2_, sexo_})) {
-            if (documento.length() == 8 || documento.length() == 11) {
-                if (!user1.getCredencial().equals(documento)) {
-                    Cliente cliente1 = new Cliente();
-                    Usuario usuario1 = new Usuario();
+        if (password.equals(password2)) {
+            if (aux.tf_are_empty(tfs) && !(f_nacimiento.isEmpty()) && !(sexo.isEmpty())) {
+                if (documento.length() == 8 || documento.length() == 11) {
+                    if (!user1.getCredencial().equals(documento)) {                        
+                        Cliente cliente1 = new Cliente();
+                        Usuario usuario1 = new Usuario();
 
-                    cliente1.setDocumento(documento);
-                    cliente1.setNombre(nombre);
-                    cliente1.setApellido(apellido);
-                    cliente1.setF_nacimiento(f_nacimiento);
-                    cliente1.setSexo(sexo);
-                    cliente1.setEmail(email);
-                    cliente1.setDireccion(direccion);
-                    cliente1.setD_distrito(distrito);
-                    cliente1.setD_provincia(provincia);
+                        cliente1.setDocumento(documento);
+                        cliente1.setNombre(nombre);
+                        cliente1.setApellido(apellido);
+                        cliente1.setF_nacimiento(f_nacimiento);
+                        cliente1.setSexo(sexo);
+                        cliente1.setEmail(email);
+                        cliente1.setDireccion(direccion);
+                        cliente1.setD_distrito(distrito);
+                        cliente1.setD_provincia(provincia);
 
-                    usuario1.setId(usuario_a.Correlativo());
-                    usuario1.setCredencial(documento);
-                    usuario1.setPassword(password);
-                    usuario1.setRol("Cliente");
+                        usuario1.setId(usuario_a.Correlativo());
+                        usuario1.setCredencial(documento);
+                        usuario1.setPassword(password);
+                        usuario1.setRol("Cliente");
 
-                    usuario_a.agregar(usuario1);
-                    usuario_a.grabar_archivo(usuario1);
+                        usuario_a.agregar(usuario1);
+                        usuario_a.grabar_archivo(usuario1);
 
-                    cliente_a.agregar(cliente1);
-                    cliente_a.grabar_archivo(cliente1);
+                        cliente_a.agregar(cliente1);
+                        cliente_a.grabar_archivo(cliente1);
 
-                    JOptionPane.showMessageDialog(rootPane, "Cuenta creada satisfactoriamente");
+                        JOptionPane.showMessageDialog(rootPane, "Cuenta creada satisfactoriamente");
 
-                    vista_login v1 = new vista_login();
-                    aux.change_jf(v1, this);
+                        vista_login v1 = new vista_login();
+                        aux.change_jf(v1, this);
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "El documento ingresado ya se encuentra registrado");
+                        aux.clean_tfs(tfs);
+                    }
+
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "El documento ingresado ya se encuentra registrado");
-                    aux.clear_tfs(new Object[]{credencial_, nombre_, apellido_, email_, direccion_, distrito_, provincia_});
+                    JOptionPane.showMessageDialog(rootPane, "El DNI (8 digitos) o RUC (11 digitos) ingresado es incorrecto");
+                    credencial_.setText("");
                 }
-
             } else {
-                JOptionPane.showMessageDialog(rootPane, "El DNI (8 digitos) o RUC (11 digitos) ingresado es incorrecto");
-                credencial_.setText("");
+                JOptionPane.showMessageDialog(rootPane, "No puede dejar campos vacios");
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Las contraseñas deben ser iguales y no vacias");
@@ -280,37 +287,37 @@ public class crear_cuenta extends javax.swing.JFrame {
 
     private void distrito_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_distrito_KeyPressed
         char c = evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            credencial_.setEditable(false);
+        if (Character.isDigit(c)) {
+            distrito_.setEditable(false);
         } else {
-            credencial_.setEditable(true);
+            distrito_.setEditable(true);
         }
     }//GEN-LAST:event_distrito_KeyPressed
 
     private void nombre_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombre_KeyPressed
         char c = evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            credencial_.setEditable(false);
+        if (Character.isDigit(c)) {
+            nombre_.setEditable(false);
         } else {
-            credencial_.setEditable(true);
+            nombre_.setEditable(true);
         }
     }//GEN-LAST:event_nombre_KeyPressed
 
     private void provincia_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_provincia_KeyPressed
         char c = evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            credencial_.setEditable(false);
+        if (Character.isDigit(c)) {
+            provincia_.setEditable(false);
         } else {
-            credencial_.setEditable(true);
+            provincia_.setEditable(true);
         }
     }//GEN-LAST:event_provincia_KeyPressed
 
     private void apellido_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_apellido_KeyPressed
         char c = evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            credencial_.setEditable(false);
+        if (Character.isDigit(c)) {
+            apellido_.setEditable(false);
         } else {
-            credencial_.setEditable(true);
+            apellido_.setEditable(true);
         }
     }//GEN-LAST:event_apellido_KeyPressed
 

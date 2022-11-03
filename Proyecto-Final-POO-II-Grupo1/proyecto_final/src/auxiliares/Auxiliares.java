@@ -2,24 +2,22 @@ package auxiliares;
 
 import javax.swing.JTextField;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 public class Auxiliares {
 
-    public boolean tf_are_empty(Object[] tfs) {
-        for (Object tf : tfs) {
-            if (tf.toString().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "No puede dejar campos vacios");
-                return true;
-            }
+    public void clean_tfs(JTextField[] tf) {
+        for (int i = 0; i < tf.length; i++) {
+            tf[i].setText("");
         }
-        return false;
     }
 
-    public void clear_tfs(Object[] tf) {
-        for (Object tf1 : tf) {
-            ((JTextField) tf1).setText("");
+    public boolean tf_are_empty(JTextField[] tf) {
+        for (int i = 0; i < tf.length; i++) {
+            if (tf[i].getText().isEmpty()) {
+                return false;
+            }
         }
+        return true;
     }
 
     public void change_jf(JFrame show, JFrame hide) {

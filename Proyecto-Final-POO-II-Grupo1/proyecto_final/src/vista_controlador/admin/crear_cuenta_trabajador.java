@@ -2,6 +2,7 @@ package vista_controlador.admin;
 
 import auxiliares.Auxiliares;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import proyecto_final.Trabajador;
 import proyecto_final.Usuario;
 import proyecto_final.trabajador_Array;
@@ -298,9 +299,12 @@ public class crear_cuenta_trabajador extends javax.swing.JFrame {
         String password = password_.getText();
         String password2 = password2_.getText();
 
-        Usuario user1 = usuario_a.busqueda_credencial(dni);
+        JTextField tfs[] = {dni_, nombre_, email_, direccion_, distrito_, provincia_};
 
-        if (password.equals(password2) && !aux.tf_are_empty(new Object[]{dni_, nombre_, email_, direccion_, distrito_, provincia_, sexo_})) {
+        Usuario user1 = usuario_a.busqueda_credencial(dni);
+        /*!!!*/
+        if (password.equals(password2)) {
+            if (aux.tf_are_empty(tfs) && !(nacimiento.isEmpty()) && !(sexo.isEmpty()) && !(sueldo <= 0))
             if (dni.length() == 8 || dni.length() == 11) {
                 if (!user1.getCredencial().equals(dni)) {
                     Trabajador trabajador1 = new Trabajador();
