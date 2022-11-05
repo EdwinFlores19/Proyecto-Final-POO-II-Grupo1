@@ -222,7 +222,7 @@ public class crear_cuenta extends javax.swing.JFrame {
         Usuario user1 = usuario_a.busqueda_credencial(documento);
 
         if (password.equals(password2)) {
-            if (aux.are_strings_emtpy(strs)) {
+            if (!aux.are_strings_emtpy(strs)) {
                 if (documento.length() == 8 || documento.length() == 11) {
                     if (!user1.getCredencial().equals(documento)) {
                         Cliente cliente1 = new Cliente();

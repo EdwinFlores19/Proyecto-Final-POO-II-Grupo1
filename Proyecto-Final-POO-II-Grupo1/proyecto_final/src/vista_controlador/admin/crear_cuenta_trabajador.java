@@ -298,7 +298,7 @@ public class crear_cuenta_trabajador extends javax.swing.JFrame {
         Usuario user1 = usuario_a.busqueda_credencial(dni);
 
         if (password.equals(password2)) {
-            if (aux.are_strings_emtpy(strs) && sueldo > 0 && n_hijos > 0) {
+            if (!aux.are_strings_emtpy(strs) && sueldo >= 0 && n_hijos >= 0) {
                 if (dni.length() == 8 || dni.length() == 11) {
                     if (!user1.getCredencial().equals(dni)) {
                         Trabajador trabajador1 = new Trabajador();

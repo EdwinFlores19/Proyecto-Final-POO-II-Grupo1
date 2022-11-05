@@ -4,10 +4,10 @@ import javax.swing.JTextField;
 import javax.swing.JFrame;
 
 public class Auxiliares {
-
+    
     public boolean are_strings_emtpy(String[] str) {
         for (int i = 0; i < str.length; i++) {
-            return str[i].isBlank();
+            return str[i].isEmpty();
         }
         return true;
     }
