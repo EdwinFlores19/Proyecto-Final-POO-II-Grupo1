@@ -70,12 +70,13 @@ public class cliente_1 extends javax.swing.JFrame {
                 b_exitActionPerformed(evt);
             }
         });
-        getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 180, -1));
+        getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 180, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_buyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buyActionPerformed

@@ -39,19 +39,19 @@ public class ventas_1 extends javax.swing.JFrame {
                 b_buscarActionPerformed(evt);
             }
         });
-        getContentPane().add(b_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 280, 250, -1));
+        getContentPane().add(b_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 250, -1));
 
         b_modificar.setBackground(new java.awt.Color(255, 255, 255));
         b_modificar.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         b_modificar.setForeground(new java.awt.Color(0, 0, 0));
         b_modificar.setText("Modificar estado");
-        getContentPane().add(b_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 250, -1));
+        getContentPane().add(b_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 250, -1));
 
         b_listar.setBackground(new java.awt.Color(255, 255, 255));
         b_listar.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         b_listar.setForeground(new java.awt.Color(0, 0, 0));
         b_listar.setText("listar ventas");
-        getContentPane().add(b_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, 250, -1));
+        getContentPane().add(b_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 250, -1));
 
         b_exit.setBackground(new java.awt.Color(255, 255, 255));
         b_exit.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
@@ -68,6 +68,7 @@ public class ventas_1 extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buscarActionPerformed

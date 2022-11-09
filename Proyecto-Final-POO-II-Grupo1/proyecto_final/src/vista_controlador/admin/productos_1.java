@@ -106,16 +106,15 @@ public class productos_1 extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_createActionPerformed
-        // TODO add your handling code here:  
         nuevo_producto n1 = new nuevo_producto();
         aux.change_jf(n1, this);
     }//GEN-LAST:event_b_createActionPerformed
 
     private void b_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_listarActionPerformed
-        // TODO add your handling code here:
         listar_producto l1 = new listar_producto();
         aux.change_jf(l1, this);
     }//GEN-LAST:event_b_listarActionPerformed

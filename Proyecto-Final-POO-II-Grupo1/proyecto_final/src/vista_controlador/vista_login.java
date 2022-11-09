@@ -84,6 +84,7 @@ public class vista_login extends javax.swing.JFrame {
         getContentPane().add(jlabelfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_create_accountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_create_accountActionPerformed

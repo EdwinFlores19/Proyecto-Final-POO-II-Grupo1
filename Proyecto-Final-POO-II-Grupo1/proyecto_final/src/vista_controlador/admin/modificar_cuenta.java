@@ -226,6 +226,7 @@ public class modificar_cuenta extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void doc_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_doc_KeyPressed
