@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package proyecto_final;
 
 import java.io.BufferedReader;
@@ -13,10 +9,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author WILLIAM
- */
 public class Ventas_Array {
     
     String linea;
@@ -24,7 +16,7 @@ public class Ventas_Array {
     String partes[] = null;
     String nom = "Ventas.txt";
 
-    private ArrayList<Ventas> ventas_a = new ArrayList();
+    private final ArrayList<Ventas> ventas_a = new ArrayList();
 
     /* Metodos main */
     public void inicializar() {
@@ -136,7 +128,7 @@ public class Ventas_Array {
             
             pw.flush();
             pw.close();
-        } catch ( Exception e ){
+        } catch ( IOException e ){
             System.out.println(e);
         }
    }
