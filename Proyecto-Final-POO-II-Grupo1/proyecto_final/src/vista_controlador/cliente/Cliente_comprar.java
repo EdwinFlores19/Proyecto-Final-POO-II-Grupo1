@@ -1,19 +1,24 @@
-package vista_controlador.vendedor;
+package vista_controlador.cliente;
 
 import auxiliares.Auxiliares;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import proyecto_final.productos_Array;
 import proyecto_final.Productos;
-import vista_controlador.admin.productos_1;
+import proyecto_final.DetalleVentas;
+import proyecto_final.DetalleVentas_Array;
 
-public class comprar_producto extends javax.swing.JFrame {
+public class cliente_comprar extends javax.swing.JFrame {
 
     productos_Array array1 = new productos_Array();
+    DetalleVentas_Array array2 = new DetalleVentas_Array();
     Auxiliares aux = new Auxiliares();
 
-    public comprar_producto() {
+    /* Boleta local */
+    ArrayList<DetalleVentas> boleta_a = new ArrayList();
+
+    public cliente_comprar() {
         initComponents();
         array1.inicializar();
         /* Inicializar table desde UI, con una funcion señal, si es que se cambio el valor en la celda de unidades, actualizar el total */
@@ -25,20 +30,25 @@ public class comprar_producto extends javax.swing.JFrame {
                 }
         ) {
             Class[] types = new Class[]{
-                java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Double.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean[]{
-                false, false, true, false, false
+                false, false, false, false, false
             };
 
+            @Override
             public Class getColumnClass(int columnIndex) {
                 return types[columnIndex];
             }
 
+            @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit[columnIndex];
             }
         });
+
+        table_products.setColumnSelectionAllowed(true);
+        table_products.getTableHeader().setReorderingAllowed(false);
 
 //        modelo.addColumn("Codigo");
 //        modelo.addColumn("Nombre");
@@ -56,11 +66,14 @@ public class comprar_producto extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         codigo_ = new javax.swing.JTextField();
         b_sel = new javax.swing.JButton();
-        b_exit = new javax.swing.JButton();
+        b_edit = new javax.swing.JButton();
+        b_buy = new javax.swing.JButton();
+        b_exit1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(this.getPreferredSize());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         table_products.setModel(new javax.swing.table.DefaultTableModel(
@@ -68,11 +81,11 @@ public class comprar_producto extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo", "Nombre", "Unidades", "Precio", "Total"
+                "Codigo", "Nombre", "Cantidades", "Precio", "Total"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Double.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, true, false, false
@@ -86,7 +99,10 @@ public class comprar_producto extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        table_products.setColumnSelectionAllowed(true);
+        table_products.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(table_products);
+        table_products.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (table_products.getColumnModel().getColumnCount() > 0) {
             table_products.getColumnModel().getColumn(0).setResizable(false);
             table_products.getColumnModel().getColumn(1).setResizable(false);
@@ -122,27 +138,50 @@ public class comprar_producto extends javax.swing.JFrame {
         });
         getContentPane().add(b_sel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, -1));
 
-        b_exit.setBackground(new java.awt.Color(255, 255, 255));
-        b_exit.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        b_exit.setForeground(new java.awt.Color(0, 0, 0));
-        b_exit.setText("SALIR");
-        b_exit.addActionListener(new java.awt.event.ActionListener() {
+        b_edit.setBackground(new java.awt.Color(255, 255, 255));
+        b_edit.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_edit.setForeground(new java.awt.Color(0, 0, 0));
+        b_edit.setText("editar");
+        b_edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b_exitActionPerformed(evt);
+                b_editActionPerformed(evt);
             }
         });
-        getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 580, 220, -1));
+        getContentPane().add(b_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 510, 130, 30));
+
+        b_buy.setBackground(new java.awt.Color(255, 255, 255));
+        b_buy.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_buy.setForeground(new java.awt.Color(0, 0, 0));
+        b_buy.setText("Comprar");
+        b_buy.setEnabled(false);
+        b_buy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_buyActionPerformed(evt);
+            }
+        });
+        getContentPane().add(b_buy, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 570, 220, -1));
+
+        b_exit1.setBackground(new java.awt.Color(255, 255, 255));
+        b_exit1.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_exit1.setForeground(new java.awt.Color(0, 0, 0));
+        b_exit1.setText("SALIR");
+        b_exit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_exit1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(b_exit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 610, 220, -1));
 
         jLabel4.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Codigo:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        fondo.setBackground(new java.awt.Color(255, 255, 255));
+        fondo.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        fondo.setForeground(new java.awt.Color(0, 0, 0));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -160,25 +199,64 @@ public class comprar_producto extends javax.swing.JFrame {
     private void b_selActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_selActionPerformed
         int codigo = Integer.parseInt(codigo_.getText());
         Productos pro1 = array1.busqueda_codigo(codigo);
-        if (codigo > array1.rows()) {
+
+        if (codigo > array1.rows() || codigo < 0) {
             codigo_.setText("");
-            JOptionPane.showMessageDialog(rootPane, "Codigo no encontrado");
+            JOptionPane.showMessageDialog(rootPane, "Codigo inválido", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
         } else {
-            /*Para el total, CONSTANTEMENTE agarrar el dato de unidades y multiplicarlo con el precio*/
-            /*https://www.youtube.com/watch?v=5dK4dA39INk
-              https://www.youtube.com/watch?v=91Rp2MA0i94*/
-            int x = 1;
-            Object[] row_data = {pro1.getP_id(), pro1.getNombre(), x, pro1.getPrecio(), x * pro1.getPrecio()};
+            String cant = JOptionPane.showInputDialog(rootPane, "Ingrese la cantidad de " + pro1.getNombre() + " que desea comprar:");
+            while (cant.isBlank()) {
+                cant = JOptionPane.showInputDialog(rootPane, "Ingrese la cantidad de " + pro1.getNombre() + " que desea comprar:");
+            }
+            b_buy.setEnabled(true);
+            Object[] row_data = {pro1.getP_id(), pro1.getNombre(), Integer.parseInt(cant), pro1.getPrecio(), pro1.getPrecio() * Double.parseDouble(cant)};
             //modelo.addRow(row_data);
+
+            DetalleVentas det1 = new DetalleVentas();
+            det1.setCodVenta(array2.Correlativo());
+            det1.setCodProducto(pro1.getP_id());
+            det1.setNomProducto(pro1.getNombre());
+            det1.setCantidad(Double.parseDouble(cant));
+            det1.setPrecioProducto(pro1.getPrecio());
+            det1.setImporteTotal((double) row_data[4]);
+            boleta_a.add(det1);
+
             DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
             modelo.addRow(row_data);
         }
     }//GEN-LAST:event_b_selActionPerformed
 
-    private void b_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_exitActionPerformed
-        productos_1 p1 = new productos_1();
+    private void b_buyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buyActionPerformed
+        int confirm = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro de su compra?", "Confirmación de la compra", JOptionPane.YES_NO_CANCEL_OPTION);
+        if (confirm != 1) {
+            for (int i = 0; i < boleta_a.size(); i++) {
+                array2.agregar(boleta_a.get(i));
+                array2.grabar_archivo(boleta_a.get(i));
+            }
+        }
+    }//GEN-LAST:event_b_buyActionPerformed
+
+    private void b_exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_exit1ActionPerformed
+        cliente_1 p1 = new cliente_1();
         aux.change_jf(p1, this);
-    }//GEN-LAST:event_b_exitActionPerformed
+    }//GEN-LAST:event_b_exit1ActionPerformed
+
+    private void b_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_editActionPerformed
+        // get the selected row and show an optionpane asking for the new value
+        int row = table_products.getSelectedRow();
+        if (row == -1) {
+            JOptionPane.showMessageDialog(rootPane, "No se ha elegido un producto", "Error de edición", JOptionPane.ERROR_MESSAGE);
+        } else {
+            String value = JOptionPane.showInputDialog(rootPane, "Ingrese la cantidad nueva cantidad que desea comprar:");
+            while (value.isBlank()) {
+                value = JOptionPane.showInputDialog(rootPane, "Ingrese la cantidad nueva cantidad que desea comprar:");
+            }
+            table_products.setValueAt(value, row, 2);
+            double pre_val = (double) table_products.getValueAt(row, 3);
+            table_products.setValueAt(Double.parseDouble(value) * pre_val, row, 4);
+        }
+
+    }//GEN-LAST:event_b_editActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -194,13 +272,13 @@ public class comprar_producto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(comprar_producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cliente_comprar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(comprar_producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cliente_comprar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(comprar_producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cliente_comprar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(comprar_producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cliente_comprar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -208,16 +286,18 @@ public class comprar_producto extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new comprar_producto().setVisible(true);
+                new cliente_comprar().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton b_exit;
+    private javax.swing.JButton b_buy;
+    private javax.swing.JButton b_edit;
+    private javax.swing.JButton b_exit1;
     private javax.swing.JButton b_sel;
     private javax.swing.JTextField codigo_;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;

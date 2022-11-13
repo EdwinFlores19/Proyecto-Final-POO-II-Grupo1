@@ -3,19 +3,29 @@ package proyecto_final;
 public class DetalleVentas {
     int codVenta;
     int codProducto;
-    int cantidad;
-    float precioProducto;
-    float importeTotal;
+    String nomProducto;
+    double cantidad;
+    double precioProducto;
+    double importeTotal;
 
     public DetalleVentas() {
     }
 
-    public DetalleVentas(int codVenta, int codProducto, int cantidad, float precioProducto, float importeTotal) {
+    public DetalleVentas(int codVenta, String nomProducto ,int codProducto, double cantidad, double precioProducto, double importeTotal) {
         this.codVenta = codVenta;
+        this.nomProducto = nomProducto;
         this.codProducto = codProducto;
         this.cantidad = cantidad;
         this.precioProducto = precioProducto;
         this.importeTotal = importeTotal;
+    }
+
+    public String getNomProducto() {
+        return nomProducto;
+    }
+
+    public void setNomProducto(String nomProducto) {
+        this.nomProducto = nomProducto;
     }
 
     public int getCodVenta() {
@@ -34,27 +44,27 @@ public class DetalleVentas {
         this.codProducto = codProducto;
     }
 
-    public int getCantidad() {
+    public double getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(int cantidad) {
+    public void setCantidad(double cantidad) {
         this.cantidad = cantidad;
     }
 
-    public float getPrecioProducto() {
+    public double getPrecioProducto() {
         return precioProducto;
     }
 
-    public void setPrecioProducto(float precioProducto) {
+    public void setPrecioProducto(double precioProducto) {
         this.precioProducto = precioProducto;
     }
 
-    public float getImporteTotal() {
+    public double getImporteTotal() {
         return importeTotal;
     }
 
-    public void setImporteTotal(float importeTotal) {
+    public void setImporteTotal(double importeTotal) {
         this.importeTotal = importeTotal;
     }
     

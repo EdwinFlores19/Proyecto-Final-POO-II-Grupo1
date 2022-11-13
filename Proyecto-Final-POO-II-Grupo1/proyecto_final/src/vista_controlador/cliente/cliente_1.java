@@ -1,6 +1,5 @@
 package vista_controlador.cliente;
 
-import vista_controlador.crear_cuenta;
 import vista_controlador.vista_login;
 import auxiliares.Auxiliares;
 
@@ -80,7 +79,7 @@ public class cliente_1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_buyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buyActionPerformed
-        crear_cuenta c1 = new crear_cuenta();
+        cliente_comprar c1 = new cliente_comprar();
         aux.change_jf(c1, this);
     }//GEN-LAST:event_b_buyActionPerformed
 

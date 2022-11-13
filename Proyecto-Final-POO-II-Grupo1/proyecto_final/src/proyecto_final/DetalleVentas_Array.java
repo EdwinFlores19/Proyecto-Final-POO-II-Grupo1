@@ -64,7 +64,7 @@ public class DetalleVentas_Array {
             BufferedWriter b = new BufferedWriter(f);
             PrintWriter pw = new PrintWriter(b);
 
-            pw.print(obj.getCodVenta()+","+obj.getCodProducto()+","+obj.getCantidad()+","+obj.getPrecioProducto()
+            pw.print(obj.getCodVenta()+","+obj.getCodProducto()+","+obj.getNomProducto()+","+obj.getCantidad()+","+obj.getPrecioProducto()
             +","+obj.getImporteTotal());
             pw.print("\n");
             pw.flush();
@@ -84,6 +84,14 @@ public class DetalleVentas_Array {
         }
     }*/
 
+    public int Correlativo() {
+        if (detalle_a.isEmpty()) {
+            return 1;
+        } else {
+            return detalle_a.get(detalle_a.size() - 1).getCodVenta()+ 1;
+        }
+    }
+    
     public DetalleVentas get(int pos) {
         return detalle_a.get(pos);
     }
@@ -117,8 +125,8 @@ public class DetalleVentas_Array {
             PrintWriter pw = new PrintWriter(b);
             for(DetalleVentas obj:detalle_a)
             {
-               pw.println(obj.getCodVenta()+","+obj.getCodProducto()+","+obj.getCantidad()+","+obj.getPrecioProducto()
-            +","+obj.getImporteTotal()); 
+               pw.println(obj.getCodVenta()+","+obj.getCodProducto()+","+obj.getNomProducto()+","+obj.getCantidad()+","+obj.getPrecioProducto()
+            +","+obj.getImporteTotal());
             }
             
             pw.flush();

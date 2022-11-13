@@ -101,7 +101,7 @@ public class vista_login extends javax.swing.JFrame {
         if (user.getPassword().equals(contrasena)) {
             roles(user);
         } else if ("error".equals(user.getPassword())) {
-            JOptionPane.showMessageDialog(rootPane, "Documento y/o contrasena incorrectas");
+            JOptionPane.showMessageDialog(rootPane, "Documento y/o contrasena incorrectas", "Login", JOptionPane.ERROR_MESSAGE);
             dni_.setText("");
             contraseña_.setText("");
         }
@@ -110,22 +110,22 @@ public class vista_login extends javax.swing.JFrame {
     private void roles(Usuario user) {
         switch (user.getRol()) {
             case "Administrador":
-                JOptionPane.showMessageDialog(rootPane, "Bienvenido a nuestra plataforma administrador!!!");
+                JOptionPane.showMessageDialog(rootPane, "Bienvenido a nuestra plataforma administrador!!!", "Login", JOptionPane.PLAIN_MESSAGE);
                 admin_1 a1 = new admin_1();
                 aux.change_jf(a1, this);
                 break;
             case "Vendedor":
-                JOptionPane.showMessageDialog(rootPane, "Bienvenido a nuestra plataforma vendedor!!!");
+                JOptionPane.showMessageDialog(rootPane, "Bienvenido a nuestra plataforma vendedor!!!", "Login", JOptionPane.PLAIN_MESSAGE);
                 vendedor_1 v1 = new vendedor_1();
                 aux.change_jf(v1, this);
                 break;
             case "Cliente":
-                JOptionPane.showMessageDialog(rootPane, "Bienvenido a nuestra plataforma cliente!!!");
+                JOptionPane.showMessageDialog(rootPane, "Bienvenido a nuestra plataforma cliente!!!", "Login", JOptionPane.PLAIN_MESSAGE);
                 cliente_1 c1 = new cliente_1();
                 aux.change_jf(c1, this);
                 break;
             default:
-                JOptionPane.showMessageDialog(rootPane, "Su rol no es admitido");
+                JOptionPane.showMessageDialog(rootPane, "Su rol no es admitido", "Login", JOptionPane.ERROR_MESSAGE);
                 this.setVisible(true);
                 break;
         }

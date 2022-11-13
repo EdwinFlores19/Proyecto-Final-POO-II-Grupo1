@@ -250,26 +250,26 @@ public class crear_cuenta extends javax.swing.JFrame {
                         cliente_a.agregar(cliente1);
                         cliente_a.grabar_archivo(cliente1);
 
-                        JOptionPane.showMessageDialog(rootPane, "Cuenta creada satisfactoriamente");
+                        JOptionPane.showMessageDialog(rootPane, "Cuenta creada satisfactoriamente", "Creación de cuenta", JOptionPane.INFORMATION_MESSAGE);
 
                         vista_login v1 = new vista_login();
                         aux.change_jf(v1, this);
                     } else {
-                        JOptionPane.showMessageDialog(rootPane, "El documento ingresado ya se encuentra registrado");
+                        JOptionPane.showMessageDialog(rootPane, "El documento ingresado ya se encuentra registrado", "Creación de cuenta", JOptionPane.INFORMATION_MESSAGE);
                         aux.clean_tfs(tfs);
                     }
 
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "El DNI (8 digitos) o RUC (11 digitos) ingresado es incorrecto");
+                    JOptionPane.showMessageDialog(rootPane, "El DNI (8 digitos) o RUC (11 digitos) ingresado es incorrecto", "Creación de cuenta", JOptionPane.ERROR_MESSAGE);
                     credencial_.setText("");
                 }
             } else {
-                JOptionPane.showMessageDialog(rootPane, "No puede dejar campos vacios");
+                JOptionPane.showMessageDialog(rootPane, "No puede dejar campos vacios", "Creación de cuenta", JOptionPane.ERROR_MESSAGE);
                 aux.clean_tfs(tfs);
                 sexo_.setSelectedIndex(0);
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Las contraseñas deben ser iguales y no vacias");
+            JOptionPane.showMessageDialog(rootPane, "Las contraseñas deben ser iguales y no vacias", "Creación de cuenta", JOptionPane.ERROR_MESSAGE);
             password2_.setText("");
             password_.setText("");
         }
