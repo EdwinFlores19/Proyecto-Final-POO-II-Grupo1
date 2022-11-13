@@ -4,6 +4,9 @@ import javax.swing.JOptionPane;
 import vista_controlador.admin.productos_1;
 import proyecto_final.*;
 import auxiliares.Auxiliares;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class nuevo_producto extends javax.swing.JFrame {
 
@@ -13,6 +16,9 @@ public class nuevo_producto extends javax.swing.JFrame {
     public nuevo_producto() {
         initComponents();
         array_pro.inicializar();
+        Calendar c2 = new GregorianCalendar();
+        fecha_ingreso.setCalendar(c2);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -26,8 +32,6 @@ public class nuevo_producto extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        unidades_ = new javax.swing.JTextField();
-        tamaño_ = new javax.swing.JTextField();
         color_ = new javax.swing.JTextField();
         nombre_ = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -35,9 +39,13 @@ public class nuevo_producto extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        costo_ = new javax.swing.JTextField();
-        precio_ = new javax.swing.JTextField();
-        stock_ = new javax.swing.JTextField();
+        fecha_ingreso = new com.toedter.calendar.JDateChooser();
+        fecha_vencimiento = new com.toedter.calendar.JDateChooser();
+        tamaño_ = new javax.swing.JComboBox<>();
+        unidades_ = new javax.swing.JSpinner();
+        stock_ = new javax.swing.JSpinner();
+        costo_ = new javax.swing.JSpinner();
+        precio_ = new javax.swing.JSpinner();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,23 +99,6 @@ public class nuevo_producto extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 530, 220, -1));
 
-        unidades_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        unidades_.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        unidades_.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                unidades_KeyPressed(evt);
-            }
-        });
-        getContentPane().add(unidades_, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 140, -1));
-
-        tamaño_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        tamaño_.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                tamaño_KeyPressed(evt);
-            }
-        });
-        getContentPane().add(tamaño_, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 140, -1));
-
         color_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         color_.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -148,33 +139,27 @@ public class nuevo_producto extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("stock:");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, -1, -1));
+        getContentPane().add(fecha_ingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 270, 140, 30));
+        getContentPane().add(fecha_vencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 320, 140, 30));
 
-        costo_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        costo_.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                costo_KeyPressed(evt);
-            }
-        });
-        getContentPane().add(costo_, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 170, 140, -1));
+        tamaño_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        tamaño_.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "pequeño", "mediano", "grande" }));
+        getContentPane().add(tamaño_, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 140, 30));
 
-        precio_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        precio_.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                precio_KeyPressed(evt);
-            }
-        });
-        getContentPane().add(precio_, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, 140, -1));
+        unidades_.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        getContentPane().add(unidades_, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 140, 30));
 
-        stock_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        stock_.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                stock_KeyPressed(evt);
-            }
-        });
-        getContentPane().add(stock_, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 140, -1));
+        stock_.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        getContentPane().add(stock_, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 140, 30));
+
+        costo_.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 1.0d));
+        getContentPane().add(costo_, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 160, 140, 30));
+
+        precio_.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 1.0d));
+        getContentPane().add(precio_, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 210, 140, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -185,28 +170,19 @@ public class nuevo_producto extends javax.swing.JFrame {
         aux.change_jf(p1, this);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void unidades_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_unidades_KeyPressed
-        char c = evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            unidades_.setEditable(false);
-        } else {
-            unidades_.setEditable(true);
-        }
-    }//GEN-LAST:event_unidades_KeyPressed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int codigo = array_pro.Correlativo();
         String nombre = nombre_.getText();
         String color = color_.getText();
-        String tamaño = tamaño_.getText();
-        int unidades = Integer.parseInt(unidades_.getText());
-        int stock = Integer.parseInt(stock_.getText());
-        double costo = Double.parseDouble(costo_.getText());
-        double precio = Double.parseDouble(precio_.getText());
-        String ingreso = "a";
-        String vencimiento = "b";
+        String tamaño = (String) tamaño_.getSelectedItem();
+        int unidades = (int) unidades_.getValue();
+        int stock = (int) stock_.getValue();
+        double costo = (double) costo_.getValue();
+        double precio =(double) precio_.getValue();
+        Date ingreso = fecha_ingreso.getDate();
+        Date vencimiento =  fecha_vencimiento.getDate();
 
-        if (!(nombre.isEmpty()) && !(tamaño.isEmpty()) && !(color.isEmpty())) {
+        if (!(nombre.isEmpty()) && !(tamaño.isEmpty()) && !(color.isEmpty()) && !"".equals(tamaño)) {
             Productos pro1 = new Productos();
             pro1.setP_id(codigo);
             pro1.setNombre(nombre);
@@ -216,8 +192,8 @@ public class nuevo_producto extends javax.swing.JFrame {
             pro1.setStock(stock);
             pro1.setCosto(costo);
             pro1.setPrecio(precio);
-            pro1.setF_ingreso(ingreso);
-            pro1.setF_vencimiento(vencimiento);
+            pro1.setF_ingreso(String.valueOf(ingreso));
+            pro1.setF_vencimiento(String.valueOf(vencimiento));
 
             array_pro.agregar(pro1);
             array_pro.grabar_archivo(pro1);
@@ -229,20 +205,11 @@ public class nuevo_producto extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Ningun casillero debe estar vacio");
             nombre_.setText("");
             color_.setText("");
-            tamaño_.setText("");
+            
         }
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void tamaño_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tamaño_KeyPressed
-        char c = evt.getKeyChar();
-        if (Character.isDigit(c)) {
-            tamaño_.setEditable(false);
-        } else {
-            tamaño_.setEditable(true);
-        }
-    }//GEN-LAST:event_tamaño_KeyPressed
 
     private void color_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_color_KeyPressed
         char c = evt.getKeyChar();
@@ -261,33 +228,6 @@ public class nuevo_producto extends javax.swing.JFrame {
             tamaño_.setEditable(true);
         }
     }//GEN-LAST:event_nombre_KeyPressed
-
-    private void stock_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_stock_KeyPressed
-        char c = evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            tamaño_.setEditable(false);
-        } else {
-            tamaño_.setEditable(true);
-        }
-    }//GEN-LAST:event_stock_KeyPressed
-
-    private void costo_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_costo_KeyPressed
-        char c = evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            tamaño_.setEditable(false);
-        } else {
-            tamaño_.setEditable(true);
-        }
-    }//GEN-LAST:event_costo_KeyPressed
-
-    private void precio_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_precio_KeyPressed
-        char c = evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            tamaño_.setEditable(false);
-        } else {
-            tamaño_.setEditable(true);
-        }
-    }//GEN-LAST:event_precio_KeyPressed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -323,7 +263,9 @@ public class nuevo_producto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField color_;
-    private javax.swing.JTextField costo_;
+    private javax.swing.JSpinner costo_;
+    private com.toedter.calendar.JDateChooser fecha_ingreso;
+    private com.toedter.calendar.JDateChooser fecha_vencimiento;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -338,9 +280,9 @@ public class nuevo_producto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField nombre_;
-    private javax.swing.JTextField precio_;
-    private javax.swing.JTextField stock_;
-    private javax.swing.JTextField tamaño_;
-    private javax.swing.JTextField unidades_;
+    private javax.swing.JSpinner precio_;
+    private javax.swing.JSpinner stock_;
+    private javax.swing.JComboBox<String> tamaño_;
+    private javax.swing.JSpinner unidades_;
     // End of variables declaration//GEN-END:variables
 }

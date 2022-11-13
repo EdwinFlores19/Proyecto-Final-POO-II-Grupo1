@@ -46,7 +46,7 @@ public class buscar_producto extends javax.swing.JFrame {
 
         vencimiento_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         vencimiento_.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(vencimiento_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, 20, 40));
+        getContentPane().add(vencimiento_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, 300, 40));
 
         codigo_.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         codigo_.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));

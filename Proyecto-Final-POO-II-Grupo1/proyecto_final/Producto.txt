@@ -1,2 +1,8 @@
 1,naranjas,anaranjado,grande,200,100,0.8,10.0,a,b
 2,yogurt,fresa,grande,500,34,5.0,7.5,a,b
+3,coca cola zero,negro,pequeño,1000,129,1.5,3.0,d MMM y,d MMM y
+4,laptop,negro,mediano,100,45,2500.0,4000.0,Mon Nov 21 00:00:00 PET 2022,Wed Nov 30 00:00:00 PET 2022
+5,a,a,d,12,12,12.0,12.0,Tue Nov 15 11:47:16 PET 2022,Thu Dec 29 11:47:16 PET 2022
+6,q,q,q,1,1,1.0,1.0,Sat Nov 12 12:02:29 PET 2022,Sun Nov 12 12:02:35 PET 2023
+7,jugo de naranja 1lt,anaranjado,mediano,100,50,1.0,4.0,Sat Nov 12 12:37:08 PET 2022,Sun Nov 12 12:37:34 PET 2023
+8,1kg huevo,blanco,pequeño,500,100,2.0,4.0,Sat Nov 12 12:39:13 PET 2022,Sun Nov 12 12:39:34 PET 2023

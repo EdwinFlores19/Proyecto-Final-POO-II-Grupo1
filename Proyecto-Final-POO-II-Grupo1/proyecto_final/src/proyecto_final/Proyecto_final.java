@@ -8,5 +8,4 @@ public class Proyecto_final {
         vista_login log = new vista_login();
         log.setVisible(true);
     }
-
 }

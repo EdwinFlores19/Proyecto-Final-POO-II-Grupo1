@@ -75,7 +75,7 @@ public class modificar_producto extends javax.swing.JFrame {
                 vencimiento_KeyPressed(evt);
             }
         });
-        getContentPane().add(vencimiento_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, 100, -1));
+        getContentPane().add(vencimiento_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, 270, -1));
 
         jLabel7.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
