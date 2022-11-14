@@ -212,21 +212,23 @@ public class cliente_comprar extends javax.swing.JFrame {
             Object[] row_data = {pro1.getP_id(), pro1.getNombre(), Integer.parseInt(cant), pro1.getPrecio(), pro1.getPrecio() * Double.parseDouble(cant)};
             //modelo.addRow(row_data);
 
-            DetalleVentas det1 = new DetalleVentas();
-            det1.setCodVenta(array2.Correlativo());
-            det1.setCodProducto(pro1.getP_id());
-            det1.setNomProducto(pro1.getNombre());
-            det1.setCantidad(Double.parseDouble(cant));
-            det1.setPrecioProducto(pro1.getPrecio());
-            det1.setImporteTotal((double) row_data[4]);
-            boleta_a.add(det1);
-
             DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
             modelo.addRow(row_data);
         }
     }//GEN-LAST:event_b_selActionPerformed
 
     private void b_buyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buyActionPerformed
+        for (int i = 0; i < table_products.getRowCount(); i++) {
+            DetalleVentas det1 = new DetalleVentas();
+            det1.setCodVenta(array2.Correlativo());
+            det1.setCodProducto(Integer.parseInt(table_products.getValueAt(i, 0).toString()));
+            det1.setNomProducto(table_products.getValueAt(i, 1).toString());
+            det1.setCantidad(Double.parseDouble(table_products.getValueAt(i, 2).toString()));
+            det1.setPrecioProducto(Double.parseDouble(table_products.getValueAt(i, 3).toString()));
+            det1.setImporteTotal(Double.parseDouble(table_products.getValueAt(i, 4).toString()));
+            boleta_a.add(det1);
+        }
+
         int confirm = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro de su compra?", "Confirmación de la compra", JOptionPane.YES_NO_CANCEL_OPTION);
         if (confirm != 1) {
             for (int i = 0; i < boleta_a.size(); i++) {
