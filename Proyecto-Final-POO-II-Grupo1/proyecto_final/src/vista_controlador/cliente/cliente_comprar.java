@@ -268,8 +268,8 @@ public class cliente_comprar extends javax.swing.JFrame {
         String resumen = "Codigo de venta: " + obj.getCodVenta() + "\n";
         double suma = 0;
         for (int i = 0; i < table_products.getRowCount(); i++) {
-            resumen +=
-                    "Nombre: " + table_products.getValueAt(i, 1).toString() + "\n"
+            resumen
+                    += "Nombre: " + table_products.getValueAt(i, 1).toString() + "\n"
                     + "  Cantidad: " + table_products.getValueAt(i, 2).toString() + "\n"
                     + "  Precio: " + table_products.getValueAt(i, 3).toString() + "\n"
                     + "  Subtotal: " + table_products.getValueAt(i, 4).toString() + "\n";
@@ -296,8 +296,23 @@ public class cliente_comprar extends javax.swing.JFrame {
                 "Resumen de compra:\n" + resumen_de_compra(det1),
                 "Resumen de compra",
                 JOptionPane.YES_NO_OPTION);
+        if (confirm == 0) {
+            for (int i = 0; i < boleta_a.size(); i++) {
+                detvent_array.agregar(boleta_a.get(i));
+                detvent_array.grabar_archivo(boleta_a.get(i));
+
+                Productos prod1 = prod_array.busqueda_codigo(Integer.parseInt(table_products.getValueAt(i, 0).toString()));
+                int prev_stock = prod1.getStock();
+                int cant_less = Integer.parseInt(table_products.getValueAt(i, 2).toString());
+                prod1.setStock(prev_stock - cant_less);
+                prod_array.grabarModificareliminar();
+                /*Ventas faltante generacion y duardado*/
+            }
+            DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
+            modelo.setRowCount(0);
+        }
         // TODO En caso poner si (confirm = 0), proceder con la venta
-        
+
         /*
         int confirm = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro de su compra?", "Confirmación de la compra", JOptionPane.YES_NO_CANCEL_OPTION);
         if (confirm == 0) {

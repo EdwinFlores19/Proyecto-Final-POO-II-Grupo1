@@ -104,12 +104,13 @@ public class cliente_1 extends javax.swing.JFrame {
     }//GEN-LAST:event_b_exitActionPerformed
 
     private void b_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buscarActionPerformed
-        cliente_buscar_producto cbp1 = new cliente_buscar_producto();
+        cliente_buscar cbp1 = new cliente_buscar();
         aux.change_jf(cbp1, this);
     }//GEN-LAST:event_b_buscarActionPerformed
 
     private void b_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_listarActionPerformed
-        // TODO add your handling code here:
+        cliente_listar cl1 = new cliente_listar();
+        aux.change_jf(cl1, this);
     }//GEN-LAST:event_b_listarActionPerformed
 
     private void b_buscar_reciboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buscar_reciboActionPerformed

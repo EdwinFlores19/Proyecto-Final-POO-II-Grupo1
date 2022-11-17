@@ -5,12 +5,12 @@ import javax.swing.JOptionPane;
 import proyecto_final.productos_Array;
 import proyecto_final.Productos;
 
-public class cliente_buscar_producto extends javax.swing.JFrame {
+public class cliente_buscar extends javax.swing.JFrame {
 
     productos_Array array1 = new productos_Array();
     Auxiliares aux = new Auxiliares();
 
-    public cliente_buscar_producto() {
+    public cliente_buscar() {
         initComponents();
         array1.inicializar();
     }
@@ -176,21 +176,23 @@ public class cliente_buscar_producto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(cliente_buscar_producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cliente_buscar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(cliente_buscar_producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cliente_buscar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(cliente_buscar_producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cliente_buscar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(cliente_buscar_producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cliente_buscar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new cliente_buscar_producto().setVisible(true);
+                new cliente_buscar().setVisible(true);
             }
         });
     }
