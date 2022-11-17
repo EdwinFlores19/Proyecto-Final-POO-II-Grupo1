@@ -21,12 +21,12 @@ public class cliente_comprar extends javax.swing.JFrame {
     public cliente_comprar() {
         initComponents();
         array1.inicializar();
+
         /* Inicializar table desde UI, con una funcion señal, si es que se cambio el valor en la celda de unidades, actualizar el total */
-        //modelo = new DefaultTableModel();
         table_products.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{},
                 new String[]{
-                    "Codigo", "Nombre", "Unidades", "Precio", "Total"
+                    "Codigo", "Nombre", "Cantidades", "Precio", "Total"
                 }
         ) {
             Class[] types = new Class[]{
@@ -48,13 +48,20 @@ public class cliente_comprar extends javax.swing.JFrame {
         });
 
         table_products.setColumnSelectionAllowed(true);
+
         table_products.getTableHeader().setReorderingAllowed(false);
 
-//        modelo.addColumn("Codigo");
-//        modelo.addColumn("Nombre");
-//        modelo.addColumn("Unidades");
-//        modelo.addColumn("Precio");
-//        modelo.addColumn("Total");
+        jScrollPane1.setViewportView(table_products);
+
+        table_products.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (table_products.getColumnModel().getColumnCount() > 0) {
+            table_products.getColumnModel().getColumn(0).setResizable(false);
+            table_products.getColumnModel().getColumn(1).setResizable(false);
+            table_products.getColumnModel().getColumn(2).setResizable(false);
+            table_products.getColumnModel().getColumn(3).setResizable(false);
+            table_products.getColumnModel().getColumn(4).setResizable(false);
+        }
+
     }
 
     @SuppressWarnings("unchecked")
@@ -67,6 +74,7 @@ public class cliente_comprar extends javax.swing.JFrame {
         codigo_ = new javax.swing.JTextField();
         b_sel = new javax.swing.JButton();
         b_edit = new javax.swing.JButton();
+        b_delete = new javax.swing.JButton();
         b_buy = new javax.swing.JButton();
         b_exit1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -88,7 +96,7 @@ public class cliente_comprar extends javax.swing.JFrame {
                 java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -142,12 +150,25 @@ public class cliente_comprar extends javax.swing.JFrame {
         b_edit.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         b_edit.setForeground(new java.awt.Color(0, 0, 0));
         b_edit.setText("editar");
+        b_edit.setEnabled(false);
         b_edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_editActionPerformed(evt);
             }
         });
         getContentPane().add(b_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 510, 130, 30));
+
+        b_delete.setBackground(new java.awt.Color(255, 255, 255));
+        b_delete.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        b_delete.setForeground(new java.awt.Color(0, 0, 0));
+        b_delete.setText("eliminar");
+        b_delete.setEnabled(false);
+        b_delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_deleteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(b_delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 510, 130, 30));
 
         b_buy.setBackground(new java.awt.Color(255, 255, 255));
         b_buy.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
@@ -208,12 +229,56 @@ public class cliente_comprar extends javax.swing.JFrame {
             while (cant.isBlank()) {
                 cant = JOptionPane.showInputDialog(rootPane, "Ingrese la cantidad de " + pro1.getNombre() + " que desea comprar:");
             }
+
             b_buy.setEnabled(true);
-            Object[] row_data = {pro1.getP_id(), pro1.getNombre(), Integer.parseInt(cant), pro1.getPrecio(), pro1.getPrecio() * Double.parseDouble(cant)};
-            //modelo.addRow(row_data);
+            b_delete.setEnabled(true);
+            b_edit.setEnabled(true);
+
+            /*TODO: TERMINAR COMPRAS. LOS BOTONES PUEDE QUE GENEREN CONFUSIÓN?*/
+            // Verificar por el codigo si el producto ya esta en el JTable
+            // Si esta, sumar la cantidad
+            // Si no esta, agregarlo
+            // Si la cantidad es 0, eliminarlo
+            if (table_products.getRowCount() == 0) {
+                Object[] row_data = {pro1.getP_id(), pro1.getNombre(), Integer.parseInt(cant), pro1.getPrecio(), pro1.getPrecio() * Double.parseDouble(cant)};
+
+                DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
+                modelo.addRow(row_data);
+            } else {
+//                for (int i = 0; i < table_products.getRowCount(); i++) {
+//                    if (table_products.getValueAt(i, 0).equals(codigo)) {
+//                        table_products.setValueAt(Integer.parseInt(cant) + Integer.parseInt(table_products.getValueAt(i, 2).toString()), i, 2);
+//                        table_products.setValueAt(pro1.getPrecio() * Double.parseDouble(cant) + Double.parseDouble(table_products.getValueAt(i, 4).toString()), i, 4);
+//                        return;
+//                    } else {
+//                        Object[] row_data = {pro1.getP_id(), pro1.getNombre(), Integer.parseInt(cant), pro1.getPrecio(), pro1.getPrecio() * Double.parseDouble(cant)};
+//
+//                        DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
+//                        modelo.addRow(row_data);
+//                        return;
+//                    }
+//                }
+                for (int i = 0; i < table_products.getRowCount(); i++) {
+                    if (cant.equals("0") && table_products.getValueAt(i, 0).equals(codigo)) {
+                        DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
+                        modelo.removeRow(i);
+                        break;
+                    } else if (table_products.getValueAt(i, 0).equals(codigo) && cant.equals("0") == false) {
+                        table_products.setValueAt(Integer.parseInt(cant) + Integer.parseInt(table_products.getValueAt(i, 2).toString()), i, 2);
+                        table_products.setValueAt(pro1.getPrecio() * Double.parseDouble(cant) + Double.parseDouble(table_products.getValueAt(i, 4).toString()), i, 4);
+                        break;
+                    }
+                }
+                Object[] row_data = {pro1.getP_id(), pro1.getNombre(), Integer.parseInt(cant), pro1.getPrecio(), pro1.getPrecio() * Double.parseDouble(cant)};
+
+                DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
+                modelo.addRow(row_data);
+            }
+
+            /*Object[] row_data = {pro1.getP_id(), pro1.getNombre(), Integer.parseInt(cant), pro1.getPrecio(), pro1.getPrecio() * Double.parseDouble(cant)};
 
             DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
-            modelo.addRow(row_data);
+            modelo.addRow(row_data);*/
         }
     }//GEN-LAST:event_b_selActionPerformed
 
@@ -236,6 +301,8 @@ public class cliente_comprar extends javax.swing.JFrame {
                 array2.grabar_archivo(boleta_a.get(i));
             }
         }
+        DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
+        modelo.setRowCount(0);
     }//GEN-LAST:event_b_buyActionPerformed
 
     private void b_exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_exit1ActionPerformed
@@ -244,7 +311,6 @@ public class cliente_comprar extends javax.swing.JFrame {
     }//GEN-LAST:event_b_exit1ActionPerformed
 
     private void b_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_editActionPerformed
-        // get the selected row and show an optionpane asking for the new value
         int row = table_products.getSelectedRow();
         if (row == -1) {
             JOptionPane.showMessageDialog(rootPane, "No se ha elegido un producto", "Error de edición", JOptionPane.ERROR_MESSAGE);
@@ -257,8 +323,20 @@ public class cliente_comprar extends javax.swing.JFrame {
             double pre_val = (double) table_products.getValueAt(row, 3);
             table_products.setValueAt(Double.parseDouble(value) * pre_val, row, 4);
         }
-
     }//GEN-LAST:event_b_editActionPerformed
+
+    private void b_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_deleteActionPerformed
+        int row = table_products.getSelectedRow();
+        if (row == -1) {
+            JOptionPane.showMessageDialog(rootPane, "No se ha elegido un producto", "Error de edición", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int confirm = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro de su elección?", "Confirmación de edición", JOptionPane.YES_NO_CANCEL_OPTION);
+            if (confirm != 1) {
+                DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
+                modelo.removeRow(row);
+            }
+        }
+    }//GEN-LAST:event_b_deleteActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -295,6 +373,7 @@ public class cliente_comprar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_buy;
+    private javax.swing.JButton b_delete;
     private javax.swing.JButton b_edit;
     private javax.swing.JButton b_exit1;
     private javax.swing.JButton b_sel;
