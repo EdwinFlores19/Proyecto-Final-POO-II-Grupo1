@@ -23,4 +23,14 @@ public class Auxiliares {
         hide.setVisible(false);
         hide.dispose();
     }
+    
+    public static boolean isNumeric(String s)
+    {
+        try {
+            Integer.parseInt(s);
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+        return true;
+    }
 }

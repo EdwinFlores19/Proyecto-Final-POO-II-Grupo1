@@ -46,18 +46,33 @@ public class cliente_1 extends javax.swing.JFrame {
         b_buscar.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         b_buscar.setForeground(new java.awt.Color(0, 0, 0));
         b_buscar.setText("buscar producto");
+        b_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_buscarActionPerformed(evt);
+            }
+        });
         getContentPane().add(b_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 300, 280, -1));
 
         b_listar.setBackground(new java.awt.Color(255, 255, 255));
         b_listar.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         b_listar.setForeground(new java.awt.Color(0, 0, 0));
         b_listar.setText("listar productos");
+        b_listar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_listarActionPerformed(evt);
+            }
+        });
         getContentPane().add(b_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 280, -1));
 
         b_buscar_recibo.setBackground(new java.awt.Color(255, 255, 255));
         b_buscar_recibo.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         b_buscar_recibo.setForeground(new java.awt.Color(0, 0, 0));
         b_buscar_recibo.setText("buscar boleta/factura");
+        b_buscar_recibo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_buscar_reciboActionPerformed(evt);
+            }
+        });
         getContentPane().add(b_buscar_recibo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, 280, -1));
 
         b_exit.setBackground(new java.awt.Color(255, 255, 255));
@@ -87,6 +102,19 @@ public class cliente_1 extends javax.swing.JFrame {
         vista_login v1 = new vista_login();
         aux.change_jf(v1, this);
     }//GEN-LAST:event_b_exitActionPerformed
+
+    private void b_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buscarActionPerformed
+        cliente_buscar_producto cbp1 = new cliente_buscar_producto();
+        aux.change_jf(cbp1, this);
+    }//GEN-LAST:event_b_buscarActionPerformed
+
+    private void b_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_listarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_listarActionPerformed
+
+    private void b_buscar_reciboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buscar_reciboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_buscar_reciboActionPerformed
 
     public static void main(String args[]) {
         try {
