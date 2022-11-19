@@ -8,12 +8,15 @@ import proyecto_final.productos_Array;
 import proyecto_final.Productos;
 import proyecto_final.DetalleVentas;
 import proyecto_final.DetalleVentas_Array;
+import proyecto_final.Ventas;
+import proyecto_final.Ventas_Array;
 // TODO Ventas
 
 public class cliente_comprar extends javax.swing.JFrame {
 
     productos_Array prod_array = new productos_Array();
     DetalleVentas_Array detvent_array = new DetalleVentas_Array();
+    Ventas_Array vent_array = new Ventas_Array();
     Auxiliares aux = new Auxiliares();
 
     /* Boleta local */
@@ -281,6 +284,7 @@ public class cliente_comprar extends javax.swing.JFrame {
 
     private void b_buyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buyActionPerformed
         DetalleVentas det1 = new DetalleVentas();
+        double suma = 0;
         for (int i = 0; i < table_products.getRowCount(); i++) {
             det1.setCodVenta(detvent_array.Correlativo());
             det1.setCodProducto(Integer.parseInt(table_products.getValueAt(i, 0).toString()));
@@ -288,6 +292,7 @@ public class cliente_comprar extends javax.swing.JFrame {
             det1.setCantidad(Double.parseDouble(table_products.getValueAt(i, 2).toString()));
             det1.setPrecioProducto(Double.parseDouble(table_products.getValueAt(i, 3).toString()));
             det1.setImporteTotal(Double.parseDouble(table_products.getValueAt(i, 4).toString()));
+            suma += Double.parseDouble(table_products.getValueAt(i, 4).toString());
             boleta_a.add(det1);
         }
 
@@ -307,29 +312,25 @@ public class cliente_comprar extends javax.swing.JFrame {
                 prod1.setStock(prev_stock - cant_less);
                 prod_array.grabarModificareliminar();
                 /*Ventas faltante generacion y duardado*/
+                Ventas vent1 = new Ventas();
+                vent1.setCodigo(vent_array.Correlativo());
+                //vent1.setDocCliente(SACAR DEL LOGING);
+                //vent1.setFecha(FECHA DEL LOGIN);
+                //vent1.setHora(HORA DEL LOGIN);
+                vent1.setSubtotal(Float.parseFloat(table_products.getValueAt(i, 4).toString()));
+                vent1.setIgv((float) 0.18);
+                vent1.setTotal((float) suma);
+                //vent1.setDocVendedor(NO SE ME OCURRE COMO PODER HACERLO);
+                /*if (DOC_DEL_CLIENTE.lenght() == 8) {
+                    vent1.setTipoVenta("DNI");
+                } else {
+                    vent1.setTipoVenta("RUC");
+                }*/
+
             }
             DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
             modelo.setRowCount(0);
         }
-        // TODO En caso poner si (confirm = 0), proceder con la venta
-
-        /*
-        int confirm = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro de su compra?", "Confirmación de la compra", JOptionPane.YES_NO_CANCEL_OPTION);
-        if (confirm == 0) {
-            for (int i = 0; i < boleta_a.size(); i++) {
-                detvent_array.agregar(boleta_a.get(i));
-                detvent_array.grabar_archivo(boleta_a.get(i));
-                Productos prod1 = prod_array.busqueda_codigo(Integer.parseInt(table_products.getValueAt(i, 0).toString()));
-
-                int prev_stock = prod1.getStock();
-                int cant_less = Integer.parseInt(table_products.getValueAt(i, 2).toString());
-                prod1.setStock(prev_stock - cant_less);
-                prod_array.grabarModificareliminar();
-            }
-        }
-        DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
-        modelo.setRowCount(0);
-         */
     }//GEN-LAST:event_b_buyActionPerformed
 
     private void b_exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_exit1ActionPerformed
