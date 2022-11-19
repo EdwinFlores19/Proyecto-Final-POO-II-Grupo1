@@ -3,6 +3,9 @@ package vista_controlador.admin;
 import javax.swing.JOptionPane;
 import proyecto_final.usuario_Array;
 import auxiliares.Auxiliares;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.swing.JTextField;
 import proyecto_final.Cliente;
 import proyecto_final.Usuario;
@@ -18,6 +21,8 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
         initComponents();
         usuario_a.inicializar();
         cliente_a.inicializar();
+        Calendar c2 = new GregorianCalendar();
+        fecha_.setCalendar(c2);
     }
 
     @SuppressWarnings("unchecked")
@@ -208,7 +213,7 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
         String documento = credencial_.getText();
         String nombre = nombre_.getText();
         String apellido = apellido_.getText();
-        String f_nacimiento = fecha_.getDateFormatString();
+        Date f_nacimiento = fecha_.getDate();
         String sexo = (String) sexo_.getSelectedItem();
         String email = email_.getText();
         String direccion = direccion_.getText();
@@ -217,7 +222,7 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
         String password = password_.getText();
         String password2 = password2_.getText();
 
-        String strs[] = {documento, nombre, apellido, f_nacimiento, sexo, email, direccion, distrito, provincia, password, password2};
+        String strs[] = {documento, nombre, apellido,String.valueOf(f_nacimiento), sexo, email, direccion, distrito, provincia, password, password2};
         JTextField tfs[] = {apellido_, credencial_, direccion_, email_, nombre_, password2_, password_, provincia_};
 
         Usuario user1 = usuario_a.busqueda_credencial(documento);
@@ -232,7 +237,7 @@ public class crear_cuenta_cliente extends javax.swing.JFrame {
                         cliente1.setDocumento(documento);
                         cliente1.setNombre(nombre);
                         cliente1.setApellido(apellido);
-                        cliente1.setF_nacimiento(f_nacimiento);
+                        cliente1.setF_nacimiento(String.valueOf(f_nacimiento));
                         cliente1.setSexo(sexo);
                         cliente1.setEmail(email);
                         cliente1.setDireccion(direccion);

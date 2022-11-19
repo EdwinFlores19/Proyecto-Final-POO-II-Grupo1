@@ -1,6 +1,7 @@
 package vista_controlador.admin;
 
 import auxiliares.Auxiliares;
+import vista_controlador.cliente.cliente_eliminar;
 
 public class clientes_1 extends javax.swing.JFrame {
 
@@ -44,6 +45,11 @@ public class clientes_1 extends javax.swing.JFrame {
         b_eliminar.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         b_eliminar.setForeground(new java.awt.Color(0, 0, 0));
         b_eliminar.setText("eliminar cliente");
+        b_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_eliminarActionPerformed(evt);
+            }
+        });
         getContentPane().add(b_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, 200, -1));
 
         b_listar.setBackground(new java.awt.Color(255, 255, 255));
@@ -89,6 +95,13 @@ public class clientes_1 extends javax.swing.JFrame {
         listado_cliente l1 = new listado_cliente();
         aux.change_jf(l1, this);
     }//GEN-LAST:event_b_listarActionPerformed
+
+    private void b_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_eliminarActionPerformed
+        // TODO add your handling code here:
+        cliente_eliminar el=new cliente_eliminar();
+        el.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_b_eliminarActionPerformed
 
     public static void main(String args[]) {
         try {

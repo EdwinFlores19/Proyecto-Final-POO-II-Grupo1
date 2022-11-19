@@ -46,7 +46,9 @@ public class Proveedor_Array {
                 return proveedor_a.get(i);
             }
         }
-        return null;
+        Proveedor p1= new Proveedor();
+        p1.setRuc("0");
+        return p1;
     }
 
     public void grabar_archivo(Proveedor obj) {

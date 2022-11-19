@@ -30,10 +30,10 @@ public class modificar_producto extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         b_modificar = new javax.swing.JButton();
-        precio_ = new javax.swing.JTextField();
-        stock_ = new javax.swing.JTextField();
         nombre_ = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        stock_ = new javax.swing.JSpinner();
+        precio_ = new javax.swing.JSpinner();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -108,29 +108,13 @@ public class modificar_producto extends javax.swing.JFrame {
         });
         getContentPane().add(b_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 570, 260, -1));
 
-        precio_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        precio_.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                precio_KeyPressed(evt);
-            }
-        });
-        getContentPane().add(precio_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 310, 100, -1));
-
-        stock_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        stock_.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                stock_KeyPressed(evt);
-            }
-        });
-        getContentPane().add(stock_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 100, -1));
-
         nombre_.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         nombre_.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 nombre_KeyPressed(evt);
             }
         });
-        getContentPane().add(nombre_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, 100, -1));
+        getContentPane().add(nombre_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, 140, -1));
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
@@ -142,6 +126,12 @@ public class modificar_producto extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 630, 220, -1));
+
+        stock_.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        getContentPane().add(stock_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 140, 30));
+
+        precio_.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        getContentPane().add(precio_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 310, 140, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/img1.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -164,14 +154,16 @@ public class modificar_producto extends javax.swing.JFrame {
         Productos pro1 = array1.busqueda_codigo(codigo);
         if (codigo == pro1.getP_id()) {
             nombre_.setText(pro1.getNombre());
-            precio_.setText(String.valueOf(pro1.getPrecio()));
-            stock_.setText(String.valueOf(pro1.getStock()));
             vencimiento_.setText(pro1.getF_vencimiento());
+            precio_.setValue(pro1.getPrecio());
+            stock_.setValue(pro1.getStock());
+            
         } else {
             codigo_.setText("");
             nombre_.setText("");
-            stock_.setText("");
-            precio_.setText("");
+            stock_.setValue(0);
+            precio_.setValue(0);
+            vencimiento_.setText("");
             JOptionPane.showMessageDialog(rootPane, "Codigo no encontrado");
         }
     }//GEN-LAST:event_b_buscarActionPerformed
@@ -180,10 +172,10 @@ public class modificar_producto extends javax.swing.JFrame {
         Productos producto1 = array1.busqueda_codigo(Integer.parseInt(codigo_.getText()));
 
         if (0 != producto1.getP_id()) {
-            producto1.setNombre(nombre_.getText());
-            producto1.setPrecio(Double.parseDouble(precio_.getText()));
-            producto1.setStock(Integer.parseInt(stock_.getText()));
+            producto1.setNombre(nombre_.getText());            
             producto1.setF_vencimiento(vencimiento_.getText());
+            producto1.setPrecio((double) precio_.getValue());
+            producto1.setStock((int) stock_.getValue());
 
             array1.grabarModificareliminar();
 
@@ -209,24 +201,6 @@ public class modificar_producto extends javax.swing.JFrame {
             codigo_.setEditable(true);
         }
     }//GEN-LAST:event_nombre_KeyPressed
-
-    private void stock_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_stock_KeyPressed
-        char c = evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            codigo_.setEditable(false);
-        } else {
-            codigo_.setEditable(true);
-        }
-    }//GEN-LAST:event_stock_KeyPressed
-
-    private void precio_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_precio_KeyPressed
-        char c = evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            codigo_.setEditable(false);
-        } else {
-            codigo_.setEditable(true);
-        }
-    }//GEN-LAST:event_precio_KeyPressed
 
     private void vencimiento_KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vencimiento_KeyPressed
         char c = evt.getKeyChar();
@@ -285,8 +259,8 @@ public class modificar_producto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField nombre_;
-    private javax.swing.JTextField precio_;
-    private javax.swing.JTextField stock_;
+    private javax.swing.JSpinner precio_;
+    private javax.swing.JSpinner stock_;
     private javax.swing.JTextField vencimiento_;
     // End of variables declaration//GEN-END:variables
 }

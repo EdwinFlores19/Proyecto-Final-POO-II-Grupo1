@@ -133,7 +133,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="seleccionar"/>
+        <Property name="text" type="java.lang.String" value="sleccionar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_selActionPerformed"/>
@@ -201,7 +201,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="finalizar compra"/>
+        <Property name="text" type="java.lang.String" value="Comprar"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
