@@ -286,6 +286,20 @@ public class cliente_comprar extends javax.swing.JFrame {
             modelo.addRow(row_data);*/
         }
     }//GEN-LAST:event_b_selActionPerformed
+    private String resumen_de_compra(DetalleVentas obj) {
+        String resumen = "Codigo de venta: " + obj.getCodVenta() + "\n";
+        double suma = 0;
+        for (int i = 0; i < table_products.getRowCount(); i++) {
+            resumen +=
+                    "Nombre: " + table_products.getValueAt(i, 1).toString() + "\n"
+                    + "  Cantidad: " + table_products.getValueAt(i, 2).toString() + "\n"
+                    + "  Precio: " + table_products.getValueAt(i, 3).toString() + "\n"
+                    + "  Subtotal: " + table_products.getValueAt(i, 4).toString() + "\n";
+            suma += Double.parseDouble(table_products.getValueAt(i, 4).toString());
+        }
+        resumen += "\nTotal: " + suma;
+        return resumen;
+    }
 
     private void b_buyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buyActionPerformed
         for (int i = 0; i < table_products.getRowCount(); i++) {
@@ -299,6 +313,14 @@ public class cliente_comprar extends javax.swing.JFrame {
             boleta_a.add(det1);
         }
 
+        int confirm = JOptionPane.showConfirmDialog(
+                rootPane,
+                "Resumen de compra:\n" + resumen_de_compra(det1),
+                "Resumen de compra",
+                JOptionPane.YES_NO_OPTION);
+        // TODO En caso poner si (confirm = 0), proceder con la venta
+        
+        /*
         int confirm = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro de su compra?", "Confirmación de la compra", JOptionPane.YES_NO_CANCEL_OPTION);
         if (confirm == 0) {
             for (int i = 0; i < boleta_a.size(); i++) {
