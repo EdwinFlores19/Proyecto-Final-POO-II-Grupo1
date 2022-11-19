@@ -277,7 +277,7 @@ public class cliente_comprar extends javax.swing.JFrame {
 
                     DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
                     modelo.addRow(row_data);
-                }                
+                }
             }
 
             /*Object[] row_data = {pro1.getP_id(), pro1.getNombre(), Integer.parseInt(cant), pro1.getPrecio(), pro1.getPrecio() * Double.parseDouble(cant)};
@@ -290,8 +290,8 @@ public class cliente_comprar extends javax.swing.JFrame {
         String resumen = "Codigo de venta: " + obj.getCodVenta() + "\n";
         double suma = 0;
         for (int i = 0; i < table_products.getRowCount(); i++) {
-            resumen +=
-                    "Nombre: " + table_products.getValueAt(i, 1).toString() + "\n"
+            resumen
+                    += "Nombre: " + table_products.getValueAt(i, 1).toString() + "\n"
                     + "  Cantidad: " + table_products.getValueAt(i, 2).toString() + "\n"
                     + "  Precio: " + table_products.getValueAt(i, 3).toString() + "\n"
                     + "  Subtotal: " + table_products.getValueAt(i, 4).toString() + "\n";
@@ -302,14 +302,16 @@ public class cliente_comprar extends javax.swing.JFrame {
     }
 
     private void b_buyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buyActionPerformed
+        DetalleVentas det1 = new DetalleVentas();
+        double suma = 0;
         for (int i = 0; i < table_products.getRowCount(); i++) {
-            DetalleVentas det1 = new DetalleVentas();
             det1.setCodVenta(array2.Correlativo());
             det1.setCodProducto(Integer.parseInt(table_products.getValueAt(i, 0).toString()));
             det1.setNomProducto(table_products.getValueAt(i, 1).toString());
             det1.setCantidad(Double.parseDouble(table_products.getValueAt(i, 2).toString()));
             det1.setPrecioProducto(Double.parseDouble(table_products.getValueAt(i, 3).toString()));
             det1.setImporteTotal(Double.parseDouble(table_products.getValueAt(i, 4).toString()));
+            suma += Double.parseDouble(table_products.getValueAt(i, 4).toString());
             boleta_a.add(det1);
         }
 
@@ -318,18 +320,15 @@ public class cliente_comprar extends javax.swing.JFrame {
                 "Resumen de compra:\n" + resumen_de_compra(det1),
                 "Resumen de compra",
                 JOptionPane.YES_NO_OPTION);
-        // TODO En caso poner si (confirm = 0), proceder con la venta
-        
-        /*
-        int confirm = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro de su compra?", "Confirmación de la compra", JOptionPane.YES_NO_CANCEL_OPTION);
+
         if (confirm == 0) {
             for (int i = 0; i < boleta_a.size(); i++) {
                 array2.agregar(boleta_a.get(i));
                 array2.grabar_archivo(boleta_a.get(i));
+                DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
+                modelo.setRowCount(0);
             }
         }
-        DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
-        modelo.setRowCount(0);
     }//GEN-LAST:event_b_buyActionPerformed
 
     private void b_exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_exit1ActionPerformed
