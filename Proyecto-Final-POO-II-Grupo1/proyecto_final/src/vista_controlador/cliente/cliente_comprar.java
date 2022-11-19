@@ -234,11 +234,6 @@ public class cliente_comprar extends javax.swing.JFrame {
             b_delete.setEnabled(true);
             b_edit.setEnabled(true);
 
-            /*TODO: TERMINAR COMPRAS. LOS BOTONES PUEDE QUE GENEREN CONFUSIÓN?*/
-            // Verificar por el codigo si el producto ya esta en el JTable
-            // Si esta, sumar la cantidad
-            // Si no esta, agregarlo
-            // Si la cantidad es 0, eliminarlo
             boolean encontrado = false;
             if (table_products.getRowCount() == 0) {
                 Object[] row_data = {pro1.getP_id(), pro1.getNombre(), Integer.parseInt(cant), pro1.getPrecio(), pro1.getPrecio() * Double.parseDouble(cant)};
@@ -246,19 +241,6 @@ public class cliente_comprar extends javax.swing.JFrame {
                 DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
                 modelo.addRow(row_data);
             } else {
-//                for (int i = 0; i < table_products.getRowCount(); i++) {
-//                    if (table_products.getValueAt(i, 0).equals(codigo)) {
-//                        table_products.setValueAt(Integer.parseInt(cant) + Integer.parseInt(table_products.getValueAt(i, 2).toString()), i, 2);
-//                        table_products.setValueAt(pro1.getPrecio() * Double.parseDouble(cant) + Double.parseDouble(table_products.getValueAt(i, 4).toString()), i, 4);
-//                        return;
-//                    } else {
-//                        Object[] row_data = {pro1.getP_id(), pro1.getNombre(), Integer.parseInt(cant), pro1.getPrecio(), pro1.getPrecio() * Double.parseDouble(cant)};
-//
-//                        DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
-//                        modelo.addRow(row_data);
-//                        return;
-//                    }
-//                }
                 for (int i = 0; i < table_products.getRowCount(); i++) {
                     if (cant.equals("0") && table_products.getValueAt(i, 0).equals(codigo)) {
                         encontrado = true;
@@ -279,11 +261,6 @@ public class cliente_comprar extends javax.swing.JFrame {
                     modelo.addRow(row_data);
                 }
             }
-
-            /*Object[] row_data = {pro1.getP_id(), pro1.getNombre(), Integer.parseInt(cant), pro1.getPrecio(), pro1.getPrecio() * Double.parseDouble(cant)};
-
-            DefaultTableModel modelo = (DefaultTableModel) table_products.getModel();
-            modelo.addRow(row_data);*/
         }
     }//GEN-LAST:event_b_selActionPerformed
     private String resumen_de_compra(DetalleVentas obj) {

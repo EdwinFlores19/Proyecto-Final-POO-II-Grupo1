@@ -16,7 +16,6 @@ public class ventas_1 extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         b_buscar = new javax.swing.JButton();
-        b_modificar = new javax.swing.JButton();
         b_listar = new javax.swing.JButton();
         b_exit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -41,17 +40,16 @@ public class ventas_1 extends javax.swing.JFrame {
         });
         getContentPane().add(b_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 250, -1));
 
-        b_modificar.setBackground(new java.awt.Color(255, 255, 255));
-        b_modificar.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        b_modificar.setForeground(new java.awt.Color(0, 0, 0));
-        b_modificar.setText("Modificar estado");
-        getContentPane().add(b_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 250, -1));
-
         b_listar.setBackground(new java.awt.Color(255, 255, 255));
         b_listar.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
         b_listar.setForeground(new java.awt.Color(0, 0, 0));
         b_listar.setText("listar ventas");
-        getContentPane().add(b_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 250, -1));
+        b_listar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_listarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(b_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 250, -1));
 
         b_exit.setBackground(new java.awt.Color(255, 255, 255));
         b_exit.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
@@ -73,12 +71,17 @@ public class ventas_1 extends javax.swing.JFrame {
 
     private void b_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_buscarActionPerformed
         // TODO add your handling code here:        
+        
     }//GEN-LAST:event_b_buscarActionPerformed
 
     private void b_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_exitActionPerformed
         admin_1 a1 = new admin_1();
         aux.change_jf(a1, this);
     }//GEN-LAST:event_b_exitActionPerformed
+
+    private void b_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_listarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_listarActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -109,7 +112,6 @@ public class ventas_1 extends javax.swing.JFrame {
     private javax.swing.JButton b_buscar;
     private javax.swing.JButton b_exit;
     private javax.swing.JButton b_listar;
-    private javax.swing.JButton b_modificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

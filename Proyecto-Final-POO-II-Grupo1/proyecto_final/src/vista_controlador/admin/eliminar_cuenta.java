@@ -211,7 +211,7 @@ public class eliminar_cuenta extends javax.swing.JFrame {
 
         Usuario user = array1.busqueda_credencial(documento);
         if (documento.length() == 8 || documento.length() == 11) {
-            if (user.getCredencial().isEmpty()) {
+            if (!user.getCredencial().isEmpty()) {
                 if ("Cliente".equals(user.getRol())) {
                     Cliente cliente1 = cliente_a.busqueda_credencial(documento);
 

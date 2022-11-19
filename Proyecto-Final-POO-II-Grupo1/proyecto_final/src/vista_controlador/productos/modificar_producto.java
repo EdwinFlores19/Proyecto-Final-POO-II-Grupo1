@@ -174,7 +174,8 @@ public class modificar_producto extends javax.swing.JFrame {
         if (0 != producto1.getP_id()) {
             producto1.setNombre(nombre_.getText());            
             producto1.setF_vencimiento(vencimiento_.getText());
-            producto1.setPrecio((double) precio_.getValue());
+            String precio1= String.valueOf(precio_.getValue());
+            producto1.setPrecio(Double.parseDouble(precio1));
             producto1.setStock((int) stock_.getValue());
 
             array1.grabarModificareliminar();
